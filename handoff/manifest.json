@@ -1,0 +1,67 @@
+{
+  "name": "AlterU U Agent frontend handoff",
+  "version": "1.0.0",
+  "updated_at": "2026-08-10",
+  "canvas": {
+    "width": 220,
+    "height": 48
+  },
+  "natural_character_size": {
+    "width": 42,
+    "height": 44
+  },
+  "idle_invitation_scheduler": {
+    "first_delay_seconds": {
+      "min": 20,
+      "max": 40
+    },
+    "repeat_delay_seconds": {
+      "min": 180,
+      "max": 360
+    },
+    "max_plays_per_page_session": 2,
+    "recent_interaction_guard_seconds": 8,
+    "after_waiting_cooldown_seconds": 60,
+    "pause_while_page_hidden": true,
+    "randomize_each_interval": true
+  },
+  "states": [
+    {
+      "id": "create-game",
+      "communication_category": "idle_invitation",
+      "message": "Create a game?",
+      "duration_ms": 6000,
+      "playback": "once",
+      "final_state": "pure-u",
+      "miniapp": "miniapp/alteru-u-agent-create-game.svg",
+      "native": "native/alteru-u-agent-create-game.lottie.json"
+    },
+    {
+      "id": "your-turn",
+      "communication_category": "awaiting_user",
+      "message": "Your turn — I’m waiting",
+      "duration_ms": 4000,
+      "playback": "once",
+      "final_state": "persistent-message",
+      "miniapp": "miniapp/alteru-u-agent-your-turn.svg",
+      "native": "native/alteru-u-agent-your-turn.lottie.json"
+    }
+  ],
+  "invariants": {
+    "u_watermark_always_visible": true,
+    "arm_count": [
+      0,
+      2
+    ],
+    "thinking_dot_count": 3,
+    "bubble_height": 36,
+    "bubble_radius": 18,
+    "bubble_horizontal_padding": 14,
+    "supports_reduced_motion": true,
+    "excluded_categories": [
+      "queue",
+      "badge_count",
+      "multiple_actions"
+    ]
+  }
+}

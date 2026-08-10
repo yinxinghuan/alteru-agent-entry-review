@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>AlterU U Agent · Frontend Handoff</title>
+  <style>
+    :root{color-scheme:light;--ink:#171014;--muted:#71676e;--line:rgba(23,16,20,.14);--paper:#f4f1f2;--pink:#f5b1c7;--hot:#ff4b8a;--black:#070607}*{box-sizing:border-box}html{background:var(--paper);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Helvetica Neue",Arial,sans-serif;color:var(--ink)}body{margin:0;min-width:280px}.page{width:min(1120px,calc(100% - 40px));margin:0 auto;padding:64px 0 88px}.eyebrow{margin:0 0 14px;color:var(--hot);font-size:12px;font-weight:760;letter-spacing:.12em;text-transform:uppercase}.hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:56px;align-items:end;padding-bottom:38px;border-bottom:1px solid var(--line)}h1{max-width:760px;margin:0;font-family:"Iowan Old Style",Georgia,serif;font-size:clamp(44px,7vw,82px);font-weight:500;line-height:.9;letter-spacing:-.055em}.hero p{margin:0;color:var(--muted);font-size:16px;line-height:1.7}.decision{display:inline-flex;align-items:center;gap:9px;margin-top:22px;padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.55);font-size:12px;font-weight:700}.decision::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--hot);box-shadow:0 0 0 4px rgba(255,75,138,.12)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:36px}.card{overflow:hidden;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.7);box-shadow:0 18px 50px rgba(31,15,23,.05)}.stage{position:relative;height:176px;background:var(--black);overflow:hidden}.platform-line{height:48px;border-bottom:1px solid rgba(255,255,255,.08);background:#0a090a}.animation-wrap{position:absolute;top:0;left:12px;width:220px;height:48px}.animation-wrap img{display:block;width:220px;height:48px;pointer-events:none;-webkit-user-drag:none}.stage-note{position:absolute;right:16px;bottom:14px;color:rgba(255,255,255,.42);font-size:10px;letter-spacing:.08em;text-transform:uppercase}.card-body{padding:22px}.card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.index{display:grid;place-items:center;width:28px;height:28px;flex:0 0 auto;border-radius:50%;background:var(--ink);color:white;font:600 13px/1 Georgia,serif}.card h2{margin:0 0 5px;font-size:21px;letter-spacing:-.025em}.card .meta{margin:0;color:var(--muted);font-size:13px;line-height:1.5}.state{margin:20px 0 0;display:grid;grid-template-columns:92px 1fr;gap:8px 14px;padding-top:18px;border-top:1px solid var(--line);font-size:12px}.state dt{color:var(--muted)}.state dd{margin:0;font-weight:650}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.button,.link{min-height:44px;border-radius:999px;padding:0 16px;font:700 12px/1 inherit;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;-webkit-tap-highlight-color:transparent}.button{border:0;background:var(--ink);color:white}.button:hover{background:#352a30}.link{border:1px solid var(--line);background:white;color:var(--ink)}.spec{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:56px;margin-top:72px;padding-top:34px;border-top:1px solid var(--line)}.spec h2{margin:0;font-family:"Iowan Old Style",Georgia,serif;font-size:36px;font-weight:500;line-height:1}.spec-copy{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.spec article{padding-top:14px;border-top:1px solid var(--line)}.spec h3{margin:0 0 8px;font-size:13px}.spec p{margin:0;color:var(--muted);font-size:13px;line-height:1.65}.downloads{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.footer{margin-top:72px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:24px;color:var(--muted);font-size:11px}.footer strong{color:var(--ink)}@media(max-width:760px){.page{width:min(100% - 24px,560px);padding:36px 0 56px}.hero,.spec{grid-template-columns:1fr;gap:24px}.hero{padding-bottom:28px}h1{font-size:clamp(42px,15vw,64px)}.grid{grid-template-columns:1fr;gap:16px;margin-top:24px}.stage{height:148px}.animation-wrap{left:4px}.card-body{padding:18px}.spec{margin-top:48px}.spec-copy{grid-template-columns:1fr;gap:18px}.footer{margin-top:48px;flex-direction:column;gap:6px}}@media(max-width:360px){.animation-wrap{transform:scale(.94);transform-origin:left top}.card-head{gap:10px}.state{grid-template-columns:80px 1fr}.actions{display:grid}.button,.link{width:100%}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Frontend handoff · v1.0</p>
+        <h1>Two states.<br />One living U.</h1>
+        <span class="decision">方案二已定版</span>
+      </div>
+      <p>最终交付只保留两个沟通类别：没有待办时邀请创建游戏；有待回复消息时提醒“轮到你了”并进入对应会话。下方动画在 MiniAPP 中就是可直接使用的 SVG 文件。</p>
+    </header>
+
+    <section class="grid" aria-label="两个最终动画">
+      <article class="card">
+        <div class="stage">
+          <div class="platform-line"></div>
+          <div class="animation-wrap"><img id="create-animation" src="./miniapp/alteru-u-agent-create-game.svg" width="220" height="48" alt="" /></div>
+          <span class="stage-note">left-top placement</span>
+        </div>
+        <div class="card-body">
+          <div class="card-head"><div><h2>空闲邀请</h2><p class="meta">没有待办 · 主动邀请创建游戏</p></div><span class="index">01</span></div>
+          <dl class="state"><dt>文案</dt><dd>Create a game?</dd><dt>时长</dt><dd>6s · 播放一次</dd><dt>结束</dt><dd>收回为纯 U</dd><dt>点击</dt><dd>打开创建游戏 Agent</dd></dl>
+          <div class="actions"><button class="button" type="button" data-replay="create-animation" data-src="./miniapp/alteru-u-agent-create-game.svg">重新播放</button><a class="link" download href="./miniapp/alteru-u-agent-create-game.svg">下载 SVG</a><a class="link" download href="./native/alteru-u-agent-create-game.lottie.json">下载 Lottie</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="stage">
+          <div class="platform-line"></div>
+          <div class="animation-wrap"><img id="waiting-animation" src="./miniapp/alteru-u-agent-your-turn.svg" width="220" height="48" alt="" /></div>
+          <span class="stage-note">left-top placement</span>
+        </div>
+        <div class="card-body">
+          <div class="card-head"><div><h2>待回复提醒</h2><p class="meta">Agent 等待用户 · 立即获得优先级</p></div><span class="index">02</span></div>
+          <dl class="state"><dt>文案</dt><dd>Your turn — I’m waiting</dd><dt>时长</dt><dd>4s · 播放一次</dd><dt>结束</dt><dd>保留提示，双手收回</dd><dt>点击</dt><dd>打开对应 conversationId</dd></dl>
+          <div class="actions"><button class="button" type="button" data-replay="waiting-animation" data-src="./miniapp/alteru-u-agent-your-turn.svg">重新播放</button><a class="link" download href="./miniapp/alteru-u-agent-your-turn.svg">下载 SVG</a><a class="link" download href="./native/alteru-u-agent-your-turn.lottie.json">下载 Lottie</a></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="spec">
+      <div><p class="eyebrow">Integration contract</p><h2>待回复永远优先。</h2></div>
+      <div>
+        <div class="spec-copy">
+          <article><h3>状态抢占</h3><p><code>awaiting_user</code> 到达时，立即停止空闲邀请并切换到待回复动画；清除后先回到纯 U，并保持 60 秒冷却。</p></article>
+          <article><h3>统一画布</h3><p>两端、两状态都使用 220 × 48 透明画布。气泡长度变化不会推挤平台右侧元素，也不会产生布局跳动。</p></article>
+          <article><h3>角色完整性</h3><p>U 始终存在；思考阶段固定三个点；手臂只允许 0 或 2。停留阶段不让角色持续晃动。</p></article>
+          <article><h3>当前不做</h3><p>没有第三种多待办状态，不展示数量徽标，不展开多个会话，也不根据消息数量改变角色动作。</p></article>
+          <article><h3>低频随机招呼</h3><p>首次等待 20–40 秒；后续每次随机等待 3–6 分钟，每个页面会话最多 2 次。用户刚操作过或页面不可见时继续顺延。</p></article>
+        </div>
+        <div class="downloads"><a class="button" href="./README.md">查看完整接入说明</a><a class="link" href="./manifest.json">查看 manifest</a></div>
+      </div>
+    </section>
+    <footer class="footer"><span><strong>AlterU U Agent</strong> · frontend motion delivery</span><span>MiniAPP SVG + Native Lottie</span></footer>
+  </main>
+  <script>
+    document.querySelectorAll('[data-replay]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const image = document.getElementById(button.dataset.replay);
+        image.removeAttribute('src');
+        requestAnimationFrame(() => image.setAttribute('src', button.dataset.src));
+      });
+    });
+  </script>
+</body>
+</html>
