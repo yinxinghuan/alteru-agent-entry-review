@@ -217,6 +217,55 @@ function animated(frames, dimensions = 1) {
   }
 }
 
+function svgPathToLottie(pathData) {
+  const tokens = pathData.match(/[A-Za-z]|-?(?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?/gi) || []
+  const vertices = []
+  const inTangents = []
+  const outTangents = []
+  let index = 0
+  let command = ''
+  let closed = false
+
+  const readNumber = () => Number(tokens[index++])
+  const isCommand = (token) => /^[A-Za-z]$/.test(token || '')
+
+  while (index < tokens.length) {
+    if (isCommand(tokens[index])) command = tokens[index++]
+    if (command === 'M') {
+      const point = [readNumber(), readNumber()]
+      vertices.push(point)
+      inTangents.push([0, 0])
+      outTangents.push([0, 0])
+      command = 'L'
+      continue
+    }
+    if (command === 'C') {
+      const control1 = [readNumber(), readNumber()]
+      const control2 = [readNumber(), readNumber()]
+      const endpoint = [readNumber(), readNumber()]
+      const previous = vertices[vertices.length - 1]
+      outTangents[outTangents.length - 1] = [control1[0] - previous[0], control1[1] - previous[1]]
+      vertices.push(endpoint)
+      inTangents.push([control2[0] - endpoint[0], control2[1] - endpoint[1]])
+      outTangents.push([0, 0])
+      continue
+    }
+    if (command === 'L') {
+      vertices.push([readNumber(), readNumber()])
+      inTangents.push([0, 0])
+      outTangents.push([0, 0])
+      continue
+    }
+    if (command === 'Z' || command === 'z') {
+      closed = true
+      break
+    }
+    throw new Error(`Unsupported SVG path command in official U watermark: ${command}; next tokens: ${tokens.slice(index, index + 8).join(' ')}`)
+  }
+
+  return { c: closed, i: inTangents, o: outTangents, v: vertices }
+}
+
 function staticProp(value) {
   return { a: 0, k: value }
 }
@@ -307,14 +356,14 @@ function rectPositionFrames(kind, finalWidth) {
 function markScaleFrames(kind) {
   if (kind === 'create') {
     return [
-      { t: 0, v: [25, 25, 100] }, { t: 36, v: [25, 25, 100] }, { t: 46, v: [25.9, 24.1, 100] },
-      { t: 58, v: [24.25, 26.35, 100] }, { t: 72, v: [25, 25, 100] }, { t: 300, v: [25, 25, 100] },
-      { t: 314, v: [24.6, 25.7, 100] }, { t: 328, v: [25.8, 24.2, 100] }, { t: 342, v: [25, 25, 100] }, { t: 360, v: [25, 25, 100] },
+      { t: 0, v: [100, 100, 100] }, { t: 36, v: [100, 100, 100] }, { t: 46, v: [103.6, 96.4, 100] },
+      { t: 58, v: [97, 105.4, 100] }, { t: 72, v: [100, 100, 100] }, { t: 300, v: [100, 100, 100] },
+      { t: 314, v: [98.4, 102.8, 100] }, { t: 328, v: [103.2, 96.8, 100] }, { t: 342, v: [100, 100, 100] }, { t: 360, v: [100, 100, 100] },
     ]
   }
   return [
-    { t: 0, v: [25, 25, 100] }, { t: 14, v: [25, 25, 100] }, { t: 26, v: [25.9, 24.1, 100] },
-    { t: 38, v: [24.25, 26.35, 100] }, { t: 52, v: [25, 25, 100] }, { t: 240, v: [25, 25, 100] },
+    { t: 0, v: [100, 100, 100] }, { t: 14, v: [100, 100, 100] }, { t: 26, v: [103.6, 96.4, 100] },
+    { t: 38, v: [97, 105.4, 100] }, { t: 52, v: [100, 100, 100] }, { t: 240, v: [100, 100, 100] },
   ]
 }
 
@@ -440,20 +489,36 @@ function patchAnimatedTransforms(layer, kind) {
   return layer
 }
 
+function makeOfficialUMarkLayer(op, kind) {
+  const markGroup = group('Official U watermark paths', [
+    { ty: 'sh', nm: 'U main path', ks: staticProp(svgPathToLottie(U_PATH_MAIN)) },
+    { ty: 'sh', nm: 'U star path', ks: staticProp(svgPathToLottie(U_PATH_STAR)) },
+    fill([1, 1, 1, 1]),
+  ])
+  const groupTransform = markGroup.it[markGroup.it.length - 1]
+  groupTransform.p = staticProp([1, 3])
+  groupTransform.s = staticProp([16.40625, 16.40625])
+
+  return shapeLayer(10, 'Official U watermark — vector', op, {
+    o: staticProp(100),
+    r: staticProp(0),
+    p: staticProp([22, 38, 0]),
+    a: staticProp([22, 38, 0]),
+    s: animated(markScaleFrames(kind), 3),
+  }, [markGroup])
+}
+
 async function pngData(svg) {
   return (await sharp(Buffer.from(svg)).png().toBuffer()).toString('base64')
 }
 
 async function writeNativeLottie(state, kind) {
-  const uSvg = `<svg width="168" height="168" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="${U_PATH_MAIN}" fill="#fff"/><path d="${U_PATH_STAR}" fill="#fff"/></svg>`
   const textWidth = state.bubbleWidth * 4
   const textSvg = `<svg width="${textWidth}" height="144" viewBox="0 0 ${textWidth} 144" xmlns="http://www.w3.org/2000/svg"><text x="${textWidth / 2}" y="88" fill="${COLORS.ink}" font-family="-apple-system, BlinkMacSystemFont, SF Pro Text, PingFang SC, Helvetica Neue, Arial, sans-serif" font-size="44" font-weight="650" text-anchor="middle">${escapeXml(state.copy)}</text></svg>`
-  const [uData, textData] = await Promise.all([pngData(uSvg), pngData(textSvg)])
+  const textData = await pngData(textSvg)
   const op = state.frames
 
-  const markLayer = imageLayer(10, 'Official U watermark', op, 'u_mark', {
-    o: staticProp(100), r: staticProp(0), p: staticProp([22, 38, 0]), a: staticProp([84, 140, 0]), s: animated(markScaleFrames(kind), 3),
-  })
+  const markLayer = makeOfficialUMarkLayer(op, kind)
   const faceLayer = patchAnimatedTransforms(makeFaceLayer(op, kind), kind)
   const leftArm = makeArmLayer(op, kind, 'left', 31)
   const rightArm = makeArmLayer(op, kind, 'right', 32)
@@ -484,13 +549,13 @@ async function writeNativeLottie(state, kind) {
     nm: `AlterU U Agent — ${state.title}`,
     ddd: 0,
     assets: [
-      { id: 'u_mark', w: 168, h: 168, u: '', p: `data:image/png;base64,${uData}`, e: 1 },
       { id: 'message_copy', w: textWidth, h: 144, u: '', p: `data:image/png;base64,${textData}`, e: 1 },
     ],
     layers,
     markers,
     meta: {
       generator: 'AlterU U Agent handoff generator',
+      handoff_version: '1.0.1',
       state: state.id,
       duration_ms: state.durationMs,
       final_state: state.finalState,
@@ -508,7 +573,7 @@ async function writeNativeLottie(state, kind) {
 function writeManifest() {
   const manifest = {
     name: 'AlterU U Agent frontend handoff',
-    version: '1.0.0',
+    version: '1.0.1',
     updated_at: '2026-08-10',
     canvas: CANVAS,
     natural_character_size: { width: 42, height: 44 },
@@ -552,6 +617,12 @@ function writeManifest() {
       bubble_horizontal_padding: 14,
       supports_reduced_motion: true,
       excluded_categories: ['queue', 'badge_count', 'multiple_actions'],
+    },
+    native_compatibility: {
+      official_u_rendering: 'pure-vector-shape-layer',
+      embedded_image_assets: ['message_copy'],
+      external_image_assets: 0,
+      rationale: 'Avoid native Lottie image-anchor and embedded-watermark compatibility differences.',
     },
   }
   fs.writeFileSync(path.join(handoffDir, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`)

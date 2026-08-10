@@ -1,6 +1,6 @@
 # AlterU U Agent 前端动效交付
 
-> 交付版本：1.0.0  
+> 交付版本：1.0.1  
 > 定版日期：2026-08-10  
 > 选定方向：方案二 · U-born Agent  
 > 适用端：MiniAPP、iOS、Android
@@ -28,7 +28,9 @@
 - `native/alteru-u-agent-create-game.lottie.json`
 - `native/alteru-u-agent-your-turn.lottie.json`
 
-两份 Lottie 都是 `220 × 48`、60fps、单次播放。U 与文案图片已通过 data URI 内嵌，交付时不需要额外的 images 目录。
+两份 Lottie 都是 `220 × 48`、60fps、单次播放。正式 U 的两条路径是纯矢量 Shape Layer，不依赖位图锚点；文案图片通过 data URI 内嵌，交付时不需要额外的 images 目录。
+
+`v1.0.1` 修复了部分原生 Lottie 渲染器中 U 主体缺失、只剩脸和双手的问题。前端应替换旧 JSON 文件本身，不要继续使用已缓存的 `v1.0.0` 内容。
 
 ## 3. 动画时间线
 
@@ -112,6 +114,8 @@ function replayImage(image: HTMLImageElement, src: string) {
 - background：transparent
 - interaction：由外层原生按钮承接
 - 点击热区：至少 `220 × 48pt/dp`；空间受限时视觉可以等比缩放，但触控高度不得小于 `44pt/dp`
+
+原生容器请使用完整 `220:48` 比例的 `fitCenter / scaleAspectFit`，不要使用 `aspectFill` 或按气泡宽度裁剪画布。两个状态共用同一容器尺寸，只有 JSON 内容发生替换。
 
 空闲邀请播放完毕后，容器会停在纯 U 的末帧。待回复播放完毕后，容器会停在可读提示末帧。业务状态发生变化时使用新 JSON 重新播放，不要在两份动画之间做帧号跳转。
 
