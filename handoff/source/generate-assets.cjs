@@ -7,6 +7,7 @@ const miniappDir = path.join(handoffDir, 'miniapp')
 const nativeDir = path.join(handoffDir, 'native')
 
 const CANVAS = { width: 220, height: 48 }
+const BUBBLE_X = 43
 const COLORS = {
   white: '#FFFFFF',
   ink: '#171014',
@@ -78,7 +79,7 @@ function sharedSvgMarkup(state) {
       <circle cx="39" cy="30" r="2.5" fill="${COLORS.white}"/>
     </g>
   </g>
-  <g id="speech" transform="translate(51 6)">
+  <g id="speech" transform="translate(${BUBBLE_X} 6)">
     <g id="speech-motion">
       <path id="bubble-tail" d="M0 13L-7 18L0 25Z" fill="${state.bubbleFill}"/>
       <rect id="bubble-surface" width="36" height="36" rx="18" fill="${state.bubbleFill}" stroke="rgba(13,10,15,.08)"/>
@@ -405,12 +406,20 @@ function makeFaceLayer(op, kind) {
       fill([0.960784, 0.694118, 0.780392, 1]),
       stroke([1, 1, 1, 1], 2),
     ]),
-    ellipse([-2.25, 0], [2.5, 3.5], [0.090196, 0.062745, 0.078431, 1]),
-    ellipse([2.25, 0], [2.5, 3.5], [0.090196, 0.062745, 0.078431, 1]),
   ]
   return shapeLayer(30, 'U Agent Face', op, transform({
     opacity: opacityFrames(kind, 'face'), position: [22, 33.5, 0], anchor: [0, 5.5, 0], scale: [100, 100, 100],
   }), shapes)
+}
+
+function makeEyeLayer(op, kind, side, ind) {
+  const eyeX = side === 'left' ? -2.25 : 2.25
+  return shapeLayer(ind, `U Agent ${side} eye`, op, transform({
+    opacity: opacityFrames(kind, 'face'),
+    position: [22, 33.5, 0],
+    anchor: [0, 5.5, 0],
+    scale: [100, 100, 100],
+  }), [ellipse([eyeX, 0], [2.5, 3.5], [0.090196, 0.062745, 0.078431, 1])])
 }
 
 function makeArmLayer(op, kind, side, ind) {
@@ -437,7 +446,7 @@ function makeBubbleLayer(op, kind, state) {
   const fillColor = state.bubbleFill === COLORS.white
     ? [1, 1, 1, 1]
     : [0.960784, 0.694118, 0.780392, 1]
-  return shapeLayer(20, 'Speech bubble surface', op, transform({ opacity: opacityFrames(kind, 'speech'), position: [51, 24, 0] }), [
+  return shapeLayer(20, 'Speech bubble surface', op, transform({ opacity: opacityFrames(kind, 'speech'), position: [BUBBLE_X, 24, 0] }), [
     group('Bubble', [
       { ty: 'rc', p: animated(positions, 2), s: animated(sizes, 2), r: staticProp(18), d: 1, nm: 'Bubble Shape' },
       fill(fillColor),
@@ -449,7 +458,7 @@ function makeTailLayer(op, kind, state) {
   const fillColor = state.bubbleFill === COLORS.white
     ? [1, 1, 1, 1]
     : [0.960784, 0.694118, 0.780392, 1]
-  return shapeLayer(21, 'Speech bubble tail', op, transform({ opacity: opacityFrames(kind, 'speech'), position: [51, 24, 0] }), [
+  return shapeLayer(21, 'Speech bubble tail', op, transform({ opacity: opacityFrames(kind, 'speech'), position: [BUBBLE_X, 24, 0] }), [
     group('Tail', [
       { ty: 'sh', nm: 'Tail Path', ks: staticProp({ c: true, i: [[0, 0], [0, 0], [0, 0]], o: [[0, 0], [0, 0], [0, 0]], v: [[-7, 0], [0, -5], [0, 7]] }) },
       fill(fillColor),
@@ -458,7 +467,7 @@ function makeTailLayer(op, kind, state) {
 }
 
 function makeDotsLayer(op, kind) {
-  return shapeLayer(23, 'Three thinking dots', op, transform({ opacity: opacityFrames(kind, 'dots'), position: [69, 24, 0] }), [
+  return shapeLayer(23, 'Three thinking dots', op, transform({ opacity: opacityFrames(kind, 'dots'), position: [BUBBLE_X + 18, 24, 0] }), [
     ellipse([-6, 0], [4, 4], [0.090196, 0.062745, 0.078431, 1]),
     ellipse([0, 0], [4, 4], [0.090196, 0.062745, 0.078431, 1]),
     ellipse([6, 0], [4, 4], [0.090196, 0.062745, 0.078431, 1]),
@@ -479,7 +488,7 @@ function makeRingLayer(op) {
 }
 
 function patchAnimatedTransforms(layer, kind) {
-  if (layer.nm === 'U Agent Face') layer.ks.s = animated(faceScaleFrames(kind), 3)
+  if (layer.nm === 'U Agent Face' || layer.nm.endsWith(' eye')) layer.ks.s = animated(faceScaleFrames(kind), 3)
   if (layer.nm === 'Waiting attention ring') {
     layer.ks.s = animated([
       { t: 0, v: [72, 72, 100] }, { t: 64, v: [132, 132, 100] },
@@ -508,6 +517,15 @@ function makeOfficialUMarkLayer(op, kind) {
   }, [markGroup])
 }
 
+function makeNativeBackgroundLayer(op) {
+  return shapeLayer(1, 'Native platform black background', op, transform({ position: [0, 0, 0] }), [
+    group('Background', [
+      { ty: 'rc', p: staticProp([110, 24]), s: staticProp([220, 48]), r: staticProp(0), d: 1, nm: 'Background rectangle' },
+      fill([0.027451, 0.023529, 0.027451, 1]),
+    ]),
+  ])
+}
+
 async function pngData(svg) {
   return (await sharp(Buffer.from(svg)).png().toBuffer()).toString('base64')
 }
@@ -520,6 +538,8 @@ async function writeNativeLottie(state, kind) {
 
   const markLayer = makeOfficialUMarkLayer(op, kind)
   const faceLayer = patchAnimatedTransforms(makeFaceLayer(op, kind), kind)
+  const leftEye = patchAnimatedTransforms(makeEyeLayer(op, kind, 'left', 33), kind)
+  const rightEye = patchAnimatedTransforms(makeEyeLayer(op, kind, 'right', 34), kind)
   const leftArm = makeArmLayer(op, kind, 'left', 31)
   const rightArm = makeArmLayer(op, kind, 'right', 32)
   const bubble = makeBubbleLayer(op, kind, state)
@@ -527,10 +547,11 @@ async function writeNativeLottie(state, kind) {
   const dots = makeDotsLayer(op, kind)
   const copyLayer = imageLayer(24, 'Message copy', op, 'message_copy', {
     o: animated(opacityFrames(kind, 'copy')),
-    r: staticProp(0), p: staticProp([51, 6, 0]), a: staticProp([0, 0, 0]), s: staticProp([25, 25, 100]),
+    r: staticProp(0), p: staticProp([BUBBLE_X, 6, 0]), a: staticProp([0, 0, 0]), s: staticProp([25, 25, 100]),
   })
-  const layers = [copyLayer, dots, bubble, tail, rightArm, leftArm, faceLayer, markLayer]
+  const layers = [copyLayer, dots, bubble, tail, rightArm, leftArm, leftEye, rightEye, faceLayer, markLayer]
   if (kind === 'waiting') layers.push(patchAnimatedTransforms(makeRingLayer(op), kind))
+  layers.push(makeNativeBackgroundLayer(op))
 
   const markers = kind === 'create'
     ? [
@@ -555,7 +576,7 @@ async function writeNativeLottie(state, kind) {
     markers,
     meta: {
       generator: 'AlterU U Agent handoff generator',
-      handoff_version: '1.0.1',
+      handoff_version: '1.0.2',
       state: state.id,
       duration_ms: state.durationMs,
       final_state: state.finalState,
@@ -573,7 +594,7 @@ async function writeNativeLottie(state, kind) {
 function writeManifest() {
   const manifest = {
     name: 'AlterU U Agent frontend handoff',
-    version: '1.0.1',
+    version: '1.0.2',
     updated_at: '2026-08-10',
     canvas: CANVAS,
     natural_character_size: { width: 42, height: 44 },
@@ -620,6 +641,8 @@ function writeManifest() {
     },
     native_compatibility: {
       official_u_rendering: 'pure-vector-shape-layer',
+      background_rendering: 'native-platform-black-shape-layer',
+      eye_rendering: 'two-independent-shape-layers-above-face',
       embedded_image_assets: ['message_copy'],
       external_image_assets: 0,
       rationale: 'Avoid native Lottie image-anchor and embedded-watermark compatibility differences.',
