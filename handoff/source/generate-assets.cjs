@@ -7,7 +7,7 @@ const miniappDir = path.join(handoffDir, 'miniapp')
 const nativeDir = path.join(handoffDir, 'native')
 
 const CANVAS = { width: 220, height: 48 }
-const BUBBLE_X = 43
+const BUBBLE_X = 51
 const COLORS = {
   white: '#FFFFFF',
   ink: '#171014',
@@ -81,7 +81,7 @@ function sharedSvgMarkup(state) {
   </g>
   <g id="speech" transform="translate(${BUBBLE_X} 6)">
     <g id="speech-motion">
-      <path id="bubble-tail" d="M0 13L-7 18L0 25Z" fill="${state.bubbleFill}"/>
+      <path id="bubble-tail" d="M2 19L-11 23L2 27Z" fill="${state.bubbleFill}"/>
       <rect id="bubble-surface" width="36" height="36" rx="18" fill="${state.bubbleFill}" stroke="rgba(13,10,15,.08)"/>
       <clipPath id="bubble-clip"><rect id="bubble-clip-rect" width="36" height="36" rx="18"/></clipPath>
       <g clip-path="url(#bubble-clip)">
@@ -209,6 +209,10 @@ function animated(frames, dimensions = 1) {
     a: 1,
     k: frames.map((frame, index) => {
       const result = { t: frame.t, s: frame.v }
+      if (frame.hold && index < frames.length - 1) {
+        result.h = 1
+        return result
+      }
       if (index < frames.length - 1) {
         result.e = frames[index + 1].v
         Object.assign(result, lottieEase(dimensions))
@@ -358,13 +362,13 @@ function markScaleFrames(kind) {
   if (kind === 'create') {
     return [
       { t: 0, v: [100, 100, 100] }, { t: 36, v: [100, 100, 100] }, { t: 46, v: [103.6, 96.4, 100] },
-      { t: 58, v: [97, 105.4, 100] }, { t: 72, v: [100, 100, 100] }, { t: 300, v: [100, 100, 100] },
-      { t: 314, v: [98.4, 102.8, 100] }, { t: 328, v: [103.2, 96.8, 100] }, { t: 342, v: [100, 100, 100] }, { t: 360, v: [100, 100, 100] },
+      { t: 58, v: [97, 105.4, 100] }, { t: 72, v: [100, 100, 100], hold: true }, { t: 300, v: [100, 100, 100] },
+      { t: 314, v: [98.4, 102.8, 100] }, { t: 328, v: [103.2, 96.8, 100] }, { t: 342, v: [100, 100, 100], hold: true }, { t: 360, v: [100, 100, 100] },
     ]
   }
   return [
     { t: 0, v: [100, 100, 100] }, { t: 14, v: [100, 100, 100] }, { t: 26, v: [103.6, 96.4, 100] },
-    { t: 38, v: [97, 105.4, 100] }, { t: 52, v: [100, 100, 100] }, { t: 240, v: [100, 100, 100] },
+    { t: 38, v: [97, 105.4, 100] }, { t: 52, v: [100, 100, 100], hold: true }, { t: 240, v: [100, 100, 100] },
   ]
 }
 
@@ -404,11 +408,11 @@ function makeFaceLayer(op, kind) {
     group('Face', [
       { ty: 'rc', p: staticProp([0, 0]), s: staticProp([14, 11]), r: staticProp(5.5), d: 1, nm: 'Face Shape' },
       fill([0.960784, 0.694118, 0.780392, 1]),
-      stroke([1, 1, 1, 1], 2),
+      stroke([1, 1, 1, 1], 2.6),
     ]),
   ]
   return shapeLayer(30, 'U Agent Face', op, transform({
-    opacity: opacityFrames(kind, 'face'), position: [22, 33.5, 0], anchor: [0, 5.5, 0], scale: [100, 100, 100],
+    opacity: opacityFrames(kind, 'face'), position: [22, 39, 0], anchor: [0, 5.5, 0], scale: [100, 100, 100],
   }), shapes)
 }
 
@@ -416,7 +420,7 @@ function makeEyeLayer(op, kind, side, ind) {
   const eyeX = side === 'left' ? -2.25 : 2.25
   return shapeLayer(ind, `U Agent ${side} eye`, op, transform({
     opacity: opacityFrames(kind, 'face'),
-    position: [22, 33.5, 0],
+    position: [22, 39, 0],
     anchor: [0, 5.5, 0],
     scale: [100, 100, 100],
   }), [ellipse([eyeX, 0], [2.5, 3.5], [0.090196, 0.062745, 0.078431, 1])])
@@ -448,19 +452,8 @@ function makeBubbleLayer(op, kind, state) {
     : [0.960784, 0.694118, 0.780392, 1]
   return shapeLayer(20, 'Speech bubble surface', op, transform({ opacity: opacityFrames(kind, 'speech'), position: [BUBBLE_X, 24, 0] }), [
     group('Bubble', [
+      { ty: 'sh', nm: 'Integrated tail path', ks: staticProp({ c: true, i: [[0, 0], [0, 0], [0, 0]], o: [[0, 0], [0, 0], [0, 0]], v: [[-11, 5], [2, 1], [2, 9]] }) },
       { ty: 'rc', p: animated(positions, 2), s: animated(sizes, 2), r: staticProp(18), d: 1, nm: 'Bubble Shape' },
-      fill(fillColor),
-    ]),
-  ])
-}
-
-function makeTailLayer(op, kind, state) {
-  const fillColor = state.bubbleFill === COLORS.white
-    ? [1, 1, 1, 1]
-    : [0.960784, 0.694118, 0.780392, 1]
-  return shapeLayer(21, 'Speech bubble tail', op, transform({ opacity: opacityFrames(kind, 'speech'), position: [BUBBLE_X, 24, 0] }), [
-    group('Tail', [
-      { ty: 'sh', nm: 'Tail Path', ks: staticProp({ c: true, i: [[0, 0], [0, 0], [0, 0]], o: [[0, 0], [0, 0], [0, 0]], v: [[-7, 0], [0, -5], [0, 7]] }) },
       fill(fillColor),
     ]),
   ])
@@ -543,13 +536,12 @@ async function writeNativeLottie(state, kind) {
   const leftArm = makeArmLayer(op, kind, 'left', 31)
   const rightArm = makeArmLayer(op, kind, 'right', 32)
   const bubble = makeBubbleLayer(op, kind, state)
-  const tail = makeTailLayer(op, kind, state)
   const dots = makeDotsLayer(op, kind)
   const copyLayer = imageLayer(24, 'Message copy', op, 'message_copy', {
     o: animated(opacityFrames(kind, 'copy')),
     r: staticProp(0), p: staticProp([BUBBLE_X, 6, 0]), a: staticProp([0, 0, 0]), s: staticProp([25, 25, 100]),
   })
-  const layers = [copyLayer, dots, bubble, tail, rightArm, leftArm, leftEye, rightEye, faceLayer, markLayer]
+  const layers = [copyLayer, dots, bubble, rightArm, leftArm, leftEye, rightEye, faceLayer, markLayer]
   if (kind === 'waiting') layers.push(patchAnimatedTransforms(makeRingLayer(op), kind))
   layers.push(makeNativeBackgroundLayer(op))
 
@@ -576,7 +568,7 @@ async function writeNativeLottie(state, kind) {
     markers,
     meta: {
       generator: 'AlterU U Agent handoff generator',
-      handoff_version: '1.0.2',
+      handoff_version: '1.0.3',
       state: state.id,
       duration_ms: state.durationMs,
       final_state: state.finalState,
@@ -594,7 +586,7 @@ async function writeNativeLottie(state, kind) {
 function writeManifest() {
   const manifest = {
     name: 'AlterU U Agent frontend handoff',
-    version: '1.0.2',
+    version: '1.0.3',
     updated_at: '2026-08-10',
     canvas: CANVAS,
     natural_character_size: { width: 42, height: 44 },
@@ -643,6 +635,10 @@ function writeManifest() {
       official_u_rendering: 'pure-vector-shape-layer',
       background_rendering: 'native-platform-black-shape-layer',
       eye_rendering: 'two-independent-shape-layers-above-face',
+      bubble_tail_rendering: 'integrated-in-bubble-shape-layer-with-2px-overlap',
+      bubble_tail_geometry: '8px-base-shifted-5px-toward-face-center',
+      face_center_y: 33.5,
+      face_stroke_width: 2.6,
       embedded_image_assets: ['message_copy'],
       external_image_assets: 0,
       rationale: 'Avoid native Lottie image-anchor and embedded-watermark compatibility differences.',

@@ -72,9 +72,9 @@
       <circle cx="39" cy="30" r="2.5" fill="#FFFFFF"/>
     </g>
   </g>
-  <g id="speech" transform="translate(43 6)">
+  <g id="speech" transform="translate(51 6)">
     <g id="speech-motion">
-      <path id="bubble-tail" d="M0 13L-7 18L0 25Z" fill="#FFFFFF"/>
+      <path id="bubble-tail" d="M2 19L-11 23L2 27Z" fill="#FFFFFF"/>
       <rect id="bubble-surface" width="36" height="36" rx="18" fill="#FFFFFF" stroke="rgba(13,10,15,.08)"/>
       <clipPath id="bubble-clip"><rect id="bubble-clip-rect" width="36" height="36" rx="18"/></clipPath>
       <g clip-path="url(#bubble-clip)">

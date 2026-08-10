@@ -1,6 +1,6 @@
 {
   "name": "AlterU U Agent frontend handoff",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "updated_at": "2026-08-10",
   "canvas": {
     "width": 220,
@@ -68,6 +68,10 @@
     "official_u_rendering": "pure-vector-shape-layer",
     "background_rendering": "native-platform-black-shape-layer",
     "eye_rendering": "two-independent-shape-layers-above-face",
+    "bubble_tail_rendering": "integrated-in-bubble-shape-layer-with-2px-overlap",
+    "bubble_tail_geometry": "8px-base-shifted-5px-toward-face-center",
+    "face_center_y": 33.5,
+    "face_stroke_width": 2.6,
     "embedded_image_assets": [
       "message_copy"
     ],
