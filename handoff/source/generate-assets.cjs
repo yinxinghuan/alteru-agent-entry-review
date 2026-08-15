@@ -62,27 +62,31 @@ function sharedSvgMarkup(state) {
   return `
   <g id="u-agent">
     <g id="u-mark">
-      <path transform="translate(1 3) scale(.1640625)" d="${U_PATH_MAIN}" fill="${COLORS.white}"/>
-      <path transform="translate(1 3) scale(.1640625)" d="${U_PATH_STAR}" fill="${COLORS.white}"/>
+      <path transform="translate(0 3) scale(.1640625)" d="${U_PATH_MAIN}" fill="${COLORS.white}"/>
+      <path transform="translate(0 3) scale(.1640625)" d="${U_PATH_STAR}" fill="${COLORS.white}"/>
     </g>
     <g id="u-face">
-      <rect x="15" y="28" width="14" height="11" rx="5.5" fill="${COLORS.pink}" stroke="${COLORS.white}" stroke-width="2"/>
-      <ellipse cx="19.75" cy="33.5" rx="1.25" ry="1.75" fill="${COLORS.ink}"/>
-      <ellipse cx="24.25" cy="33.5" rx="1.25" ry="1.75" fill="${COLORS.ink}"/>
+      <rect x="12" y="25" width="18" height="15" rx="8" fill="${COLORS.white}"/>
+      <rect x="14" y="27" width="14" height="11" rx="6" fill="${COLORS.pink}"/>
+      <ellipse cx="18.25" cy="32.5" rx="1.25" ry="1.75" fill="${COLORS.ink}"/>
+      <ellipse cx="23.75" cy="32.5" rx="1.25" ry="1.75" fill="${COLORS.ink}"/>
     </g>
     <g id="arm-left">
-      <path d="M17 33L8 36" fill="none" stroke="${COLORS.pink}" stroke-width="3" stroke-linecap="round"/>
-      <circle cx="8" cy="36" r="2.5" fill="${COLORS.white}"/>
+      <rect x="7" y="32" width="10" height="3" rx="1.5" fill="${COLORS.pink}"/>
+      <circle cx="7.5" cy="33.5" r="2.5" fill="${COLORS.white}"/>
     </g>
     <g id="arm-right">
-      <path d="M29 33L39 30" fill="none" stroke="${COLORS.pink}" stroke-width="3" stroke-linecap="round"/>
-      <circle cx="39" cy="30" r="2.5" fill="${COLORS.white}"/>
+      <rect x="29" y="32" width="10" height="3" rx="1.5" fill="${COLORS.pink}"/>
+      <circle cx="38.5" cy="33.5" r="2.5" fill="${COLORS.white}"/>
     </g>
   </g>
   <g id="speech" transform="translate(${BUBBLE_X} 6)">
     <g id="speech-motion">
-      <path id="bubble-tail" d="M2 19L-11 23L2 27Z" fill="${state.bubbleFill}"/>
-      <rect id="bubble-surface" width="36" height="36" rx="18" fill="${state.bubbleFill}" stroke="rgba(13,10,15,.08)"/>
+      <g id="bubble-tail" transform="translate(-6 20) rotate(8 11 11)">
+        <path d="M11 0V11H0Z" fill="${state.bubbleFill}"/>
+      </g>
+      <rect id="bubble-surface" width="36" height="36" rx="18" fill="${state.bubbleFill}"/>
+      <rect id="bubble-inset" x=".5" y=".5" width="35" height="35" rx="17.5" fill="none" stroke="rgba(13,10,15,.08)"/>
       <clipPath id="bubble-clip"><rect id="bubble-clip-rect" width="36" height="36" rx="18"/></clipPath>
       <g clip-path="url(#bubble-clip)">
         <g id="thinking-dots" fill="${COLORS.ink}">
@@ -96,13 +100,14 @@ function sharedSvgMarkup(state) {
 
 function createSvgCss(state) {
   return `
-    #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#bubble-tail,#thinking-dots,#message-copy { transform-box: fill-box; }
-    #u-mark { transform-origin: 50% 82%; animation: create-mark 6s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #u-face { transform-origin: center bottom; animation: create-face 6s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #arm-left { transform-origin: right center; animation: create-left-arm 6s ease-in-out 1 both; }
-    #arm-right { transform-origin: left center; animation: create-right-arm 6s ease-in-out 1 both; }
-    #speech-motion { transform-origin: 0 82%; animation: create-speech 6s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#thinking-dots,#message-copy { transform-box: view-box; }
+    #u-mark { transform-origin: 21px 37.44px; animation: create-mark 6s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #u-face { transform-origin: 21px 38px; animation: create-face 6s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #arm-left { transform-origin: 17px 33.5px; animation: create-left-arm 6s ease-in-out 1 both; }
+    #arm-right { transform-origin: 29px 33.5px; animation: create-right-arm 6s ease-in-out 1 both; }
+    #speech-motion { transform-box: fill-box; transform-origin: center; animation: create-speech 6s cubic-bezier(.2,.8,.2,1) 1 both; }
     #bubble-surface,#bubble-clip-rect { animation: create-width 6s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #bubble-inset { animation: create-inset-width 6s cubic-bezier(.2,.8,.2,1) 1 both; }
     #thinking-dots { animation: create-dots 6s ease 1 both; }
     #thinking-dots circle { transform-box: fill-box; transform-origin: center; animation: dot-pulse .66s ease-in-out infinite alternate; }
     #thinking-dots circle:nth-child(2) { animation-delay: .12s; }
@@ -133,28 +138,35 @@ function createSvgCss(state) {
       36%,70% { width:${state.bubbleWidth}px; }
       79%,100% { width:36px; }
     }
+    @keyframes create-inset-width {
+      0%,28% { width:35px; }
+      36%,70% { width:${state.bubbleWidth - 1}px; }
+      79%,100% { width:35px; }
+    }
     @keyframes create-dots { 0%,20% { opacity:0; } 23%,29% { opacity:1; } 35%,100% { opacity:0; } }
     @keyframes create-copy { 0%,32% { opacity:0; transform:translateX(4px); } 38%,70% { opacity:1; transform:translateX(0); } 76%,100% { opacity:0; transform:translateX(-2px); } }
     @keyframes create-left-arm { 0%,34% { opacity:0; transform:rotate(22deg) scaleX(.72); } 39%,61% { opacity:1; transform:rotate(8deg) scaleX(1); } 67%,100% { opacity:0; transform:rotate(22deg) scaleX(.72); } }
     @keyframes create-right-arm { 0%,34% { opacity:0; transform:rotate(18deg) scaleX(.72); } 39% { opacity:1; transform:rotate(-58deg) scaleX(1); } 45% { opacity:1; transform:rotate(16deg) scaleX(1); } 51% { opacity:1; transform:rotate(-50deg) scaleX(1); } 57%,61% { opacity:1; transform:rotate(-10deg) scaleX(1); } 67%,100% { opacity:0; transform:rotate(18deg) scaleX(.72); } }
     @keyframes dot-pulse { from { transform:translateY(1px) scale(.82); opacity:.5; } to { transform:translateY(-1px) scale(1); opacity:1; } }
     @media (prefers-reduced-motion: reduce) {
-      #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#bubble-surface,#bubble-clip-rect,#thinking-dots,#message-copy,#thinking-dots circle { animation:none!important; }
+      #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#bubble-surface,#bubble-inset,#bubble-clip-rect,#thinking-dots,#message-copy,#thinking-dots circle { animation:none!important; }
       #u-face,#speech-motion,#message-copy { opacity:1; transform:none; }
       #arm-left,#arm-right,#thinking-dots { opacity:0; }
       #bubble-surface,#bubble-clip-rect { width:${state.bubbleWidth}px; }
+      #bubble-inset { width:${state.bubbleWidth - 1}px; }
     }`
 }
 
 function waitingSvgCss(state) {
   return `
-    #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#bubble-tail,#thinking-dots,#message-copy,#attention-ring { transform-box: fill-box; }
-    #u-mark { transform-origin: 50% 82%; animation: waiting-mark 4s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #u-face { transform-origin: center bottom; animation: waiting-face 4s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #arm-left { transform-origin: right center; animation: waiting-left-arm 4s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #arm-right { transform-origin: left center; animation: waiting-right-arm 4s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #speech-motion { transform-origin: 0 82%; animation: waiting-speech 4s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#thinking-dots,#message-copy,#attention-ring { transform-box: view-box; }
+    #u-mark { transform-origin: 21px 37.44px; animation: waiting-mark 4s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #u-face { transform-origin: 21px 38px; animation: waiting-face 4s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #arm-left { transform-origin: 17px 33.5px; animation: waiting-left-arm 4s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #arm-right { transform-origin: 29px 33.5px; animation: waiting-right-arm 4s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #speech-motion { transform-box: fill-box; transform-origin: center; animation: waiting-speech 4s cubic-bezier(.2,.8,.2,1) 1 both; }
     #bubble-surface,#bubble-clip-rect { animation: waiting-width 4s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #bubble-inset { animation: waiting-inset-width 4s cubic-bezier(.2,.8,.2,1) 1 both; }
     #thinking-dots { animation: waiting-dots 4s ease 1 both; }
     #thinking-dots circle { transform-box: fill-box; transform-origin:center; animation: dot-pulse .66s ease-in-out infinite alternate; }
     #thinking-dots circle:nth-child(2) { animation-delay:.12s; }
@@ -165,6 +177,7 @@ function waitingSvgCss(state) {
     @keyframes waiting-face { 0%,5% { opacity:0; transform:translateY(6px) scale(.68); } 18% { opacity:1; transform:translateY(-2px) scale(1.08); } 23%,100% { opacity:1; transform:translateY(0) scale(1); } }
     @keyframes waiting-speech { 0%,16% { opacity:0; transform:translateX(-8px) scale(.82); } 24%,100% { opacity:1; transform:translateX(0) scale(1); } }
     @keyframes waiting-width { 0%,31% { width:36px; } 44%,100% { width:${state.bubbleWidth}px; } }
+    @keyframes waiting-inset-width { 0%,31% { width:35px; } 44%,100% { width:${state.bubbleWidth - 1}px; } }
     @keyframes waiting-dots { 0%,17% { opacity:0; } 23%,32% { opacity:1; } 41%,100% { opacity:0; } }
     @keyframes waiting-copy { 0%,38% { opacity:0; transform:translateX(4px); } 47%,100% { opacity:1; transform:translateX(0); } }
     @keyframes waiting-left-arm { 0%,20% { opacity:0; transform:rotate(22deg) scaleX(.72); } 30%,56% { opacity:1; transform:rotate(12deg) scaleX(1); } 70%,100% { opacity:0; transform:rotate(22deg) scaleX(.72); } }
@@ -172,10 +185,11 @@ function waitingSvgCss(state) {
     @keyframes waiting-ring { 0% { opacity:0; transform:scale(.72); } 18% { opacity:.9; } 72%,100% { opacity:0; transform:scale(1.32); } }
     @keyframes dot-pulse { from { transform:translateY(1px) scale(.82); opacity:.5; } to { transform:translateY(-1px) scale(1); opacity:1; } }
     @media (prefers-reduced-motion: reduce) {
-      #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#bubble-surface,#bubble-clip-rect,#thinking-dots,#message-copy,#attention-ring,#thinking-dots circle { animation:none!important; }
+      #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#bubble-surface,#bubble-inset,#bubble-clip-rect,#thinking-dots,#message-copy,#attention-ring,#thinking-dots circle { animation:none!important; }
       #u-face,#speech-motion,#message-copy { opacity:1; transform:none; }
       #arm-left,#arm-right,#thinking-dots,#attention-ring { opacity:0; }
       #bubble-surface,#bubble-clip-rect { width:${state.bubbleWidth}px; }
+      #bubble-inset { width:${state.bubbleWidth - 1}px; }
     }`
 }
 
@@ -586,8 +600,8 @@ async function writeNativeLottie(state, kind) {
 function writeManifest() {
   const manifest = {
     name: 'AlterU U Agent frontend handoff',
-    version: '1.0.3',
-    updated_at: '2026-08-10',
+    version: '1.0.4',
+    updated_at: '2026-08-15',
     canvas: CANVAS,
     natural_character_size: { width: 42, height: 44 },
     idle_invitation_scheduler: {
@@ -628,6 +642,8 @@ function writeManifest() {
       bubble_height: 36,
       bubble_radius: 18,
       bubble_horizontal_padding: 14,
+      character_bubble_gap: 9,
+      miniapp_render_unit: 'css-px-not-rpx',
       supports_reduced_motion: true,
       excluded_categories: ['queue', 'badge_count', 'multiple_actions'],
     },
@@ -642,6 +658,13 @@ function writeManifest() {
       embedded_image_assets: ['message_copy'],
       external_image_assets: 0,
       rationale: 'Avoid native Lottie image-anchor and embedded-watermark compatibility differences.',
+    },
+    miniapp_compatibility: {
+      visual_source_of_truth: 'https://yinxinghuan.github.io/alteru-agent-entry-review/?v=ab3ea266',
+      render_size_css_px: CANVAS,
+      forbidden_render_size: '220rpx × 48rpx',
+      image_mode: 'aspectFit',
+      rationale: 'Keep the MiniAPP export at the same CSS-pixel geometry as the approved review component.',
     },
   }
   fs.writeFileSync(path.join(handoffDir, 'manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`)

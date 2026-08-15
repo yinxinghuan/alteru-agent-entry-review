@@ -2,7 +2,7 @@
 
 > 状态：平台吉祥物候选，尚未完成正式命名与品牌定版。  
 > 当前原型：评审页中的“方案二 · U 字母角色 / U-born Agent”。  
-> 最近确认：2026-08-10。
+> 最近确认：2026-08-15。
 
 ## 1. 角色定位
 
@@ -26,13 +26,14 @@
 5. **双手可以不对称表演。** 左手负责稳定轮廓或支撑，右手负责挥手、指向；多待办时可以双手向外打开。数量对称，动作职责不必镜像。
 6. **静止时保持克制。** U 在等待期间不持续晃动；弹性只服务于脸和双手伸出、收回的瞬间。
 7. **原生端使用自洽的 Lottie 图层。** 正式 U 是两个纯矢量 Shape Path，不使用内嵌 PNG；双眼是位于粉色脸上方的两个独立 Shape Layer；画布自带平台黑色背景，保证白色 U 在 LottieFiles 等白色预览环境中仍然可见。MiniAPP 继续使用正式 SVG 路径。
+8. **MiniAPP 与线上组件同源。** `https://yinxinghuan.github.io/alteru-agent-entry-review/?v=ab3ea266` 中的角色与气泡组件是 MiniAPP 的唯一视觉基准；导出 SVG 直接复用其 `42 × 44px` 角色、`9px` 间距、脸/双眼/双手和尾尖几何，不再另画近似版。
 
 ## 3. 气泡几何合同
 
 - 基础高度固定为 `36px`，四角统一使用 `18px` 圆角。
 - 展开气泡采用固定左右内边距 `14px`，宽度由内容动态决定；手机可缩至 `12px`。
 - 气泡尾巴固定在靠近角色的一侧，不能因文字长度改变位置或姿势。
-- 气泡尾巴与圆角主体必须在同一个 Shape Layer 内共享填充，并向主体内部重叠 `2px`；三角底边为 `8px`，中心向脸部下移 `5px`，避免抗锯齿接缝、三角过高或与手部重叠。
+- MiniAPP / Web 的气泡尾巴固定为 `11 × 11px`，位于主体左侧 `-6px`、底部 `5px`，旋转 `8deg`，与主体保持足够重叠；原生 Lottie 因渲染器抗锯齿差异，使用同填充 Shape Layer 内的兼容路径消除接缝。
 - 思考阶段必须是 `36 × 36px` 的正圆空白气泡，内部有 3 个居中圆点。
 - 文案阶段从思考圆平滑展开为动态长度，不能为每句文字单独手调宽度、圆角或边距。
 - 当前主色：白色用于普通邀请，品牌粉用于需要用户行动的提醒；状态不能只依靠颜色表达。
@@ -111,3 +112,4 @@
 - 接入合同：`handoff/README.md`；最终双状态预览：`handoff/preview.html`。
 - 关键截图：`_qa/u-pure.png`、`_qa/u-grow.png`、`_qa/u-thinking.png`、`_qa/attention-idle-greeting.png`、`_qa/attention-waiting.png`。
 - 当前评审页：<https://yinxinghuan.github.io/alteru-agent-entry-review/>。
+- MiniAPP 定版基准：<https://yinxinghuan.github.io/alteru-agent-entry-review/?v=ab3ea266>。

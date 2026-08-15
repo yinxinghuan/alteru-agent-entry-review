@@ -1,8 +1,8 @@
 # AlterU U Agent 前端动效交付
 
-> 交付版本：1.0.3  
-> 定版日期：2026-08-10  
-> 选定方向：方案二 · U-born Agent  
+> 交付版本：1.0.4
+> 定版日期：2026-08-15
+> 选定方向：方案二 · U-born Agent
 > 适用端：MiniAPP、iOS、Android
 
 ## 1. 本次只支持两个沟通状态
@@ -21,7 +21,7 @@
 - `miniapp/alteru-u-agent-create-game.svg`
 - `miniapp/alteru-u-agent-your-turn.svg`
 
-两份 SVG 都是 `220 × 48`、无外链、无脚本的自包含文件。CSS 动画、正式 U 路径、角色、气泡和文案都在文件内部，可直接作为 `<img>` 使用。
+两份 SVG 都是 `220 × 48`、无外链、无脚本的自包含文件。CSS 动画、正式 U 路径、角色、气泡和文案都在文件内部，可直接作为 `<img>` 使用。`v1.0.4` 以线上评审页 `?v=ab3ea266` 中的组件为唯一视觉基准：U、脸、双眼、双手、`9px` 角色—气泡间距、气泡尾尖和文案位置均使用同源几何，不再维护一套近似造型。
 
 ### 原生 APP
 
@@ -83,6 +83,30 @@ const repeatDelay = () => randomSeconds(180, 360);
 
 ## 5. MiniAPP 接入
 
+### 尺寸合同（必须）
+
+- 素材的自然显示尺寸是 **`220px × 48px` CSS 像素**，不是 `220rpx × 48rpx`。
+- 微信 Mini Program 必须给 `<image>` 写 `width: 220px; height: 48px`。直接写成 `220rpx × 48rpx` 会随屏宽缩成约一半，并让角色、字重、白边和气泡都显得与评审页不同。
+- 不要单独缩放 U、气泡或三角尾尖，不要设置 `mode="aspectFill"`；如产品布局确实需要整体缩放，只能等比缩放完整 `220:48` 画布。
+
+```xml
+<button class="u-agent-entry" aria-label="Your turn. Open the conversation waiting for your reply">
+  <image
+    class="u-agent-entry__animation"
+    src="./alteru-u-agent-your-turn.svg"
+    mode="aspectFit"
+  />
+</button>
+```
+
+```css
+.u-agent-entry__animation {
+  display: block;
+  width: 220px;
+  height: 48px;
+}
+```
+
 ```html
 <button class="u-agent-entry" aria-label="Create a game with AlterU Agent">
   <img
@@ -130,6 +154,8 @@ iOS 与 Android 都应为整个动画容器设置可访问名称，并根据当�
 - 手臂数量只能是 0 或 2，不能只显示单手。
 - 思考阶段必须有 3 个点，且气泡是 `36 × 36px` 正圆。
 - 展开气泡高 `36px`、圆角 `18px`、左右内边距 `14px`。
+- 角色画布 `42 × 44px`；角色和气泡之间固定 `9px`；完整素材固定 `220 × 48px` CSS 像素。
+- MiniAPP 禁止把上述 `px` 数值原样改写成 `rpx`。
 - 普通邀请使用白色气泡，待回复使用品牌粉；含义同时由文案表达，不能只靠颜色。
 - 角色只在伸出与收回瞬间带动 U 弹一下，停留期间 U 不持续晃动。
 - 控件固定在平台左上角；不要迁到右上角。

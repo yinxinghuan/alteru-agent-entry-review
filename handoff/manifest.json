@@ -1,7 +1,7 @@
 {
   "name": "AlterU U Agent frontend handoff",
-  "version": "1.0.3",
-  "updated_at": "2026-08-10",
+  "version": "1.0.4",
+  "updated_at": "2026-08-15",
   "canvas": {
     "width": 220,
     "height": 48
@@ -57,6 +57,8 @@
     "bubble_height": 36,
     "bubble_radius": 18,
     "bubble_horizontal_padding": 14,
+    "character_bubble_gap": 9,
+    "miniapp_render_unit": "css-px-not-rpx",
     "supports_reduced_motion": true,
     "excluded_categories": [
       "queue",
@@ -77,5 +79,15 @@
     ],
     "external_image_assets": 0,
     "rationale": "Avoid native Lottie image-anchor and embedded-watermark compatibility differences."
+  },
+  "miniapp_compatibility": {
+    "visual_source_of_truth": "https://yinxinghuan.github.io/alteru-agent-entry-review/?v=ab3ea266",
+    "render_size_css_px": {
+      "width": 220,
+      "height": 48
+    },
+    "forbidden_render_size": "220rpx × 48rpx",
+    "image_mode": "aspectFit",
+    "rationale": "Keep the MiniAPP export at the same CSS-pixel geometry as the approved review component."
   }
 }
