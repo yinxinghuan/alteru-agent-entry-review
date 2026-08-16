@@ -1,6 +1,6 @@
 # AlterU U Agent 前端动效交付
 
-> 交付版本：1.0.5
+> 交付版本：1.0.6
 > 定版日期：2026-08-16
 > 选定方向：方案二 · U-born Agent
 > 适用端：MiniAPP、iOS、Android
@@ -20,9 +20,10 @@
 
 - `miniapp/alteru-u-agent-create-game.svg`
 - `miniapp/alteru-u-agent-your-turn.svg`
+- `source/agent-entry-controller.ts`（两类通知的总状态控制器）
 - `source/idle-invitation-scheduler.ts`（持续随机循环参考实现）
 
-两份 SVG 都是 `220 × 48`、无外链、无脚本的自包含文件。CSS 动画、正式 U 路径、角色、气泡和文案都在文件内部，可直接作为 `<img>` 使用。`v1.0.5` 以线上评审页 `?v=ab3ea266` 中的组件为唯一视觉基准：U、脸、双眼、双手、`9px` 角色—气泡间距、气泡尾尖和文案位置均使用同源几何，不再维护一套近似造型。
+两份 SVG 都是 `220 × 48`、无外链、无脚本的自包含文件。CSS 动画、正式 U 路径、角色、气泡和文案都在文件内部，可直接作为 `<img>` 使用。`v1.0.6` 以线上评审页 `?v=ab3ea266` 中的组件为唯一视觉基准：U、脸、双眼、双手、`9px` 角色—气泡间距、气泡尾尖和文案位置均使用同源几何，不再维护一套近似造型。
 
 ### 原生 APP
 
@@ -66,11 +67,22 @@ awaiting_user > idle_invitation > pure_u
 ```ts
 type UAgentEntryState =
   | { kind: 'idle_invitation' }
-  | { kind: 'awaiting_user'; conversationId: string }
-  | { kind: 'pure_u' };
+  | { kind: 'awaiting_user'; conversationId: string };
 ```
 
-参考调度逻辑：
+`pure_u` 是 `idle_invitation` 两次动画之间的视觉静止帧，不是第三类业务通知。业务前端统一通过 `source/agent-entry-controller.ts` 切换以上两类状态：
+
+```ts
+await entryController.setState({ kind: 'idle_invitation' });
+await entryController.setState({
+  kind: 'awaiting_user',
+  conversationId: message.conversationId,
+});
+
+entryButton.addEventListener('click', () => entryController.handlePress());
+```
+
+底层空闲随机调度逻辑：
 
 ```ts
 const randomSeconds = (min: number, max: number) =>

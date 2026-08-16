@@ -582,7 +582,7 @@ async function writeNativeLottie(state, kind) {
     markers,
     meta: {
       generator: 'AlterU U Agent handoff generator',
-      handoff_version: '1.0.5',
+      handoff_version: '1.0.6',
       state: state.id,
       duration_ms: state.durationMs,
       final_state: state.finalState,
@@ -600,10 +600,16 @@ async function writeNativeLottie(state, kind) {
 function writeManifest() {
   const manifest = {
     name: 'AlterU U Agent frontend handoff',
-    version: '1.0.5',
+    version: '1.0.6',
     updated_at: '2026-08-16',
     canvas: CANVAS,
     natural_character_size: { width: 42, height: 44 },
+    state_controller: {
+      source: 'source/agent-entry-controller.ts',
+      supported_categories: ['idle_invitation', 'awaiting_user'],
+      awaiting_user_playback: 'once_per_state_entry_or_conversation_change',
+      click_routing: 'create-game-agent-or-corresponding-conversation',
+    },
     idle_invitation_scheduler: {
       first_delay_seconds: { min: 5, max: 10 },
       repeat_delay_seconds: { min: 10, max: 30 },
