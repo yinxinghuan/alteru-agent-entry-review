@@ -4,7 +4,7 @@ Interactive comparison page for the AlterU global Agent entry. The U-born Agent 
 
 Frontend-ready MiniAPP SVG and native Lottie files are in [`handoff/`](handoff/). Open [`handoff/preview.html`](handoff/preview.html) for the final two-state preview and [`handoff/README.md`](handoff/README.md) for the integration contract.
 
-Current handoff: `v1.0.6`. The two-category controller handles both the randomized idle invitation and the event-driven awaiting-user notification. The idle invitation first appears after a random `5–10s`, then repeats after a freshly randomized `10–30s` interval until the state changes.
+Current handoff: `v1.0.7`. The two-category controller handles both the randomized idle invitation and the event-driven awaiting-user notification. The awaiting-user animation no longer uses the misaligned pink attention ring.
 
 The U-born Agent is also being tracked as a potential AlterU platform mascot. Its current identity, motion, bubble, and reuse rules are documented in [`doc/character-system.md`](doc/character-system.md). Cross-project decisions are recorded locally at `/Users/yin/code/games/memory/alteru_u_agent_character.md`.
 

@@ -12,7 +12,6 @@ const COLORS = {
   white: '#FFFFFF',
   ink: '#171014',
   pink: '#F5B1C7',
-  pinkHot: '#FF7EAA',
 }
 
 const U_PATH_MAIN = 'M170.98 80.6864C175.826 80.3379 179.093 82.8464 180.922 87.1309C184.554 95.5742 179.373 98.9845 175.515 105.325C163.859 124.48 165.503 149.557 163.744 170.582C161.932 192.259 154.492 222.584 132.269 231.923C124.974 234.989 114.517 234.372 107.397 231.013C70.2537 212.926 93.1286 160.103 105.525 133.265C109.335 126.098 112.98 118.784 117.907 112.277C121.491 107.547 127.748 104.724 132.998 108.827C135.386 110.694 136.494 114.684 135.563 117.517C133.513 123.752 129.105 129.175 126.136 135.017C117.204 151.711 107.57 173.577 108.149 192.736C108.648 197.729 110.443 203.949 114.709 207.163C121.717 212.44 129.246 209.446 133.613 202.772C139.289 194.091 141.378 184.867 142.431 174.855C143.583 164.684 143.524 154.864 144.04 144.611C144.994 125.736 146.094 103.972 158.412 88.4443C161.509 84.5388 165.905 81.2324 170.98 80.6864Z'
@@ -159,7 +158,7 @@ function createSvgCss(state) {
 
 function waitingSvgCss(state) {
   return `
-    #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#thinking-dots,#message-copy,#attention-ring { transform-box: view-box; }
+    #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#thinking-dots,#message-copy { transform-box: view-box; }
     #u-mark { transform-origin: 21px 37.44px; animation: waiting-mark 4s cubic-bezier(.2,.8,.2,1) 1 both; }
     #u-face { transform-origin: 21px 38px; animation: waiting-face 4s cubic-bezier(.2,.8,.2,1) 1 both; }
     #arm-left { transform-origin: 17px 33.5px; animation: waiting-left-arm 4s cubic-bezier(.2,.8,.2,1) 1 both; }
@@ -172,7 +171,6 @@ function waitingSvgCss(state) {
     #thinking-dots circle:nth-child(2) { animation-delay:.12s; }
     #thinking-dots circle:nth-child(3) { animation-delay:.24s; }
     #message-copy { animation: waiting-copy 4s ease 1 both; }
-    #attention-ring { transform-origin:center; animation: waiting-ring 1.6s ease-out 2 both; }
     @keyframes waiting-mark { 0%,5%,22%,100% { transform:translateY(0) scale(1); } 9% { transform:translateY(1px) scale(1.035,.965); } 14% { transform:translateY(-1.5px) scale(.97,1.055); } 19% { transform:translateY(.4px) scale(1.016,.987); } }
     @keyframes waiting-face { 0%,5% { opacity:0; transform:translateY(6px) scale(.68); } 18% { opacity:1; transform:translateY(-2px) scale(1.08); } 23%,100% { opacity:1; transform:translateY(0) scale(1); } }
     @keyframes waiting-speech { 0%,16% { opacity:0; transform:translateX(-8px) scale(.82); } 24%,100% { opacity:1; transform:translateX(0) scale(1); } }
@@ -182,28 +180,23 @@ function waitingSvgCss(state) {
     @keyframes waiting-copy { 0%,38% { opacity:0; transform:translateX(4px); } 47%,100% { opacity:1; transform:translateX(0); } }
     @keyframes waiting-left-arm { 0%,20% { opacity:0; transform:rotate(22deg) scaleX(.72); } 30%,56% { opacity:1; transform:rotate(12deg) scaleX(1); } 70%,100% { opacity:0; transform:rotate(22deg) scaleX(.72); } }
     @keyframes waiting-right-arm { 0%,20% { opacity:0; transform:rotate(10deg) scaleX(.72); } 30%,56% { opacity:1; transform:rotate(-8deg) scaleX(1.16); } 70%,100% { opacity:0; transform:rotate(-4deg) scaleX(.76); } }
-    @keyframes waiting-ring { 0% { opacity:0; transform:scale(.72); } 18% { opacity:.9; } 72%,100% { opacity:0; transform:scale(1.32); } }
     @keyframes dot-pulse { from { transform:translateY(1px) scale(.82); opacity:.5; } to { transform:translateY(-1px) scale(1); opacity:1; } }
     @media (prefers-reduced-motion: reduce) {
-      #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#bubble-surface,#bubble-inset,#bubble-clip-rect,#thinking-dots,#message-copy,#attention-ring,#thinking-dots circle { animation:none!important; }
+      #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#bubble-surface,#bubble-inset,#bubble-clip-rect,#thinking-dots,#message-copy,#thinking-dots circle { animation:none!important; }
       #u-face,#speech-motion,#message-copy { opacity:1; transform:none; }
-      #arm-left,#arm-right,#thinking-dots,#attention-ring { opacity:0; }
+      #arm-left,#arm-right,#thinking-dots { opacity:0; }
       #bubble-surface,#bubble-clip-rect { width:${state.bubbleWidth}px; }
       #bubble-inset { width:${state.bubbleWidth - 1}px; }
     }`
 }
 
 function writeMiniappSvg(state, type) {
-  const extra = type === 'waiting'
-    ? `<ellipse id="attention-ring" cx="22" cy="25" rx="18" ry="18" fill="none" stroke="${COLORS.pinkHot}" stroke-width="1" opacity="0"/>`
-    : ''
   const css = type === 'waiting' ? waitingSvgCss(state) : createSvgCss(state)
   const svg = `<svg width="${CANVAS.width}" height="${CANVAS.height}" viewBox="0 0 ${CANVAS.width} ${CANVAS.height}" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
   <title id="title">AlterU U Agent — ${escapeXml(state.title)}</title>
   <desc id="desc">${escapeXml(state.accessible)}. The U watermark stays visible while the face, paired arms, thinking bubble, and message animate.</desc>
   <style>${css}
   </style>
-  ${extra}
   ${sharedSvgMarkup(state)}
 </svg>\n`
   const filePath = path.join(miniappDir, `alteru-u-agent-${state.id}.svg`)
@@ -481,27 +474,8 @@ function makeDotsLayer(op, kind) {
   ])
 }
 
-function makeRingLayer(op) {
-  return shapeLayer(9, 'Waiting attention ring', op, transform({
-    opacity: [{ t: 0, v: [0] }, { t: 12, v: [90] }, { t: 64, v: [0] }, { t: 76, v: [90] }, { t: 128, v: [0] }, { t: 240, v: [0] }],
-    position: [22, 25, 0],
-    scale: [100, 100, 100],
-  }), [
-    group('Ring', [
-      { ty: 'el', p: staticProp([0, 0]), s: staticProp([36, 36]), d: 1, nm: 'Ring Path' },
-      stroke([1, 0.494118, 0.666667, 1], 1),
-    ]),
-  ])
-}
-
 function patchAnimatedTransforms(layer, kind) {
   if (layer.nm === 'U Agent Face' || layer.nm.endsWith(' eye')) layer.ks.s = animated(faceScaleFrames(kind), 3)
-  if (layer.nm === 'Waiting attention ring') {
-    layer.ks.s = animated([
-      { t: 0, v: [72, 72, 100] }, { t: 64, v: [132, 132, 100] },
-      { t: 76, v: [72, 72, 100] }, { t: 128, v: [132, 132, 100] }, { t: 240, v: [132, 132, 100] },
-    ], 3)
-  }
   return layer
 }
 
@@ -556,7 +530,6 @@ async function writeNativeLottie(state, kind) {
     r: staticProp(0), p: staticProp([BUBBLE_X, 6, 0]), a: staticProp([0, 0, 0]), s: staticProp([25, 25, 100]),
   })
   const layers = [copyLayer, dots, bubble, rightArm, leftArm, leftEye, rightEye, faceLayer, markLayer]
-  if (kind === 'waiting') layers.push(patchAnimatedTransforms(makeRingLayer(op), kind))
   layers.push(makeNativeBackgroundLayer(op))
 
   const markers = kind === 'create'
@@ -582,7 +555,7 @@ async function writeNativeLottie(state, kind) {
     markers,
     meta: {
       generator: 'AlterU U Agent handoff generator',
-      handoff_version: '1.0.6',
+      handoff_version: '1.0.7',
       state: state.id,
       duration_ms: state.durationMs,
       final_state: state.finalState,
@@ -600,7 +573,7 @@ async function writeNativeLottie(state, kind) {
 function writeManifest() {
   const manifest = {
     name: 'AlterU U Agent frontend handoff',
-    version: '1.0.6',
+    version: '1.0.7',
     updated_at: '2026-08-16',
     canvas: CANVAS,
     natural_character_size: { width: 42, height: 44 },
@@ -654,6 +627,7 @@ function writeManifest() {
       character_bubble_gap: 9,
       miniapp_render_unit: 'css-px-not-rpx',
       supports_reduced_motion: true,
+      waiting_attention_ring: false,
       excluded_categories: ['queue', 'badge_count', 'multiple_actions'],
     },
     native_compatibility: {

@@ -1,6 +1,6 @@
 {
   "name": "AlterU U Agent frontend handoff",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "updated_at": "2026-08-16",
   "canvas": {
     "width": 220,
@@ -72,6 +72,7 @@
     "character_bubble_gap": 9,
     "miniapp_render_unit": "css-px-not-rpx",
     "supports_reduced_motion": true,
+    "waiting_attention_ring": false,
     "excluded_categories": [
       "queue",
       "badge_count",

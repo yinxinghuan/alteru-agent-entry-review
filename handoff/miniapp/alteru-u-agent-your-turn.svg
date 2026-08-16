@@ -2,7 +2,7 @@
   <title id="title">AlterU U Agent — Your turn</title>
   <desc id="desc">Your turn. Open the Agent conversation that needs your reply. The U watermark stays visible while the face, paired arms, thinking bubble, and message animate.</desc>
   <style>
-    #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#thinking-dots,#message-copy,#attention-ring { transform-box: view-box; }
+    #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#thinking-dots,#message-copy { transform-box: view-box; }
     #u-mark { transform-origin: 21px 37.44px; animation: waiting-mark 4s cubic-bezier(.2,.8,.2,1) 1 both; }
     #u-face { transform-origin: 21px 38px; animation: waiting-face 4s cubic-bezier(.2,.8,.2,1) 1 both; }
     #arm-left { transform-origin: 17px 33.5px; animation: waiting-left-arm 4s cubic-bezier(.2,.8,.2,1) 1 both; }
@@ -15,7 +15,6 @@
     #thinking-dots circle:nth-child(2) { animation-delay:.12s; }
     #thinking-dots circle:nth-child(3) { animation-delay:.24s; }
     #message-copy { animation: waiting-copy 4s ease 1 both; }
-    #attention-ring { transform-origin:center; animation: waiting-ring 1.6s ease-out 2 both; }
     @keyframes waiting-mark { 0%,5%,22%,100% { transform:translateY(0) scale(1); } 9% { transform:translateY(1px) scale(1.035,.965); } 14% { transform:translateY(-1.5px) scale(.97,1.055); } 19% { transform:translateY(.4px) scale(1.016,.987); } }
     @keyframes waiting-face { 0%,5% { opacity:0; transform:translateY(6px) scale(.68); } 18% { opacity:1; transform:translateY(-2px) scale(1.08); } 23%,100% { opacity:1; transform:translateY(0) scale(1); } }
     @keyframes waiting-speech { 0%,16% { opacity:0; transform:translateX(-8px) scale(.82); } 24%,100% { opacity:1; transform:translateX(0) scale(1); } }
@@ -25,17 +24,15 @@
     @keyframes waiting-copy { 0%,38% { opacity:0; transform:translateX(4px); } 47%,100% { opacity:1; transform:translateX(0); } }
     @keyframes waiting-left-arm { 0%,20% { opacity:0; transform:rotate(22deg) scaleX(.72); } 30%,56% { opacity:1; transform:rotate(12deg) scaleX(1); } 70%,100% { opacity:0; transform:rotate(22deg) scaleX(.72); } }
     @keyframes waiting-right-arm { 0%,20% { opacity:0; transform:rotate(10deg) scaleX(.72); } 30%,56% { opacity:1; transform:rotate(-8deg) scaleX(1.16); } 70%,100% { opacity:0; transform:rotate(-4deg) scaleX(.76); } }
-    @keyframes waiting-ring { 0% { opacity:0; transform:scale(.72); } 18% { opacity:.9; } 72%,100% { opacity:0; transform:scale(1.32); } }
     @keyframes dot-pulse { from { transform:translateY(1px) scale(.82); opacity:.5; } to { transform:translateY(-1px) scale(1); opacity:1; } }
     @media (prefers-reduced-motion: reduce) {
-      #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#bubble-surface,#bubble-inset,#bubble-clip-rect,#thinking-dots,#message-copy,#attention-ring,#thinking-dots circle { animation:none!important; }
+      #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#bubble-surface,#bubble-inset,#bubble-clip-rect,#thinking-dots,#message-copy,#thinking-dots circle { animation:none!important; }
       #u-face,#speech-motion,#message-copy { opacity:1; transform:none; }
-      #arm-left,#arm-right,#thinking-dots,#attention-ring { opacity:0; }
+      #arm-left,#arm-right,#thinking-dots { opacity:0; }
       #bubble-surface,#bubble-clip-rect { width:160px; }
       #bubble-inset { width:159px; }
     }
   </style>
-  <ellipse id="attention-ring" cx="22" cy="25" rx="18" ry="18" fill="none" stroke="#FF7EAA" stroke-width="1" opacity="0"/>
   
   <g id="u-agent">
     <g id="u-mark">
