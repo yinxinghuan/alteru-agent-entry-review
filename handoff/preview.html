@@ -12,7 +12,7 @@
   <main class="page">
     <header class="hero">
       <div>
-        <p class="eyebrow">Frontend handoff · v1.0.4</p>
+        <p class="eyebrow">Frontend handoff · v1.0.5</p>
         <h1>Two states.<br />One living U.</h1>
         <span class="decision">方案二已定版</span>
       </div>
@@ -28,7 +28,7 @@
         </div>
         <div class="card-body">
           <div class="card-head"><div><h2>空闲邀请</h2><p class="meta">没有待办 · 主动邀请创建游戏</p></div><span class="index">01</span></div>
-          <dl class="state"><dt>文案</dt><dd>Create a game?</dd><dt>时长</dt><dd>6s · 播放一次</dd><dt>结束</dt><dd>收回为纯 U</dd><dt>点击</dt><dd>打开创建游戏 Agent</dd></dl>
+          <dl class="state"><dt>文案</dt><dd>Create a game?</dd><dt>时长</dt><dd>7s · 文案停留约 3s</dd><dt>结束</dt><dd>收回为纯 U</dd><dt>点击</dt><dd>打开创建游戏 Agent</dd></dl>
           <div class="actions"><button class="button" type="button" data-replay="create-animation" data-src="./miniapp/alteru-u-agent-create-game.svg">重新播放</button><a class="link" download href="./miniapp/alteru-u-agent-create-game.svg">下载 SVG</a><a class="link" download href="./native/alteru-u-agent-create-game.lottie.json">下载 Lottie</a></div>
         </div>
       </article>
@@ -55,9 +55,9 @@
           <article><h3>统一画布</h3><p>两端、两状态都使用 220 × 48 透明画布。MiniAPP 按 220px × 48px 显示，不得写成同数值 rpx。</p></article>
           <article><h3>角色完整性</h3><p>U 始终存在；思考阶段固定三个点；手臂只允许 0 或 2。停留阶段不让角色持续晃动。</p></article>
           <article><h3>当前不做</h3><p>没有第三种多待办状态，不展示数量徽标，不展开多个会话，也不根据消息数量改变角色动作。</p></article>
-          <article><h3>低频随机招呼</h3><p>首次等待 20–40 秒；后续每次随机等待 3–6 分钟，每个页面会话最多 2 次。用户刚操作过或页面不可见时继续顺延。</p></article>
+          <article><h3>持续随机招呼</h3><p>首次等待 5–10 秒；每次播完重新随机等待 10–30 秒，空闲期间持续循环且不限次数。用户刚操作过或页面不可见时继续顺延。</p></article>
         </div>
-        <div class="downloads"><a class="button" download href="./AlterU-U-Agent-Frontend-Handoff-v1.0.4.zip">下载 v1.0.4 交付包</a><a class="link" href="./README.md">查看完整接入说明</a><a class="link" href="./manifest.json">查看 manifest</a></div>
+        <div class="downloads"><a class="button" download href="./AlterU-U-Agent-Frontend-Handoff-v1.0.5.zip">下载 v1.0.5 交付包</a><a class="link" href="./README.md">查看完整接入说明</a><a class="link" href="./manifest.json">查看 manifest</a></div>
       </div>
     </section>
     <footer class="footer"><span><strong>AlterU U Agent</strong> · frontend motion delivery</span><span>MiniAPP SVG + Native Lottie</span></footer>

@@ -3,52 +3,52 @@
   <desc id="desc">Create a game with AlterU Agent. The U watermark stays visible while the face, paired arms, thinking bubble, and message animate.</desc>
   <style>
     #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#thinking-dots,#message-copy { transform-box: view-box; }
-    #u-mark { transform-origin: 21px 37.44px; animation: create-mark 6s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #u-face { transform-origin: 21px 38px; animation: create-face 6s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #arm-left { transform-origin: 17px 33.5px; animation: create-left-arm 6s ease-in-out 1 both; }
-    #arm-right { transform-origin: 29px 33.5px; animation: create-right-arm 6s ease-in-out 1 both; }
-    #speech-motion { transform-box: fill-box; transform-origin: center; animation: create-speech 6s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #bubble-surface,#bubble-clip-rect { animation: create-width 6s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #bubble-inset { animation: create-inset-width 6s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #thinking-dots { animation: create-dots 6s ease 1 both; }
+    #u-mark { transform-origin: 21px 37.44px; animation: create-mark 7s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #u-face { transform-origin: 21px 38px; animation: create-face 7s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #arm-left { transform-origin: 17px 33.5px; animation: create-left-arm 7s ease-in-out 1 both; }
+    #arm-right { transform-origin: 29px 33.5px; animation: create-right-arm 7s ease-in-out 1 both; }
+    #speech-motion { transform-box: fill-box; transform-origin: center; animation: create-speech 7s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #bubble-surface,#bubble-clip-rect { animation: create-width 7s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #bubble-inset { animation: create-inset-width 7s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #thinking-dots { animation: create-dots 7s ease 1 both; }
     #thinking-dots circle { transform-box: fill-box; transform-origin: center; animation: dot-pulse .66s ease-in-out infinite alternate; }
     #thinking-dots circle:nth-child(2) { animation-delay: .12s; }
     #thinking-dots circle:nth-child(3) { animation-delay: .24s; }
-    #message-copy { animation: create-copy 6s ease 1 both; }
+    #message-copy { animation: create-copy 7s ease 1 both; }
     @keyframes create-mark {
-      0%,8%,18%,82%,94%,100% { transform: translateY(0) scale(1); }
-      11% { transform: translateY(1px) scale(1.035,.965); }
-      14% { transform: translateY(-1.5px) scale(.97,1.055); }
-      17% { transform: translateY(.4px) scale(1.016,.987); }
-      85% { transform: translateY(-.6px) scale(.985,1.025); }
-      89% { transform: translateY(1px) scale(1.035,.965); }
-      92% { transform: translateY(-.4px) scale(.99,1.018); }
+      0%,6.86%,15.43%,84.57%,94.86%,100% { transform: translateY(0) scale(1); }
+      9.43% { transform: translateY(1px) scale(1.035,.965); }
+      12% { transform: translateY(-1.5px) scale(.97,1.055); }
+      14.57% { transform: translateY(.4px) scale(1.016,.987); }
+      87.14% { transform: translateY(-.6px) scale(.985,1.025); }
+      90.57% { transform: translateY(1px) scale(1.035,.965); }
+      93.14% { transform: translateY(-.4px) scale(.99,1.018); }
     }
     @keyframes create-face {
-      0%,8% { opacity:0; transform:translateY(6px) scale(.68); }
-      15% { opacity:1; transform:translateY(-2px) scale(1.08); }
-      19%,82% { opacity:1; transform:translateY(0) scale(1); }
-      90%,100% { opacity:0; transform:translateY(6px) scale(.72); }
+      0%,6.86% { opacity:0; transform:translateY(6px) scale(.68); }
+      12.86% { opacity:1; transform:translateY(-2px) scale(1.08); }
+      16.29%,84.57% { opacity:1; transform:translateY(0) scale(1); }
+      91.43%,100% { opacity:0; transform:translateY(6px) scale(.72); }
     }
     @keyframes create-speech {
-      0%,19% { opacity:0; transform:translateX(-4px) scale(.74); }
-      23%,78% { opacity:1; transform:translateX(0) scale(1); }
-      84%,100% { opacity:0; transform:translateX(-4px) scale(.74); }
+      0%,16.29% { opacity:0; transform:translateX(-4px) scale(.74); }
+      19.71%,84.29% { opacity:1; transform:translateX(0) scale(1); }
+      90.48%,100% { opacity:0; transform:translateX(-4px) scale(.74); }
     }
     @keyframes create-width {
-      0%,28% { width:36px; }
-      36%,70% { width:126px; }
-      79%,100% { width:36px; }
+      0%,24% { width:36px; }
+      30.86%,75.43% { width:126px; }
+      83.14%,100% { width:36px; }
     }
     @keyframes create-inset-width {
-      0%,28% { width:35px; }
-      36%,70% { width:125px; }
-      79%,100% { width:35px; }
+      0%,24% { width:35px; }
+      30.86%,75.43% { width:125px; }
+      83.14%,100% { width:35px; }
     }
-    @keyframes create-dots { 0%,20% { opacity:0; } 23%,29% { opacity:1; } 35%,100% { opacity:0; } }
-    @keyframes create-copy { 0%,32% { opacity:0; transform:translateX(4px); } 38%,70% { opacity:1; transform:translateX(0); } 76%,100% { opacity:0; transform:translateX(-2px); } }
-    @keyframes create-left-arm { 0%,34% { opacity:0; transform:rotate(22deg) scaleX(.72); } 39%,61% { opacity:1; transform:rotate(8deg) scaleX(1); } 67%,100% { opacity:0; transform:rotate(22deg) scaleX(.72); } }
-    @keyframes create-right-arm { 0%,34% { opacity:0; transform:rotate(18deg) scaleX(.72); } 39% { opacity:1; transform:rotate(-58deg) scaleX(1); } 45% { opacity:1; transform:rotate(16deg) scaleX(1); } 51% { opacity:1; transform:rotate(-50deg) scaleX(1); } 57%,61% { opacity:1; transform:rotate(-10deg) scaleX(1); } 67%,100% { opacity:0; transform:rotate(18deg) scaleX(.72); } }
+    @keyframes create-dots { 0%,17.14% { opacity:0; } 19.71%,24.86% { opacity:1; } 30%,100% { opacity:0; } }
+    @keyframes create-copy { 0%,27.43% { opacity:0; transform:translateX(4px); } 32.57%,75.43% { opacity:1; transform:translateX(0); } 80.57%,100% { opacity:0; transform:translateX(-2px); } }
+    @keyframes create-left-arm { 0%,29.14% { opacity:0; transform:rotate(22deg) scaleX(.72); } 33.43%,68.1% { opacity:1; transform:rotate(8deg) scaleX(1); } 73.81%,100% { opacity:0; transform:rotate(22deg) scaleX(.72); } }
+    @keyframes create-right-arm { 0%,29.14% { opacity:0; transform:rotate(18deg) scaleX(.72); } 33.43% { opacity:1; transform:rotate(-58deg) scaleX(1); } 38.57% { opacity:1; transform:rotate(16deg) scaleX(1); } 43.71% { opacity:1; transform:rotate(-50deg) scaleX(1); } 48.86%,68.1% { opacity:1; transform:rotate(-10deg) scaleX(1); } 73.81%,100% { opacity:0; transform:rotate(18deg) scaleX(.72); } }
     @keyframes dot-pulse { from { transform:translateY(1px) scale(.82); opacity:.5; } to { transform:translateY(-1px) scale(1); opacity:1; } }
     @media (prefers-reduced-motion: reduce) {
       #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#bubble-surface,#bubble-inset,#bubble-clip-rect,#thinking-dots,#message-copy,#thinking-dots circle { animation:none!important; }

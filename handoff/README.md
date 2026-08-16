@@ -1,7 +1,7 @@
 # AlterU U Agent 前端动效交付
 
-> 交付版本：1.0.4
-> 定版日期：2026-08-15
+> 交付版本：1.0.5
+> 定版日期：2026-08-16
 > 选定方向：方案二 · U-born Agent
 > 适用端：MiniAPP、iOS、Android
 
@@ -20,8 +20,9 @@
 
 - `miniapp/alteru-u-agent-create-game.svg`
 - `miniapp/alteru-u-agent-your-turn.svg`
+- `source/idle-invitation-scheduler.ts`（持续随机循环参考实现）
 
-两份 SVG 都是 `220 × 48`、无外链、无脚本的自包含文件。CSS 动画、正式 U 路径、角色、气泡和文案都在文件内部，可直接作为 `<img>` 使用。`v1.0.4` 以线上评审页 `?v=ab3ea266` 中的组件为唯一视觉基准：U、脸、双眼、双手、`9px` 角色—气泡间距、气泡尾尖和文案位置均使用同源几何，不再维护一套近似造型。
+两份 SVG 都是 `220 × 48`、无外链、无脚本的自包含文件。CSS 动画、正式 U 路径、角色、气泡和文案都在文件内部，可直接作为 `<img>` 使用。`v1.0.5` 以线上评审页 `?v=ab3ea266` 中的组件为唯一视觉基准：U、脸、双眼、双手、`9px` 角色—气泡间距、气泡尾尖和文案位置均使用同源几何，不再维护一套近似造型。
 
 ### 原生 APP
 
@@ -34,11 +35,11 @@
 
 ## 3. 动画时间线
 
-### 空闲邀请 / 6000ms
+### 空闲邀请 / 7000ms
 
 `纯 U → U 轻弹 → 长出脸 → 36px 三点思考圆 → 气泡展开 + 双手出现 → Create a game? → 气泡收回 → 脸和双手收回 → 纯 U`
 
-这是一次完整闭环。播放结束后不要停在最后一帧的气泡状态；入口应恢复为纯 U。
+这是一次完整闭环。`Create a game?` 完全显现后保持约 `3000ms`，再收回为纯 U；前面的长脸、思考与展开速度不因停留延长而放慢。
 
 ### 待回复 / 4000ms
 
@@ -56,7 +57,7 @@ awaiting_user > idle_invitation > pure_u
 - 收到新的 `awaiting_user`，且 `conversation_id` 改变时，替换点击目标并从头播放一次。
 - 用户进入对应会话后，可以保留提醒，直到业务状态确认该消息不再待回复。
 - `awaiting_user` 清除后，先回到纯 U；60 秒内不再主动邀请创建游戏。
-- 空闲邀请不是固定轮播：首次从页面稳定后的 `20–40s` 中随机取一个时间；后续每次重新从 `180–360s` 中随机取间隔，每个页面会话最多播放 2 次。
+- 空闲邀请采用持续随机循环：首次从页面稳定后的 `5–10s` 中随机取一个时间；每次播放完成后，重新从 `10–30s` 中抽取下一次间隔。只要仍是空闲状态就继续，不设置页面会话播放次数上限。
 - 用户最近 8 秒内有点击、触摸、键盘或滚动操作时，把本次邀请继续向后顺延；不要在用户正专注操作时展开气泡。
 - 页面不可见时停止计时；恢复可见后重新计算剩余冷却时间，不补播错过的动画。
 
@@ -75,11 +76,44 @@ type UAgentEntryState =
 const randomSeconds = (min: number, max: number) =>
   min + Math.random() * (max - min);
 
-const firstDelay = randomSeconds(20, 40);
-const repeatDelay = () => randomSeconds(180, 360);
+const firstDelay = () => randomSeconds(5, 10);
+const nextDelay = () => randomSeconds(10, 30);
+
+let idleTimer: ReturnType<typeof setTimeout> | undefined;
+let idleGeneration = 0;
+
+function stopIdleInvitationLoop() {
+  idleGeneration += 1;
+  if (idleTimer) clearTimeout(idleTimer);
+  idleTimer = undefined;
+}
+
+function startIdleInvitationLoop(afterWaiting = false) {
+  stopIdleInvitationLoop();
+  const generation = idleGeneration;
+
+  const schedule = (isFirst: boolean, extraDelaySeconds = 0) => {
+    const delay = extraDelaySeconds + (isFirst ? firstDelay() : nextDelay());
+    idleTimer = setTimeout(async () => {
+      if (generation !== idleGeneration || !isIdleInvitationState()) return;
+
+      if (document.hidden || wasRecentlyActive(8_000)) {
+        schedule(isFirst);
+        return;
+      }
+
+      await playCreateGameOnce();
+      if (generation === idleGeneration && isIdleInvitationState()) {
+        schedule(false);
+      }
+    }, delay * 1000);
+  };
+
+  schedule(true, afterWaiting ? 60 : 0);
+}
 ```
 
-随机值应在每次成功播放后重新抽取，不要用用户 ID 生成一个永久固定间隔。上述数值是首版产品默认值，后续可依据曝光率、点击率和打扰反馈调整。
+`firstDelay` 和 `nextDelay` 都必须是函数，确保每次调用都重新随机。停止“第三次”的逻辑来自另一个播放计数器，不来自随机函数；该计数器应删除。`awaiting_user` 到达时调用 `stopIdleInvitationLoop()`，清除后调用 `startIdleInvitationLoop(true)`。待回复动画只在状态进入或 `conversationId` 改变时播放一次，同一状态重渲染不得重播。
 
 ## 5. MiniAPP 接入
 
@@ -174,6 +208,7 @@ MiniAPP SVG 已包含 `prefers-reduced-motion` 静态呈现。原生端应读取
 - 待回复动画末帧仍可读、仍可点击，双手已经收回。
 - 待回复能打断空闲动画，并打开正确的 `conversationId`。
 - 清除待回复后不会立刻播放空闲邀请。
-- 两次空闲邀请之间的间隔不固定，且每个页面会话最多 2 次。
+- 首次空闲邀请随机等待 5–10 秒；之后每次随机等待 10–30 秒，持续到状态变化且没有次数上限。
+- `Create a game?` 完全显现后的可读停留约 3 秒。
 - 320px 宽手机上无裁切，触控高度不小于 44px。
 - 系统减少动态效果开启时仍能理解入口用途。

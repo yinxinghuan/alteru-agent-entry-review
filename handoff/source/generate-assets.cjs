@@ -26,8 +26,8 @@ const STATES = {
     accessible: 'Create a game with AlterU Agent',
     bubbleWidth: 126,
     bubbleFill: COLORS.white,
-    durationMs: 6000,
-    frames: 360,
+    durationMs: 7000,
+    frames: 420,
     finalState: 'pure-u',
   },
   waiting: {
@@ -101,52 +101,52 @@ function sharedSvgMarkup(state) {
 function createSvgCss(state) {
   return `
     #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#thinking-dots,#message-copy { transform-box: view-box; }
-    #u-mark { transform-origin: 21px 37.44px; animation: create-mark 6s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #u-face { transform-origin: 21px 38px; animation: create-face 6s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #arm-left { transform-origin: 17px 33.5px; animation: create-left-arm 6s ease-in-out 1 both; }
-    #arm-right { transform-origin: 29px 33.5px; animation: create-right-arm 6s ease-in-out 1 both; }
-    #speech-motion { transform-box: fill-box; transform-origin: center; animation: create-speech 6s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #bubble-surface,#bubble-clip-rect { animation: create-width 6s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #bubble-inset { animation: create-inset-width 6s cubic-bezier(.2,.8,.2,1) 1 both; }
-    #thinking-dots { animation: create-dots 6s ease 1 both; }
+    #u-mark { transform-origin: 21px 37.44px; animation: create-mark 7s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #u-face { transform-origin: 21px 38px; animation: create-face 7s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #arm-left { transform-origin: 17px 33.5px; animation: create-left-arm 7s ease-in-out 1 both; }
+    #arm-right { transform-origin: 29px 33.5px; animation: create-right-arm 7s ease-in-out 1 both; }
+    #speech-motion { transform-box: fill-box; transform-origin: center; animation: create-speech 7s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #bubble-surface,#bubble-clip-rect { animation: create-width 7s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #bubble-inset { animation: create-inset-width 7s cubic-bezier(.2,.8,.2,1) 1 both; }
+    #thinking-dots { animation: create-dots 7s ease 1 both; }
     #thinking-dots circle { transform-box: fill-box; transform-origin: center; animation: dot-pulse .66s ease-in-out infinite alternate; }
     #thinking-dots circle:nth-child(2) { animation-delay: .12s; }
     #thinking-dots circle:nth-child(3) { animation-delay: .24s; }
-    #message-copy { animation: create-copy 6s ease 1 both; }
+    #message-copy { animation: create-copy 7s ease 1 both; }
     @keyframes create-mark {
-      0%,8%,18%,82%,94%,100% { transform: translateY(0) scale(1); }
-      11% { transform: translateY(1px) scale(1.035,.965); }
-      14% { transform: translateY(-1.5px) scale(.97,1.055); }
-      17% { transform: translateY(.4px) scale(1.016,.987); }
-      85% { transform: translateY(-.6px) scale(.985,1.025); }
-      89% { transform: translateY(1px) scale(1.035,.965); }
-      92% { transform: translateY(-.4px) scale(.99,1.018); }
+      0%,6.86%,15.43%,84.57%,94.86%,100% { transform: translateY(0) scale(1); }
+      9.43% { transform: translateY(1px) scale(1.035,.965); }
+      12% { transform: translateY(-1.5px) scale(.97,1.055); }
+      14.57% { transform: translateY(.4px) scale(1.016,.987); }
+      87.14% { transform: translateY(-.6px) scale(.985,1.025); }
+      90.57% { transform: translateY(1px) scale(1.035,.965); }
+      93.14% { transform: translateY(-.4px) scale(.99,1.018); }
     }
     @keyframes create-face {
-      0%,8% { opacity:0; transform:translateY(6px) scale(.68); }
-      15% { opacity:1; transform:translateY(-2px) scale(1.08); }
-      19%,82% { opacity:1; transform:translateY(0) scale(1); }
-      90%,100% { opacity:0; transform:translateY(6px) scale(.72); }
+      0%,6.86% { opacity:0; transform:translateY(6px) scale(.68); }
+      12.86% { opacity:1; transform:translateY(-2px) scale(1.08); }
+      16.29%,84.57% { opacity:1; transform:translateY(0) scale(1); }
+      91.43%,100% { opacity:0; transform:translateY(6px) scale(.72); }
     }
     @keyframes create-speech {
-      0%,19% { opacity:0; transform:translateX(-4px) scale(.74); }
-      23%,78% { opacity:1; transform:translateX(0) scale(1); }
-      84%,100% { opacity:0; transform:translateX(-4px) scale(.74); }
+      0%,16.29% { opacity:0; transform:translateX(-4px) scale(.74); }
+      19.71%,84.29% { opacity:1; transform:translateX(0) scale(1); }
+      90.48%,100% { opacity:0; transform:translateX(-4px) scale(.74); }
     }
     @keyframes create-width {
-      0%,28% { width:36px; }
-      36%,70% { width:${state.bubbleWidth}px; }
-      79%,100% { width:36px; }
+      0%,24% { width:36px; }
+      30.86%,75.43% { width:${state.bubbleWidth}px; }
+      83.14%,100% { width:36px; }
     }
     @keyframes create-inset-width {
-      0%,28% { width:35px; }
-      36%,70% { width:${state.bubbleWidth - 1}px; }
-      79%,100% { width:35px; }
+      0%,24% { width:35px; }
+      30.86%,75.43% { width:${state.bubbleWidth - 1}px; }
+      83.14%,100% { width:35px; }
     }
-    @keyframes create-dots { 0%,20% { opacity:0; } 23%,29% { opacity:1; } 35%,100% { opacity:0; } }
-    @keyframes create-copy { 0%,32% { opacity:0; transform:translateX(4px); } 38%,70% { opacity:1; transform:translateX(0); } 76%,100% { opacity:0; transform:translateX(-2px); } }
-    @keyframes create-left-arm { 0%,34% { opacity:0; transform:rotate(22deg) scaleX(.72); } 39%,61% { opacity:1; transform:rotate(8deg) scaleX(1); } 67%,100% { opacity:0; transform:rotate(22deg) scaleX(.72); } }
-    @keyframes create-right-arm { 0%,34% { opacity:0; transform:rotate(18deg) scaleX(.72); } 39% { opacity:1; transform:rotate(-58deg) scaleX(1); } 45% { opacity:1; transform:rotate(16deg) scaleX(1); } 51% { opacity:1; transform:rotate(-50deg) scaleX(1); } 57%,61% { opacity:1; transform:rotate(-10deg) scaleX(1); } 67%,100% { opacity:0; transform:rotate(18deg) scaleX(.72); } }
+    @keyframes create-dots { 0%,17.14% { opacity:0; } 19.71%,24.86% { opacity:1; } 30%,100% { opacity:0; } }
+    @keyframes create-copy { 0%,27.43% { opacity:0; transform:translateX(4px); } 32.57%,75.43% { opacity:1; transform:translateX(0); } 80.57%,100% { opacity:0; transform:translateX(-2px); } }
+    @keyframes create-left-arm { 0%,29.14% { opacity:0; transform:rotate(22deg) scaleX(.72); } 33.43%,68.1% { opacity:1; transform:rotate(8deg) scaleX(1); } 73.81%,100% { opacity:0; transform:rotate(22deg) scaleX(.72); } }
+    @keyframes create-right-arm { 0%,29.14% { opacity:0; transform:rotate(18deg) scaleX(.72); } 33.43% { opacity:1; transform:rotate(-58deg) scaleX(1); } 38.57% { opacity:1; transform:rotate(16deg) scaleX(1); } 43.71% { opacity:1; transform:rotate(-50deg) scaleX(1); } 48.86%,68.1% { opacity:1; transform:rotate(-10deg) scaleX(1); } 73.81%,100% { opacity:0; transform:rotate(18deg) scaleX(.72); } }
     @keyframes dot-pulse { from { transform:translateY(1px) scale(.82); opacity:.5; } to { transform:translateY(-1px) scale(1); opacity:1; } }
     @media (prefers-reduced-motion: reduce) {
       #u-mark,#u-face,#arm-left,#arm-right,#speech-motion,#bubble-surface,#bubble-inset,#bubble-clip-rect,#thinking-dots,#message-copy,#thinking-dots circle { animation:none!important; }
@@ -338,11 +338,11 @@ function imageLayer(ind, name, op, refId, ks) {
 function opacityFrames(kind, role) {
   if (kind === 'create') {
     const map = {
-      face: [{ t: 0, v: [0] }, { t: 48, v: [0] }, { t: 90, v: [100] }, { t: 294, v: [100] }, { t: 330, v: [0] }, { t: 360, v: [0] }],
-      arms: [{ t: 0, v: [0] }, { t: 122, v: [0] }, { t: 142, v: [100] }, { t: 220, v: [100] }, { t: 244, v: [0] }, { t: 360, v: [0] }],
-      speech: [{ t: 0, v: [0] }, { t: 68, v: [0] }, { t: 84, v: [100] }, { t: 286, v: [100] }, { t: 312, v: [0] }, { t: 360, v: [0] }],
-      dots: [{ t: 0, v: [0] }, { t: 72, v: [0] }, { t: 86, v: [100] }, { t: 108, v: [100] }, { t: 126, v: [0] }, { t: 360, v: [0] }],
-      copy: [{ t: 0, v: [0] }, { t: 116, v: [0] }, { t: 140, v: [100] }, { t: 252, v: [100] }, { t: 276, v: [0] }, { t: 360, v: [0] }],
+      face: [{ t: 0, v: [0] }, { t: 48, v: [0] }, { t: 90, v: [100] }, { t: 354, v: [100] }, { t: 390, v: [0] }, { t: 420, v: [0] }],
+      arms: [{ t: 0, v: [0] }, { t: 122, v: [0] }, { t: 142, v: [100] }, { t: 286, v: [100] }, { t: 310, v: [0] }, { t: 420, v: [0] }],
+      speech: [{ t: 0, v: [0] }, { t: 68, v: [0] }, { t: 84, v: [100] }, { t: 354, v: [100] }, { t: 380, v: [0] }, { t: 420, v: [0] }],
+      dots: [{ t: 0, v: [0] }, { t: 72, v: [0] }, { t: 86, v: [100] }, { t: 108, v: [100] }, { t: 126, v: [0] }, { t: 420, v: [0] }],
+      copy: [{ t: 0, v: [0] }, { t: 116, v: [0] }, { t: 140, v: [100] }, { t: 320, v: [100] }, { t: 344, v: [0] }, { t: 420, v: [0] }],
     }
     return map[role]
   }
@@ -360,7 +360,7 @@ function sizeFrames(kind, finalWidth) {
   if (kind === 'create') {
     return [
       { t: 0, v: [36, 36] }, { t: 100, v: [36, 36] }, { t: 132, v: [finalWidth, 36] },
-      { t: 252, v: [finalWidth, 36] }, { t: 292, v: [36, 36] }, { t: 360, v: [36, 36] },
+      { t: 320, v: [finalWidth, 36] }, { t: 360, v: [36, 36] }, { t: 420, v: [36, 36] },
     ]
   }
   return [
@@ -376,8 +376,8 @@ function markScaleFrames(kind) {
   if (kind === 'create') {
     return [
       { t: 0, v: [100, 100, 100] }, { t: 36, v: [100, 100, 100] }, { t: 46, v: [103.6, 96.4, 100] },
-      { t: 58, v: [97, 105.4, 100] }, { t: 72, v: [100, 100, 100], hold: true }, { t: 300, v: [100, 100, 100] },
-      { t: 314, v: [98.4, 102.8, 100] }, { t: 328, v: [103.2, 96.8, 100] }, { t: 342, v: [100, 100, 100], hold: true }, { t: 360, v: [100, 100, 100] },
+      { t: 58, v: [97, 105.4, 100] }, { t: 72, v: [100, 100, 100], hold: true }, { t: 360, v: [100, 100, 100] },
+      { t: 374, v: [98.4, 102.8, 100] }, { t: 388, v: [103.2, 96.8, 100] }, { t: 402, v: [100, 100, 100], hold: true }, { t: 420, v: [100, 100, 100] },
     ]
   }
   return [
@@ -390,7 +390,7 @@ function faceScaleFrames(kind) {
   if (kind === 'create') {
     return [
       { t: 0, v: [68, 68, 100] }, { t: 48, v: [68, 68, 100] }, { t: 78, v: [108, 108, 100] },
-      { t: 96, v: [100, 100, 100] }, { t: 294, v: [100, 100, 100] }, { t: 330, v: [72, 72, 100] }, { t: 360, v: [72, 72, 100] },
+      { t: 96, v: [100, 100, 100] }, { t: 354, v: [100, 100, 100] }, { t: 390, v: [72, 72, 100] }, { t: 420, v: [72, 72, 100] },
     ]
   }
   return [
@@ -401,10 +401,10 @@ function faceScaleFrames(kind) {
 
 function armRotationFrames(kind, side) {
   if (kind === 'create') {
-    if (side === 'left') return [{ t: 0, v: [22] }, { t: 122, v: [22] }, { t: 146, v: [8] }, { t: 220, v: [8] }, { t: 244, v: [22] }, { t: 360, v: [22] }]
+    if (side === 'left') return [{ t: 0, v: [22] }, { t: 122, v: [22] }, { t: 146, v: [8] }, { t: 286, v: [8] }, { t: 310, v: [22] }, { t: 420, v: [22] }]
     return [
       { t: 0, v: [18] }, { t: 122, v: [18] }, { t: 142, v: [-58] }, { t: 162, v: [16] },
-      { t: 182, v: [-50] }, { t: 202, v: [-10] }, { t: 220, v: [-10] }, { t: 244, v: [18] }, { t: 360, v: [18] },
+      { t: 182, v: [-50] }, { t: 202, v: [-10] }, { t: 286, v: [-10] }, { t: 310, v: [18] }, { t: 420, v: [18] },
     ]
   }
   if (side === 'left') return [{ t: 0, v: [22] }, { t: 40, v: [22] }, { t: 72, v: [12] }, { t: 124, v: [12] }, { t: 158, v: [22] }, { t: 240, v: [22] }]
@@ -413,7 +413,7 @@ function armRotationFrames(kind, side) {
 
 function armScaleFrames(kind, side) {
   const base = side === 'right' && kind === 'waiting' ? 116 : 100
-  if (kind === 'create') return [{ t: 0, v: [72, 100, 100] }, { t: 122, v: [72, 100, 100] }, { t: 146, v: [100, 100, 100] }, { t: 220, v: [100, 100, 100] }, { t: 244, v: [72, 100, 100] }, { t: 360, v: [72, 100, 100] }]
+  if (kind === 'create') return [{ t: 0, v: [72, 100, 100] }, { t: 122, v: [72, 100, 100] }, { t: 146, v: [100, 100, 100] }, { t: 286, v: [100, 100, 100] }, { t: 310, v: [72, 100, 100] }, { t: 420, v: [72, 100, 100] }]
   return [{ t: 0, v: [72, 100, 100] }, { t: 40, v: [72, 100, 100] }, { t: 72, v: [base, 100, 100] }, { t: 124, v: [base, 100, 100] }, { t: 158, v: [76, 100, 100] }, { t: 240, v: [76, 100, 100] }]
 }
 
@@ -562,8 +562,8 @@ async function writeNativeLottie(state, kind) {
   const markers = kind === 'create'
     ? [
         { tm: 72, cm: 'thinking', dr: 54 },
-        { tm: 132, cm: 'message', dr: 144 },
-        { tm: 342, cm: 'pure-u', dr: 18 },
+        { tm: 132, cm: 'message', dr: 212 },
+        { tm: 402, cm: 'pure-u', dr: 18 },
       ]
     : [
         { tm: 42, cm: 'thinking', dr: 62 },
@@ -582,7 +582,7 @@ async function writeNativeLottie(state, kind) {
     markers,
     meta: {
       generator: 'AlterU U Agent handoff generator',
-      handoff_version: '1.0.3',
+      handoff_version: '1.0.5',
       state: state.id,
       duration_ms: state.durationMs,
       final_state: state.finalState,
@@ -600,18 +600,19 @@ async function writeNativeLottie(state, kind) {
 function writeManifest() {
   const manifest = {
     name: 'AlterU U Agent frontend handoff',
-    version: '1.0.4',
-    updated_at: '2026-08-15',
+    version: '1.0.5',
+    updated_at: '2026-08-16',
     canvas: CANVAS,
     natural_character_size: { width: 42, height: 44 },
     idle_invitation_scheduler: {
-      first_delay_seconds: { min: 20, max: 40 },
-      repeat_delay_seconds: { min: 180, max: 360 },
-      max_plays_per_page_session: 2,
+      first_delay_seconds: { min: 5, max: 10 },
+      repeat_delay_seconds: { min: 10, max: 30 },
+      repeat_until_state_change: true,
       recent_interaction_guard_seconds: 8,
       after_waiting_cooldown_seconds: 60,
       pause_while_page_hidden: true,
       randomize_each_interval: true,
+      schedule_next_after_playback_complete: true,
     },
     states: [
       {
@@ -620,6 +621,7 @@ function writeManifest() {
         message: STATES.create.copy,
         duration_ms: STATES.create.durationMs,
         playback: 'once',
+        message_fully_visible_hold_ms: 3000,
         final_state: STATES.create.finalState,
         miniapp: `miniapp/alteru-u-agent-${STATES.create.id}.svg`,
         native: `native/alteru-u-agent-${STATES.create.id}.lottie.json`,
@@ -630,6 +632,7 @@ function writeManifest() {
         message: STATES.waiting.copy,
         duration_ms: STATES.waiting.durationMs,
         playback: 'once',
+        replay_policy: 'once_per_state_entry_or_conversation_change',
         final_state: STATES.waiting.finalState,
         miniapp: `miniapp/alteru-u-agent-${STATES.waiting.id}.svg`,
         native: `native/alteru-u-agent-${STATES.waiting.id}.lottie.json`,
@@ -672,12 +675,20 @@ function writeManifest() {
 
 async function main() {
   ensureDirectories()
-  const files = [
-    writeMiniappSvg(STATES.create, 'create'),
-    writeMiniappSvg(STATES.waiting, 'waiting'),
-    await writeNativeLottie(STATES.create, 'create'),
-    await writeNativeLottie(STATES.waiting, 'waiting'),
-  ]
+  const stateOption = process.argv.find(argument => argument.startsWith('--state='))?.split('=')[1] || 'all'
+  if (!['all', 'create', 'waiting'].includes(stateOption)) {
+    throw new Error(`Unknown state "${stateOption}". Use --state=create, --state=waiting, or --state=all.`)
+  }
+
+  const files = []
+  if (stateOption === 'all' || stateOption === 'create') {
+    files.push(writeMiniappSvg(STATES.create, 'create'))
+    files.push(await writeNativeLottie(STATES.create, 'create'))
+  }
+  if (stateOption === 'all' || stateOption === 'waiting') {
+    files.push(writeMiniappSvg(STATES.waiting, 'waiting'))
+    files.push(await writeNativeLottie(STATES.waiting, 'waiting'))
+  }
   writeManifest()
   console.log(files.map(file => path.relative(handoffDir, file)).join('\n'))
 }
