@@ -1,0 +1,5265 @@
+{
+  "v": "5.12.2",
+  "fr": 60,
+  "ip": 0,
+  "op": 420,
+  "w": 220,
+  "h": 48,
+  "nm": "AlterU U Agent — Create a game",
+  "ddd": 0,
+  "assets": [
+    {
+      "id": "message_copy",
+      "w": 504,
+      "h": 144,
+      "u": "",
+      "p": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAACQCAYAAADk+Hn8AAAACXBIWXMAAAsTAAALEwEAmpwYAAAVfElEQVR4nO3dCbQkV1nA8X6zuJCZd2/3vVX13jAS0LgBStxA3AdcUBNwAYkLsgiKgoeIGhKVPcQoiSGCQRLMgLiERY0LJ9GEgEQ2iQHETBaJJBAIkTiQTMzgrJ6vqjrpV/3dqlvd1f36Df/fOX1yzuRVdXV1dX117/3ud3s9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOhWkiTbEps8IjNu10rf/0jST74jNelXcp5xzFmx9vjU+uel1r0lNf661Lj/zaw/Kq/U+r2ZdTdm1l2eGfeCVeO/Zb2PFwDaemiv9yVp3z07M+7qzPoDw3vcmpdxt6fWXSzBnzOMDU2eWvPAbf0R9WIPvFLr/zWz/qT1Pv5jWb/fN+t9DMCxIukn35kaf2ur+5zxf3R87/gvW+9jB1qRizYz/rVtA/v4067/28FgsMzp7y6oZ3bwXOlFSYz7Dc4rML3EJD+ZWveFSe5xqfVXScuf7wEbJ4gY956pAvvap9w90sW/3p9rI0tMcmJm3YWpcfcMzysBHujgt2WTR4wOOU7YkHkt3wU2xhiUce+KuKgPpcbfkll3c2b83RFB/j9oyU8uM+7fq+eUAA9MbSkz7sOBoH1XZvyfptb/TmbcS1Lr3pz/W+h+2E+/ge8DCy2z7tyarqi9mfXnrBr/zSf0TvjS0e0Gg8EDU+OflRn3kfD27uL1+2QbGwEe6F5q3eMD96srdy4vD6p/L/+WGvf2QCPm1XxHWFjZ8uCRmfWHAxf8PyZJshKxm02SbZ9Zf1DZx2Ey7Cf8bmjBA53LrP8rpeV+W10Ca5Zlx6XW36k0gG7gK8LCkqdWPbi7y3u93pZ2+0p+lVZ8h98NAR7o2uayV7IaqF8U8Xt8lbLd//EVYSHt2O6+Vs2Yb3iarbGUWv+B8f25fdNMK1ndtuoz4x6TmsH3r/b7D2qzrfd+dcX670ns4OdT438xM/4Z6fLgB7SuuCksSUJhZtz3SWbuikmeJC9v/Xdnx2XpIgX4BxnTz7YPHpX1/SlyPvJzYt3JO/r9r+gtCOfcDvnOUjP48eG5lHP7wMFgZ28ByFDVymDwULke5diS5eSHyrHYzbN4v5VtK0nST74rte4Jw/Mh752Z7CFy7c2k2ItJTpSu7MQMfkJ6+Xq93tam7eR45JpPrfu5/Bj7/Ud3NZ3MGGPz3sbKddv2fpD/TpUGjVxvTdumxp+qNoay7LipPhww17F3439h4n0u+59SW/GDwberyX3WX1N9rVj/vfm++v2HyXSU6kOI/FvTDSo1/vmp9R+sSQI8nBr3zxJEJv2s+Y3duku0FkGlN+TGzLgzJXDV7a84Xnfz8CWtA6XFcOfo3+R/Z/ypDYe6ObHuKTLkIolBdUmRK9b9ynpM/5FgkFq3O7XujrpzWSZ5npcsJ18172OUPJTUuL8cndVQyTf5b5kjPRzWkmtj7Luy/vdj3ivr9x+eGX9B8xxt95l8poVNvzFmv6lx52fWX7HmZdxp8v+S5eQESSpTp47liWbuPHnYruxya/Fbc/8VOCdfyIz/s5XB4OsnOOWbUut+NjPussDw3/CauE6mkcZctyvL7lu1fcRcT1LQS9n20Kwe7ICppMZ/QvlBfrZt1/woeZrNrH9d9SUtEHXevX5TeEL5UueopsZ/NPj+1p/UtnCFBD7lxhUkrd3IWQeV43b3SMWs0H4lQLTdZ3HzdS+tnQ5UFCBqcZz+OgkwvTnYsX27y6z/6wk+94GyW7XzFqxia2bdH9Tkqoz9hpLlwQ+mxr1b+X+7695odXX1AZl1F01Qi+Jwavxrmlra2lTY1Pg3yINuTbb46LV2u/QAyb4kKKo9dvq1vz81/pmxJ1x6RDLj39fyur2+qdKc9KgNe0FGX3LeG4+paGxU3/PW2M8EzI20MvQfirtoXscQCvBZ352eGndvzQ9ZDfDyFD95kR73saYW9kgrZ7JAfN9N3j9vHgFeurUnnutr/N1S0bA3Q3KzlfM+5bmMahFPYUla7ZOcv6K3IT7AS5Bp+zCm7P+S1gHe+htiH17Kv78zH36SYN/u+A5Ll3/TCc+7+QO9JBG/hX1aY2JaMhwQON9v7vq9gNldsH33M+se4I3/fO0NRgnwmUmeVhvc83n7Mn/f7Qvv232obsywqBfg90TcaGofMqRnQusS7DLA5+OVNZ9VjkG6VbXM4JEb+f9kJntwb3aBM6YXpOmB7Yh078/oGCUgntnw/p8rut/lvzHBMRzgZf51B+fjqAyT1XyeropZBYd6aj+/8Z+o+43JjJu6Ghv3X7fuszXX7d4uF4iR4cXwMbmTu3ofoDOZHZyhXbDzXEwhGOCbbxJrAnyZ4KYFsyMyJirJhCN/viRjqepUmeL1ytDxZtY9p2bs9dck8WqYcCNJfHmCUqhGgHFnju/fnzM6rJEH2LHt8m7LNcMfkgxVTQILPYjIfN4yIG66731N9pAyH2Pspi1BuDcDMgSjnxd/d2r9C2VMeVgkSf6b9JPHlYuBaNfDG2ZxjHkyoh5Q5d9et+rc1635+37/YZnxfz5JgC+vybH3KvMwXiljx8PEUGnpS55KatzfBwLcVZME+CJouuf47f5r8t9UkdB2ffNv0t24YpInSsKb1MaQoCf5LcH3CTQiygfojwZ+L5eVPUqj1+2D5dyoDxvGXd3F8I0k3wWDu3HvGT0eYGGk1p+tBvgk2bZAAf6AFJKQwClji/ct5dj3p8S0fFbs4Kltz4G0EOQmpf29tPCVH/mn5YYYeg/n3PayC7T1/NlJs+iD0xWLohzBm16era4EmZW+/+Fex9TgJDfScnw3FAAy4/5FOZd7Y7K8Wx+j9e8MnMfapMbU+LPaBnh5ENWu/4bFm5ZS696qbHcoNHsjGOCNv0uryiazaep6rfI8Hv29NhdJhup7vUk7tqTvfrmmJGzwus0fpNUhhula1zLbJjTEJcMvlOLGwpKbvXLhHp5T0lJzgI8cS5NpX9p4feTY2CatZKXcoNVCF3nWvb9+tGUtLfemN5FZCdpn3Llz55fPJMAr28kDRUyWsVQeVI71il733fNvz5cgLoYlyocKd27MzAXtXEpuRJcHKEMogRb1OyN+I1tCpVCDAd66i4vWq2TFFy1SCd5NxynZ6YHfz2NaBfi+O32Cym9HZdZFaLuyAtxYgJQHhugHaOv+s1pBM7DthYHvavIZMsbtDwT3PTMcugKmp93IJbFlnue2LsDHJOMIac1r20uiTtT2SmtXgnjEplslKS9mnm/e66DehOtvEpME+DIwaTel50ePN45vf0AepHqzszlP+oyYT1xm3Y9fLx0nVpWVGSe/LouckOgAX7EkreLIWhRLWkJaqBtcT7LLe62W63tO9G7qptknmXVvU+4z91YfkkLz04dT+Cac/naozeyYSgZ/aMz9cpZsxsIrl4WtXsAHF6EFX46xRx1HOW5d3f6TsduHWkDTFlWRrnkJivKSNafV1s+y+7auA3y27J+sPvB4vxp56Fu0JMdp6gVMSwL/8FyW465HZ318gWGfw7GLJxUzBCYO8LWk52d4PmTcW4aJYmdq6NPkmvMs9AJW/raI7X5bOw/V8ygForS/a1GAaZOWsyLDTr12NmfWXRv47v5kminEwNzISknaRSyBaV7HEJ4H78+O3Udq3D9oDyp5Jm3kSw2+EePOcqOV5CKZqlUUDckLmeyNni+tFP+ZNsCn1r84cE7bnI9Dk5TynNJWGW/OjHtFsbCHu6nM8A8WOKncyJ/Y5cGoc9iNv6XNPrRpZC0C/KbUuMfmv1PjL5UhljyZUyl+1KbHRu2iN/6NjZ9FqVWQWvdvTdtJBUnt+Kqt4NCDwLTXbWbcyyLPd+0DsuSMkFCHDUPGztQn5rUZ5+s0D35tEl2dUGb1tK+6sfW8m9j4C5qm861HgC8LsnR+PjLj/qI3A+UiHmdPW1ug6wCvnXsZV2+zj6LCWusAv7WoAzFehKrl9Rsd4GNmIcj3rwS9d08aMKst+PIhufvfsXVvaTrGpuRPGVKIqZEBfFHMgx/tQhy+tHGrukp2LT7HtTO5MSiJdkIqlJWJUNO/x0wCfD51rvPzkVn/T72OybhpqMTpMRHg1dkT4QAviYLBdcrXPcD7N06SxCbfS1SA12cRTH8eGspaV6lTU617W5t9AOuuTFYa70o2/oJp913WPK/u972zCPB1822nehVTc9YoFkDRM2tHgsA+yQEoMsT9Nfm8dWVq1wwD/DkzulF+sNehcp2B2hr+eQa28Z8qZy5cU44DXzmnAH/1tF30WrAIBXhpITaVWM6vvXy83d1Yng9Za+EKraTzhgvwgWm707/ch3qRijLB7WYYAAtLK8IiN6VpVoAqk4sOKDeR351NC97/jRKcL632ILR9VTO6i2PNK5ZpDwPvkxW0houMjB1jKDFsNmPwv6Wc+1unPR+xyWWRlkJ1xiXBUlYKq0mu2jKfAK8WrDkUex5CWeE10+TeGvj7j8twUVmZTS2qIg9BGz3AS7a88rv61DyvW+ll7HrxLWDdlFWgWs1tnTR5T1uOsaMu+vExZ+M+0uuYBPDAsb6+aTWpskrZfAJ83/+08l4HF2lJS6mRHwjuf9f0cBnKTp9BC/60QIvw5GlyXLQAL8Fb/1v/flkmNWKa3P6NFuCrybxlkaXq3x2eZ9KvPDzKMrzVV4sZKMDiKEqUapmn/q5J1geXlqo6J7eYV740iwAfmF5zJFSNTl8ZrlhfevRVXS9eSzKSJLuYyn/lIjhzCfD5tKkpzql8J9r56DL5MpBQdTgmkSk17sfmEeClVK4e4P2VTdvmpYLDy6fujr0+6qr6NT48brAAL9+99nfy++5FKMszj1231XLCwBcVqfgWuEHsaTMXfGXbSqJXovJH02X3S9o2nbTgA0MCMhYd+fnHy2kad3t1vqs+vSivRd2YcCjVuOYV4PPtlPeTXIWY8yH71x6YOl28Q7nmIpfd3CS5HPMI8CJ0PUu99rrtZL504OEgEODVnrSDMXOuJUt8HQP8VV0F+PyzaHXvI35j5banau/jt/uv7rUgD+zFvtxFMuU0Zp14YGGVyU763FoZ2zPJ0xrmf0o97MeHpvWUyVmbZxXgg61r6w82zWWXJ/zAMf/e2N8qy3hKK62hoM6W0A04JsDLPGMluJzXdD5kzFZ/z8EZddvJYh562d92mcgTzak27p6GUrrSFX1+6FzOIsDL9RN4vyPyPVR7iSSY1CxiFA7wxr0qEAR3TPAwtiECvNbzFVxDwfoX1h7b9sGj9JK4zdP4RklXfDXPRq5LKVvbZj/AQsmM+826m1KeyWzdbvkByjQ6KddZdIG587WpQCNP3/ukqzP0vl0F+LKb8lBgsZqzqjdi6cZOjX+NulKY8Z/XylsGA3WxKtzYA1BikhObluaMaMFfpty09kvd7WLueP56kbpASGg5TUke6/cfPvr3Ms4rY86BhTWOdL0ufGiuvrR8tSAv08cCBY1mGuBjph1Kz0Oe0R45b10fg9dbn3nBHyV3Iu/OVgLuRg/wxcJM7o7AebukuhhOsRCO+/XQ2vGx5apHPqO+EqBxt8es4wAsKmmFvz7mBtXidSjr+x+te9OuAnzMut351LXiRvzJ2uM2/hltkuzKfcsiIedKC7l86Bkv6zlZgFcTFis32TvbjFWPblfUEMi788Nre3cwbVL5XLvCx+ZuTo37w8y4F8g5LSvKNVYGnFWAL7P2x6d9Nn8vN8QWuilb/vpnlGp4eVnpwRnSsyT1CGKq2W3EAJ+/j1QzrFnzfuS6val+TXp3YdOxKedmrOTv8CWNiLb7AxbJpnJN8KmDu0y1k4IwTW/YZYCXCmCShT3lsZ/TsEKYvrZ708u4D2vd7U0BXqZaaXOcqze80PZSpnPK83HFrFousmjHZNeW+3hq/TvmGOCHiYevrgs8le/kGslfUcvdBqbJyZjvpL81mRZ6rAR4Ib1S01y3cn3ErEA39hmLhwZ1n3VLQgMbhkwDkpvoFD+wKyU7P+a9Og7wYkve+ousBX//Dc7d27TG9zDjPrPuY63Oh/HvlQRELSg1BfiRVckOThLgh2tsh7owa15HpNU4y27JfJlfKQTU6nvy1+Wr5SnBZpYBfkgeWsvCSoHry91UXkd5clwgwMuCJWPKOgutHnpkeCBfRc24l69TgH/HpAG+adpmnh9j3L7W1611F0563WrnsfycH5jnIlzATMnTb2aSp8d2j8rYrbSe2455FdOJxheNiFnopY6M1eXZ8cbfFdH6uUDG5GP3LYUz5CEiMF49etPck/bds4fj85MGeFHcxP2bivHetS36pgA/TB4qu70/3fA97peCK/J+vbldZ+7lTTX98wdO404btsrWK8AP5UvbGrerWEhl8FxZya6a11Ae51jGvwzh1Ox6kwTm5lLI7jOyKM8wE/1YDPDD85wnViqFfKrXbb4s7fLgkb0pyIOBnIvKZ3x/bIMF2HBkPrgEXCncIdmsecZvvtCKe2k+f9e4XZN0h83JVlmqNbHuKTKGKTdFGdtNjX+m3AymaaHmLVAZ5zbuZZKwlyft5cEqebrMTOgtpqV8bfq+P0UCQF4etO9Ol2lfUnxmzkVF7iPdtZKvIV2zeVd4cX29Qlpx3vhv2qireElJWSUovjhuTrd7rFQlLGcO/LFUgpTvqXwo3NrFMsahqo1NS/YOX3O8XpbyugTL/sl5Vb+11+2uro+jLDx0kvxWNuq1BwCokfb7jx6rahY5r1p6etQksBYrJQIAgBlQp00Zf+lUpWo7LBgEAAAmEFjL/KC07Ou2k/Ko2kp5Mp2SLwIAgHVWdrN/LrAk8Fllff6ta9Z2kPn7gaTBUMlmAAAwZ+FV5e6fmiWzMbQSv5XM92uphgYAwOLYPGlRnpFx+9uk3O56fxAAADBidXX1AU2132vmaL9LllHmhAIAsMjT5qzbnRp/S0NhnjtkSdyyXDMV0AAA2ChkxUEpDrRikielxj9rxQ6emvSTx5WJdwR1AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9I49/w8s3PH6fe7P2wAAAABJRU5ErkJggg==",
+      "e": 1
+    }
+  ],
+  "layers": [
+    {
+      "ddd": 0,
+      "ind": 24,
+      "ty": 2,
+      "nm": "Message copy",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 116,
+              "s": [
+                0
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 140,
+              "s": [
+                100
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 320,
+              "s": [
+                100
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 344,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 420,
+              "s": [
+                0
+              ]
+            }
+          ]
+        },
+        "r": {
+          "a": 0,
+          "k": 0
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            51,
+            6,
+            0
+          ]
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            0,
+            0,
+            0
+          ]
+        },
+        "s": {
+          "a": 0,
+          "k": [
+            25,
+            25,
+            100
+          ]
+        }
+      },
+      "ao": 0,
+      "ip": 0,
+      "op": 420,
+      "st": 0,
+      "bm": 0,
+      "refId": "message_copy"
+    },
+    {
+      "ddd": 0,
+      "ind": 23,
+      "ty": 4,
+      "nm": "Three thinking dots",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 72,
+              "s": [
+                0
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 86,
+              "s": [
+                100
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 108,
+              "s": [
+                100
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 126,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 420,
+              "s": [
+                0
+              ]
+            }
+          ]
+        },
+        "r": {
+          "a": 0,
+          "k": 0
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            69,
+            24,
+            0
+          ]
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            0,
+            0,
+            0
+          ]
+        },
+        "s": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            100
+          ]
+        }
+      },
+      "ao": 0,
+      "ip": 0,
+      "op": 420,
+      "st": 0,
+      "bm": 0,
+      "shapes": [
+        {
+          "ty": "gr",
+          "nm": "Ellipse",
+          "it": [
+            {
+              "ty": "el",
+              "p": {
+                "a": 0,
+                "k": [
+                  -6,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  4,
+                  4
+                ]
+              },
+              "d": 1,
+              "nm": "Ellipse Path"
+            },
+            {
+              "ty": "fl",
+              "c": {
+                "a": 0,
+                "k": [
+                  0.090196,
+                  0.062745,
+                  0.078431,
+                  1
+                ]
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "r": 1,
+              "nm": "Fill"
+            },
+            {
+              "ty": "tr",
+              "p": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "a": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  100,
+                  100
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 0
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "sk": {
+                "a": 0,
+                "k": 0
+              },
+              "sa": {
+                "a": 0,
+                "k": 0
+              },
+              "nm": "Transform"
+            }
+          ]
+        },
+        {
+          "ty": "gr",
+          "nm": "Ellipse",
+          "it": [
+            {
+              "ty": "el",
+              "p": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  4,
+                  4
+                ]
+              },
+              "d": 1,
+              "nm": "Ellipse Path"
+            },
+            {
+              "ty": "fl",
+              "c": {
+                "a": 0,
+                "k": [
+                  0.090196,
+                  0.062745,
+                  0.078431,
+                  1
+                ]
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "r": 1,
+              "nm": "Fill"
+            },
+            {
+              "ty": "tr",
+              "p": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "a": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  100,
+                  100
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 0
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "sk": {
+                "a": 0,
+                "k": 0
+              },
+              "sa": {
+                "a": 0,
+                "k": 0
+              },
+              "nm": "Transform"
+            }
+          ]
+        },
+        {
+          "ty": "gr",
+          "nm": "Ellipse",
+          "it": [
+            {
+              "ty": "el",
+              "p": {
+                "a": 0,
+                "k": [
+                  6,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  4,
+                  4
+                ]
+              },
+              "d": 1,
+              "nm": "Ellipse Path"
+            },
+            {
+              "ty": "fl",
+              "c": {
+                "a": 0,
+                "k": [
+                  0.090196,
+                  0.062745,
+                  0.078431,
+                  1
+                ]
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "r": 1,
+              "nm": "Fill"
+            },
+            {
+              "ty": "tr",
+              "p": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "a": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  100,
+                  100
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 0
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "sk": {
+                "a": 0,
+                "k": 0
+              },
+              "sa": {
+                "a": 0,
+                "k": 0
+              },
+              "nm": "Transform"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ddd": 0,
+      "ind": 20,
+      "ty": 4,
+      "nm": "Speech bubble surface",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 68,
+              "s": [
+                0
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 84,
+              "s": [
+                100
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 354,
+              "s": [
+                100
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 380,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 420,
+              "s": [
+                0
+              ]
+            }
+          ]
+        },
+        "r": {
+          "a": 0,
+          "k": 0
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            51,
+            24,
+            0
+          ]
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            0,
+            0,
+            0
+          ]
+        },
+        "s": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            100
+          ]
+        }
+      },
+      "ao": 0,
+      "ip": 0,
+      "op": 420,
+      "st": 0,
+      "bm": 0,
+      "shapes": [
+        {
+          "ty": "gr",
+          "nm": "Bubble",
+          "it": [
+            {
+              "ty": "sh",
+              "nm": "Integrated tail path",
+              "ks": {
+                "a": 0,
+                "k": {
+                  "c": true,
+                  "i": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0
+                    ]
+                  ],
+                  "o": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0
+                    ]
+                  ],
+                  "v": [
+                    [
+                      -11,
+                      5
+                    ],
+                    [
+                      2,
+                      1
+                    ],
+                    [
+                      2,
+                      9
+                    ]
+                  ]
+                }
+              }
+            },
+            {
+              "ty": "rc",
+              "p": {
+                "a": 1,
+                "k": [
+                  {
+                    "t": 0,
+                    "s": [
+                      18,
+                      0
+                    ],
+                    "e": [
+                      18,
+                      0
+                    ],
+                    "i": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        1,
+                        1
+                      ]
+                    },
+                    "o": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        0.8,
+                        0.8
+                      ]
+                    }
+                  },
+                  {
+                    "t": 100,
+                    "s": [
+                      18,
+                      0
+                    ],
+                    "e": [
+                      63,
+                      0
+                    ],
+                    "i": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        1,
+                        1
+                      ]
+                    },
+                    "o": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        0.8,
+                        0.8
+                      ]
+                    }
+                  },
+                  {
+                    "t": 132,
+                    "s": [
+                      63,
+                      0
+                    ],
+                    "e": [
+                      63,
+                      0
+                    ],
+                    "i": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        1,
+                        1
+                      ]
+                    },
+                    "o": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        0.8,
+                        0.8
+                      ]
+                    }
+                  },
+                  {
+                    "t": 320,
+                    "s": [
+                      63,
+                      0
+                    ],
+                    "e": [
+                      18,
+                      0
+                    ],
+                    "i": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        1,
+                        1
+                      ]
+                    },
+                    "o": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        0.8,
+                        0.8
+                      ]
+                    }
+                  },
+                  {
+                    "t": 360,
+                    "s": [
+                      18,
+                      0
+                    ],
+                    "e": [
+                      18,
+                      0
+                    ],
+                    "i": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        1,
+                        1
+                      ]
+                    },
+                    "o": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        0.8,
+                        0.8
+                      ]
+                    }
+                  },
+                  {
+                    "t": 420,
+                    "s": [
+                      18,
+                      0
+                    ]
+                  }
+                ]
+              },
+              "s": {
+                "a": 1,
+                "k": [
+                  {
+                    "t": 0,
+                    "s": [
+                      36,
+                      36
+                    ],
+                    "e": [
+                      36,
+                      36
+                    ],
+                    "i": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        1,
+                        1
+                      ]
+                    },
+                    "o": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        0.8,
+                        0.8
+                      ]
+                    }
+                  },
+                  {
+                    "t": 100,
+                    "s": [
+                      36,
+                      36
+                    ],
+                    "e": [
+                      126,
+                      36
+                    ],
+                    "i": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        1,
+                        1
+                      ]
+                    },
+                    "o": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        0.8,
+                        0.8
+                      ]
+                    }
+                  },
+                  {
+                    "t": 132,
+                    "s": [
+                      126,
+                      36
+                    ],
+                    "e": [
+                      126,
+                      36
+                    ],
+                    "i": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        1,
+                        1
+                      ]
+                    },
+                    "o": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        0.8,
+                        0.8
+                      ]
+                    }
+                  },
+                  {
+                    "t": 320,
+                    "s": [
+                      126,
+                      36
+                    ],
+                    "e": [
+                      36,
+                      36
+                    ],
+                    "i": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        1,
+                        1
+                      ]
+                    },
+                    "o": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        0.8,
+                        0.8
+                      ]
+                    }
+                  },
+                  {
+                    "t": 360,
+                    "s": [
+                      36,
+                      36
+                    ],
+                    "e": [
+                      36,
+                      36
+                    ],
+                    "i": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        1,
+                        1
+                      ]
+                    },
+                    "o": {
+                      "x": [
+                        0.2,
+                        0.2
+                      ],
+                      "y": [
+                        0.8,
+                        0.8
+                      ]
+                    }
+                  },
+                  {
+                    "t": 420,
+                    "s": [
+                      36,
+                      36
+                    ]
+                  }
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 18
+              },
+              "d": 1,
+              "nm": "Bubble Shape"
+            },
+            {
+              "ty": "fl",
+              "c": {
+                "a": 0,
+                "k": [
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "r": 1,
+              "nm": "Fill"
+            },
+            {
+              "ty": "tr",
+              "p": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "a": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  100,
+                  100
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 0
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "sk": {
+                "a": 0,
+                "k": 0
+              },
+              "sa": {
+                "a": 0,
+                "k": 0
+              },
+              "nm": "Transform"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ddd": 0,
+      "ind": 33,
+      "ty": 4,
+      "nm": "U Agent left eye",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 48,
+              "s": [
+                0
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 90,
+              "s": [
+                100
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 354,
+              "s": [
+                100
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 390,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 420,
+              "s": [
+                0
+              ]
+            }
+          ]
+        },
+        "r": {
+          "a": 0,
+          "k": 0
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            22,
+            39,
+            0
+          ]
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            0,
+            5.5,
+            0
+          ]
+        },
+        "s": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                68,
+                68,
+                100
+              ],
+              "e": [
+                68,
+                68,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 48,
+              "s": [
+                68,
+                68,
+                100
+              ],
+              "e": [
+                108,
+                108,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 78,
+              "s": [
+                108,
+                108,
+                100
+              ],
+              "e": [
+                100,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 96,
+              "s": [
+                100,
+                100,
+                100
+              ],
+              "e": [
+                100,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 354,
+              "s": [
+                100,
+                100,
+                100
+              ],
+              "e": [
+                72,
+                72,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 390,
+              "s": [
+                72,
+                72,
+                100
+              ],
+              "e": [
+                72,
+                72,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 420,
+              "s": [
+                72,
+                72,
+                100
+              ]
+            }
+          ]
+        }
+      },
+      "ao": 0,
+      "ip": 0,
+      "op": 420,
+      "st": 0,
+      "bm": 0,
+      "shapes": [
+        {
+          "ty": "gr",
+          "nm": "Ellipse",
+          "it": [
+            {
+              "ty": "el",
+              "p": {
+                "a": 0,
+                "k": [
+                  -2.25,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  2.5,
+                  3.5
+                ]
+              },
+              "d": 1,
+              "nm": "Ellipse Path"
+            },
+            {
+              "ty": "fl",
+              "c": {
+                "a": 0,
+                "k": [
+                  0.090196,
+                  0.062745,
+                  0.078431,
+                  1
+                ]
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "r": 1,
+              "nm": "Fill"
+            },
+            {
+              "ty": "tr",
+              "p": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "a": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  100,
+                  100
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 0
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "sk": {
+                "a": 0,
+                "k": 0
+              },
+              "sa": {
+                "a": 0,
+                "k": 0
+              },
+              "nm": "Transform"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ddd": 0,
+      "ind": 34,
+      "ty": 4,
+      "nm": "U Agent right eye",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 48,
+              "s": [
+                0
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 90,
+              "s": [
+                100
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 354,
+              "s": [
+                100
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 390,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 420,
+              "s": [
+                0
+              ]
+            }
+          ]
+        },
+        "r": {
+          "a": 0,
+          "k": 0
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            22,
+            39,
+            0
+          ]
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            0,
+            5.5,
+            0
+          ]
+        },
+        "s": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                68,
+                68,
+                100
+              ],
+              "e": [
+                68,
+                68,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 48,
+              "s": [
+                68,
+                68,
+                100
+              ],
+              "e": [
+                108,
+                108,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 78,
+              "s": [
+                108,
+                108,
+                100
+              ],
+              "e": [
+                100,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 96,
+              "s": [
+                100,
+                100,
+                100
+              ],
+              "e": [
+                100,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 354,
+              "s": [
+                100,
+                100,
+                100
+              ],
+              "e": [
+                72,
+                72,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 390,
+              "s": [
+                72,
+                72,
+                100
+              ],
+              "e": [
+                72,
+                72,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 420,
+              "s": [
+                72,
+                72,
+                100
+              ]
+            }
+          ]
+        }
+      },
+      "ao": 0,
+      "ip": 0,
+      "op": 420,
+      "st": 0,
+      "bm": 0,
+      "shapes": [
+        {
+          "ty": "gr",
+          "nm": "Ellipse",
+          "it": [
+            {
+              "ty": "el",
+              "p": {
+                "a": 0,
+                "k": [
+                  2.25,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  2.5,
+                  3.5
+                ]
+              },
+              "d": 1,
+              "nm": "Ellipse Path"
+            },
+            {
+              "ty": "fl",
+              "c": {
+                "a": 0,
+                "k": [
+                  0.090196,
+                  0.062745,
+                  0.078431,
+                  1
+                ]
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "r": 1,
+              "nm": "Fill"
+            },
+            {
+              "ty": "tr",
+              "p": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "a": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  100,
+                  100
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 0
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "sk": {
+                "a": 0,
+                "k": 0
+              },
+              "sa": {
+                "a": 0,
+                "k": 0
+              },
+              "nm": "Transform"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ddd": 0,
+      "ind": 30,
+      "ty": 4,
+      "nm": "U Agent Face",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 48,
+              "s": [
+                0
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 90,
+              "s": [
+                100
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 354,
+              "s": [
+                100
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 390,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 420,
+              "s": [
+                0
+              ]
+            }
+          ]
+        },
+        "r": {
+          "a": 0,
+          "k": 0
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            22,
+            39,
+            0
+          ]
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            0,
+            5.5,
+            0
+          ]
+        },
+        "s": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                68,
+                68,
+                100
+              ],
+              "e": [
+                68,
+                68,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 48,
+              "s": [
+                68,
+                68,
+                100
+              ],
+              "e": [
+                108,
+                108,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 78,
+              "s": [
+                108,
+                108,
+                100
+              ],
+              "e": [
+                100,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 96,
+              "s": [
+                100,
+                100,
+                100
+              ],
+              "e": [
+                100,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 354,
+              "s": [
+                100,
+                100,
+                100
+              ],
+              "e": [
+                72,
+                72,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 390,
+              "s": [
+                72,
+                72,
+                100
+              ],
+              "e": [
+                72,
+                72,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 420,
+              "s": [
+                72,
+                72,
+                100
+              ]
+            }
+          ]
+        }
+      },
+      "ao": 0,
+      "ip": 0,
+      "op": 420,
+      "st": 0,
+      "bm": 0,
+      "shapes": [
+        {
+          "ty": "gr",
+          "nm": "Face",
+          "it": [
+            {
+              "ty": "rc",
+              "p": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  14,
+                  11
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 5.5
+              },
+              "d": 1,
+              "nm": "Face Shape"
+            },
+            {
+              "ty": "fl",
+              "c": {
+                "a": 0,
+                "k": [
+                  0.960784,
+                  0.694118,
+                  0.780392,
+                  1
+                ]
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "r": 1,
+              "nm": "Fill"
+            },
+            {
+              "ty": "st",
+              "c": {
+                "a": 0,
+                "k": [
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "w": {
+                "a": 0,
+                "k": 2.6
+              },
+              "lc": 2,
+              "lj": 2,
+              "ml": 4,
+              "nm": "Stroke"
+            },
+            {
+              "ty": "tr",
+              "p": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "a": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  100,
+                  100
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 0
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "sk": {
+                "a": 0,
+                "k": 0
+              },
+              "sa": {
+                "a": 0,
+                "k": 0
+              },
+              "nm": "Transform"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ddd": 0,
+      "ind": 32,
+      "ty": 4,
+      "nm": "U Agent right arm",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 122,
+              "s": [
+                0
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 142,
+              "s": [
+                100
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 286,
+              "s": [
+                100
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 310,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 420,
+              "s": [
+                0
+              ]
+            }
+          ]
+        },
+        "r": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                18
+              ],
+              "e": [
+                18
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 122,
+              "s": [
+                18
+              ],
+              "e": [
+                -58
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 142,
+              "s": [
+                -58
+              ],
+              "e": [
+                16
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 162,
+              "s": [
+                16
+              ],
+              "e": [
+                -50
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 182,
+              "s": [
+                -50
+              ],
+              "e": [
+                -10
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 202,
+              "s": [
+                -10
+              ],
+              "e": [
+                -10
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 286,
+              "s": [
+                -10
+              ],
+              "e": [
+                18
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 310,
+              "s": [
+                18
+              ],
+              "e": [
+                18
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 420,
+              "s": [
+                18
+              ]
+            }
+          ]
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            29,
+            33,
+            0
+          ]
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            0,
+            0,
+            0
+          ]
+        },
+        "s": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                72,
+                100,
+                100
+              ],
+              "e": [
+                72,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 122,
+              "s": [
+                72,
+                100,
+                100
+              ],
+              "e": [
+                100,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 146,
+              "s": [
+                100,
+                100,
+                100
+              ],
+              "e": [
+                100,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 286,
+              "s": [
+                100,
+                100,
+                100
+              ],
+              "e": [
+                72,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 310,
+              "s": [
+                72,
+                100,
+                100
+              ],
+              "e": [
+                72,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 420,
+              "s": [
+                72,
+                100,
+                100
+              ]
+            }
+          ]
+        }
+      },
+      "ao": 0,
+      "ip": 0,
+      "op": 420,
+      "st": 0,
+      "bm": 0,
+      "shapes": [
+        {
+          "ty": "gr",
+          "nm": "Arm",
+          "it": [
+            {
+              "ty": "sh",
+              "nm": "Arm Path",
+              "ks": {
+                "a": 0,
+                "k": {
+                  "c": false,
+                  "i": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0
+                    ]
+                  ],
+                  "o": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0
+                    ]
+                  ],
+                  "v": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      10,
+                      0
+                    ]
+                  ]
+                }
+              }
+            },
+            {
+              "ty": "st",
+              "c": {
+                "a": 0,
+                "k": [
+                  0.960784,
+                  0.694118,
+                  0.780392,
+                  1
+                ]
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "w": {
+                "a": 0,
+                "k": 3
+              },
+              "lc": 2,
+              "lj": 2,
+              "ml": 4,
+              "nm": "Stroke"
+            },
+            {
+              "ty": "tr",
+              "p": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "a": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  100,
+                  100
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 0
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "sk": {
+                "a": 0,
+                "k": 0
+              },
+              "sa": {
+                "a": 0,
+                "k": 0
+              },
+              "nm": "Transform"
+            }
+          ]
+        },
+        {
+          "ty": "gr",
+          "nm": "Ellipse",
+          "it": [
+            {
+              "ty": "el",
+              "p": {
+                "a": 0,
+                "k": [
+                  10,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  5,
+                  5
+                ]
+              },
+              "d": 1,
+              "nm": "Ellipse Path"
+            },
+            {
+              "ty": "fl",
+              "c": {
+                "a": 0,
+                "k": [
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "r": 1,
+              "nm": "Fill"
+            },
+            {
+              "ty": "tr",
+              "p": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "a": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  100,
+                  100
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 0
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "sk": {
+                "a": 0,
+                "k": 0
+              },
+              "sa": {
+                "a": 0,
+                "k": 0
+              },
+              "nm": "Transform"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ddd": 0,
+      "ind": 31,
+      "ty": 4,
+      "nm": "U Agent left arm",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 122,
+              "s": [
+                0
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 142,
+              "s": [
+                100
+              ],
+              "e": [
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 286,
+              "s": [
+                100
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 310,
+              "s": [
+                0
+              ],
+              "e": [
+                0
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 420,
+              "s": [
+                0
+              ]
+            }
+          ]
+        },
+        "r": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                22
+              ],
+              "e": [
+                22
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 122,
+              "s": [
+                22
+              ],
+              "e": [
+                8
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 146,
+              "s": [
+                8
+              ],
+              "e": [
+                8
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 286,
+              "s": [
+                8
+              ],
+              "e": [
+                22
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 310,
+              "s": [
+                22
+              ],
+              "e": [
+                22
+              ],
+              "i": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2
+                ],
+                "y": [
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 420,
+              "s": [
+                22
+              ]
+            }
+          ]
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            17,
+            33,
+            0
+          ]
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            0,
+            0,
+            0
+          ]
+        },
+        "s": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                72,
+                100,
+                100
+              ],
+              "e": [
+                72,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 122,
+              "s": [
+                72,
+                100,
+                100
+              ],
+              "e": [
+                100,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 146,
+              "s": [
+                100,
+                100,
+                100
+              ],
+              "e": [
+                100,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 286,
+              "s": [
+                100,
+                100,
+                100
+              ],
+              "e": [
+                72,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 310,
+              "s": [
+                72,
+                100,
+                100
+              ],
+              "e": [
+                72,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 420,
+              "s": [
+                72,
+                100,
+                100
+              ]
+            }
+          ]
+        }
+      },
+      "ao": 0,
+      "ip": 0,
+      "op": 420,
+      "st": 0,
+      "bm": 0,
+      "shapes": [
+        {
+          "ty": "gr",
+          "nm": "Arm",
+          "it": [
+            {
+              "ty": "sh",
+              "nm": "Arm Path",
+              "ks": {
+                "a": 0,
+                "k": {
+                  "c": false,
+                  "i": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0
+                    ]
+                  ],
+                  "o": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0,
+                      0
+                    ]
+                  ],
+                  "v": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      -10,
+                      0
+                    ]
+                  ]
+                }
+              }
+            },
+            {
+              "ty": "st",
+              "c": {
+                "a": 0,
+                "k": [
+                  0.960784,
+                  0.694118,
+                  0.780392,
+                  1
+                ]
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "w": {
+                "a": 0,
+                "k": 3
+              },
+              "lc": 2,
+              "lj": 2,
+              "ml": 4,
+              "nm": "Stroke"
+            },
+            {
+              "ty": "tr",
+              "p": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "a": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  100,
+                  100
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 0
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "sk": {
+                "a": 0,
+                "k": 0
+              },
+              "sa": {
+                "a": 0,
+                "k": 0
+              },
+              "nm": "Transform"
+            }
+          ]
+        },
+        {
+          "ty": "gr",
+          "nm": "Ellipse",
+          "it": [
+            {
+              "ty": "el",
+              "p": {
+                "a": 0,
+                "k": [
+                  -10,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  5,
+                  5
+                ]
+              },
+              "d": 1,
+              "nm": "Ellipse Path"
+            },
+            {
+              "ty": "fl",
+              "c": {
+                "a": 0,
+                "k": [
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "r": 1,
+              "nm": "Fill"
+            },
+            {
+              "ty": "tr",
+              "p": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "a": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  100,
+                  100
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 0
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "sk": {
+                "a": 0,
+                "k": 0
+              },
+              "sa": {
+                "a": 0,
+                "k": 0
+              },
+              "nm": "Transform"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ddd": 0,
+      "ind": 10,
+      "ty": 4,
+      "nm": "Official U watermark — vector",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 0,
+          "k": 100
+        },
+        "r": {
+          "a": 0,
+          "k": 0
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            22,
+            38,
+            0
+          ]
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            22,
+            38,
+            0
+          ]
+        },
+        "s": {
+          "a": 1,
+          "k": [
+            {
+              "t": 0,
+              "s": [
+                100,
+                100,
+                100
+              ],
+              "e": [
+                100,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 36,
+              "s": [
+                100,
+                100,
+                100
+              ],
+              "e": [
+                103.6,
+                96.4,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 46,
+              "s": [
+                103.6,
+                96.4,
+                100
+              ],
+              "e": [
+                97,
+                105.4,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 58,
+              "s": [
+                97,
+                105.4,
+                100
+              ],
+              "e": [
+                100,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 72,
+              "s": [
+                100,
+                100,
+                100
+              ],
+              "h": 1
+            },
+            {
+              "t": 360,
+              "s": [
+                100,
+                100,
+                100
+              ],
+              "e": [
+                98.4,
+                102.8,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 374,
+              "s": [
+                98.4,
+                102.8,
+                100
+              ],
+              "e": [
+                103.2,
+                96.8,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 388,
+              "s": [
+                103.2,
+                96.8,
+                100
+              ],
+              "e": [
+                100,
+                100,
+                100
+              ],
+              "i": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "x": [
+                  0.2,
+                  0.2,
+                  0.2
+                ],
+                "y": [
+                  0.8,
+                  0.8,
+                  0.8
+                ]
+              }
+            },
+            {
+              "t": 402,
+              "s": [
+                100,
+                100,
+                100
+              ],
+              "h": 1
+            },
+            {
+              "t": 420,
+              "s": [
+                100,
+                100,
+                100
+              ]
+            }
+          ]
+        }
+      },
+      "ao": 0,
+      "ip": 0,
+      "op": 420,
+      "st": 0,
+      "bm": 0,
+      "shapes": [
+        {
+          "ty": "gr",
+          "nm": "Official U watermark paths",
+          "it": [
+            {
+              "ty": "sh",
+              "nm": "U main path",
+              "ks": {
+                "a": 0,
+                "k": {
+                  "c": true,
+                  "i": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      -1.8290000000000077,
+                      -4.284499999999994
+                    ],
+                    [
+                      3.858000000000004,
+                      -6.340500000000006
+                    ],
+                    [
+                      1.7589999999999861,
+                      -21.025000000000006
+                    ],
+                    [
+                      22.222999999999985,
+                      -9.338999999999999
+                    ],
+                    [
+                      7.11999999999999,
+                      3.359000000000009
+                    ],
+                    [
+                      -12.3964,
+                      26.838000000000022
+                    ],
+                    [
+                      -4.9269999999999925,
+                      6.507000000000005
+                    ],
+                    [
+                      -5.249999999999986,
+                      -4.102999999999994
+                    ],
+                    [
+                      0.9310000000000116,
+                      -2.8329999999999984
+                    ],
+                    [
+                      2.968999999999994,
+                      -5.8419999999999845
+                    ],
+                    [
+                      -0.5790000000000077,
+                      -19.158999999999992
+                    ],
+                    [
+                      -4.266000000000005,
+                      -3.2139999999999986
+                    ],
+                    [
+                      -4.36699999999999,
+                      6.674000000000007
+                    ],
+                    [
+                      -1.0530000000000257,
+                      10.012
+                    ],
+                    [
+                      -0.5159999999999911,
+                      10.253000000000014
+                    ],
+                    [
+                      -12.318000000000012,
+                      15.527699999999996
+                    ],
+                    [
+                      -5.074999999999989,
+                      0.5459999999999923
+                    ]
+                  ],
+                  "o": [
+                    [
+                      4.846000000000004,
+                      -0.34850000000000136
+                    ],
+                    [
+                      3.632000000000005,
+                      8.443300000000008
+                    ],
+                    [
+                      -11.655999999999977,
+                      19.155
+                    ],
+                    [
+                      -1.8120000000000118,
+                      21.676999999999992
+                    ],
+                    [
+                      -7.295000000000002,
+                      3.0660000000000025
+                    ],
+                    [
+                      -37.14330000000001,
+                      -18.087000000000018
+                    ],
+                    [
+                      3.809999999999988,
+                      -7.166999999999987
+                    ],
+                    [
+                      3.584000000000003,
+                      -4.730000000000004
+                    ],
+                    [
+                      2.3880000000000052,
+                      1.8670000000000044
+                    ],
+                    [
+                      -2.049999999999983,
+                      6.234999999999999
+                    ],
+                    [
+                      -8.932000000000002,
+                      16.694000000000017
+                    ],
+                    [
+                      0.4989999999999952,
+                      4.993000000000023
+                    ],
+                    [
+                      7.007999999999996,
+                      5.276999999999987
+                    ],
+                    [
+                      5.675999999999988,
+                      -8.680999999999983
+                    ],
+                    [
+                      1.1519999999999868,
+                      -10.170999999999992
+                    ],
+                    [
+                      0.9540000000000077,
+                      -18.874999999999986
+                    ],
+                    [
+                      3.09699999999998,
+                      -3.9055000000000035
+                    ],
+                    [
+                      0,
+                      0
+                    ]
+                  ],
+                  "v": [
+                    [
+                      170.98,
+                      80.6864
+                    ],
+                    [
+                      180.922,
+                      87.1309
+                    ],
+                    [
+                      175.515,
+                      105.325
+                    ],
+                    [
+                      163.744,
+                      170.582
+                    ],
+                    [
+                      132.269,
+                      231.923
+                    ],
+                    [
+                      107.397,
+                      231.013
+                    ],
+                    [
+                      105.525,
+                      133.265
+                    ],
+                    [
+                      117.907,
+                      112.277
+                    ],
+                    [
+                      132.998,
+                      108.827
+                    ],
+                    [
+                      135.563,
+                      117.517
+                    ],
+                    [
+                      126.136,
+                      135.017
+                    ],
+                    [
+                      108.149,
+                      192.736
+                    ],
+                    [
+                      114.709,
+                      207.163
+                    ],
+                    [
+                      133.613,
+                      202.772
+                    ],
+                    [
+                      142.431,
+                      174.855
+                    ],
+                    [
+                      144.04,
+                      144.611
+                    ],
+                    [
+                      158.412,
+                      88.4443
+                    ],
+                    [
+                      170.98,
+                      80.6864
+                    ]
+                  ]
+                }
+              }
+            },
+            {
+              "ty": "sh",
+              "nm": "U star path",
+              "ks": {
+                "a": 0,
+                "k": {
+                  "c": true,
+                  "i": [
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      -0.7195999999999998,
+                      0.787700000000001
+                    ],
+                    [
+                      -6.176299999999998,
+                      1.7717000000000027
+                    ],
+                    [
+                      -9.713000000000008,
+                      12.034299999999995
+                    ],
+                    [
+                      -3.655000000000001,
+                      4.031099999999999
+                    ],
+                    [
+                      -1.0060000000000002,
+                      -0.42239999999999966
+                    ],
+                    [
+                      0.6730000000000018,
+                      -1.031600000000001
+                    ],
+                    [
+                      -11.098000000000013,
+                      -10.346600000000002
+                    ],
+                    [
+                      -1.572999999999979,
+                      -1.9228999999999985
+                    ],
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      0.6779999999999973,
+                      0.1880999999999915
+                    ],
+                    [
+                      5.364999999999995,
+                      -0.04650000000000887
+                    ],
+                    [
+                      9.040099999999995,
+                      -12.60629999999999
+                    ],
+                    [
+                      2.3603999999999985,
+                      -2.222999999999999
+                    ],
+                    [
+                      0.904200000000003,
+                      0.7099999999999937
+                    ],
+                    [
+                      -1.9076000000000022,
+                      3.3290000000000077
+                    ],
+                    [
+                      9.190799999999996,
+                      6.216399999999993
+                    ],
+                    [
+                      0.5515999999999934,
+                      2.171299999999995
+                    ]
+                  ],
+                  "o": [
+                    [
+                      0.6860999999999962,
+                      -0.8301000000000016
+                    ],
+                    [
+                      2.2772999999999968,
+                      -1.071799999999996
+                    ],
+                    [
+                      10.078000000000003,
+                      -2.892800000000001
+                    ],
+                    [
+                      3.423000000000002,
+                      -4.2413000000000025
+                    ],
+                    [
+                      1.3329999999999984,
+                      -0.6827000000000005
+                    ],
+                    [
+                      0.12699999999998113,
+                      0.6457999999999977
+                    ],
+                    [
+                      -15.265999999999991,
+                      23.396599999999996
+                    ],
+                    [
+                      1.7009999999999934,
+                      1.5885999999999996
+                    ],
+                    [
+                      0,
+                      0
+                    ],
+                    [
+                      -0.7830000000000155,
+                      0.6692999999999927
+                    ],
+                    [
+                      -4.673000000000002,
+                      -1.2953000000000117
+                    ],
+                    [
+                      -10.253,
+                      0.08379999999999654
+                    ],
+                    [
+                      -2.0688999999999993,
+                      2.885000000000005
+                    ],
+                    [
+                      -1.6411000000000087,
+                      0.554000000000002
+                    ],
+                    [
+                      0.20889999999999986,
+                      -2.9980000000000047
+                    ],
+                    [
+                      11.135499999999993,
+                      -19.43419999999999
+                    ],
+                    [
+                      -1.5534000000000106,
+                      -1.0448000000000022
+                    ],
+                    [
+                      0,
+                      0
+                    ]
+                  ],
+                  "v": [
+                    [
+                      86.9111,
+                      55.8511
+                    ],
+                    [
+                      88.9727,
+                      53.5417
+                    ],
+                    [
+                      104.848,
+                      54.7181
+                    ],
+                    [
+                      133.929,
+                      32.5885
+                    ],
+                    [
+                      143.53,
+                      19.8896
+                    ],
+                    [
+                      145.281,
+                      19.7403
+                    ],
+                    [
+                      144.974,
+                      22.1183
+                    ],
+                    [
+                      135.86,
+                      73.3957
+                    ],
+                    [
+                      141.933,
+                      78.4606
+                    ],
+                    [
+                      140.234,
+                      80.9976
+                    ],
+                    [
+                      138.465,
+                      81.9081
+                    ],
+                    [
+                      124.485,
+                      79.4064
+                    ],
+                    [
+                      95.9169,
+                      103.826
+                    ],
+                    [
+                      87.8923,
+                      114.692
+                    ],
+                    [
+                      85.9333,
+                      114.646
+                    ],
+                    [
+                      92.5935,
+                      101.966
+                    ],
+                    [
+                      93.9942,
+                      61.1122
+                    ],
+                    [
+                      86.9111,
+                      55.8511
+                    ]
+                  ]
+                }
+              }
+            },
+            {
+              "ty": "fl",
+              "c": {
+                "a": 0,
+                "k": [
+                  1,
+                  1,
+                  1,
+                  1
+                ]
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "r": 1,
+              "nm": "Fill"
+            },
+            {
+              "ty": "tr",
+              "p": {
+                "a": 0,
+                "k": [
+                  1,
+                  3
+                ]
+              },
+              "a": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  16.40625,
+                  16.40625
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 0
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "sk": {
+                "a": 0,
+                "k": 0
+              },
+              "sa": {
+                "a": 0,
+                "k": 0
+              },
+              "nm": "Transform"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ddd": 0,
+      "ind": 1,
+      "ty": 4,
+      "nm": "Native platform black background",
+      "sr": 1,
+      "ks": {
+        "o": {
+          "a": 0,
+          "k": 100
+        },
+        "r": {
+          "a": 0,
+          "k": 0
+        },
+        "p": {
+          "a": 0,
+          "k": [
+            0,
+            0,
+            0
+          ]
+        },
+        "a": {
+          "a": 0,
+          "k": [
+            0,
+            0,
+            0
+          ]
+        },
+        "s": {
+          "a": 0,
+          "k": [
+            100,
+            100,
+            100
+          ]
+        }
+      },
+      "ao": 0,
+      "ip": 0,
+      "op": 420,
+      "st": 0,
+      "bm": 0,
+      "shapes": [
+        {
+          "ty": "gr",
+          "nm": "Background",
+          "it": [
+            {
+              "ty": "rc",
+              "p": {
+                "a": 0,
+                "k": [
+                  110,
+                  24
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  220,
+                  48
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 0
+              },
+              "d": 1,
+              "nm": "Background rectangle"
+            },
+            {
+              "ty": "fl",
+              "c": {
+                "a": 0,
+                "k": [
+                  0.027451,
+                  0.023529,
+                  0.027451,
+                  1
+                ]
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "r": 1,
+              "nm": "Fill"
+            },
+            {
+              "ty": "tr",
+              "p": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "a": {
+                "a": 0,
+                "k": [
+                  0,
+                  0
+                ]
+              },
+              "s": {
+                "a": 0,
+                "k": [
+                  100,
+                  100
+                ]
+              },
+              "r": {
+                "a": 0,
+                "k": 0
+              },
+              "o": {
+                "a": 0,
+                "k": 100
+              },
+              "sk": {
+                "a": 0,
+                "k": 0
+              },
+              "sa": {
+                "a": 0,
+                "k": 0
+              },
+              "nm": "Transform"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "markers": [
+    {
+      "tm": 72,
+      "cm": "thinking",
+      "dr": 54
+    },
+    {
+      "tm": 132,
+      "cm": "message",
+      "dr": 212
+    },
+    {
+      "tm": 402,
+      "cm": "pure-u",
+      "dr": 18
+    }
+  ],
+  "meta": {
+    "generator": "AlterU U Agent handoff generator",
+    "handoff_version": "1.0.7",
+    "state": "create-game",
+    "duration_ms": 7000,
+    "final_state": "pure-u",
+    "play_mode": "once",
+    "canvas": "220x48",
+    "hand_rule": "0-or-2"
+  }
+}
