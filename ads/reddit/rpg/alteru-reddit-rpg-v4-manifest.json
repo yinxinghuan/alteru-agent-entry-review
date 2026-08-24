@@ -1,0 +1,29 @@
+{
+  "id": "alteru-reddit-rpg-v4",
+  "title": "Make a world. Keep playing.",
+  "version": "v4",
+  "duration_seconds": 56,
+  "frame": "1080x1350",
+  "frame_rate": 24,
+  "audio": {
+    "sample_rate": 44100,
+    "channels": 2,
+    "integrated_loudness_target_lufs": -18,
+    "true_peak_target_dbtp": -1.5
+  },
+  "story": [
+    { "time": "00:00-00:24", "beat": "Four user requests build one continuous city, hero, relationship and conflict with stable holds and soft transitions." },
+    { "time": "00:24-00:26.5", "beat": "The created world hands off directly to play." },
+    { "time": "00:26.5-00:36.5", "beat": "Move, trigger dialogue, choose, see the consequence and continue." },
+    { "time": "00:36.5-00:48.6", "beat": "Three-scene gameplay montage: gate corridor, rooftop path and memory archive." },
+    { "time": "00:48.6-00:51", "beat": "Fast four-frame world recap." },
+    { "time": "00:51-00:56", "beat": "Brand and CTA." }
+  ],
+  "files": {
+    "video": "alteru-reddit-rpg-v4.mp4",
+    "poster_png": "alteru-reddit-rpg-v4-poster.png",
+    "poster_webp": "alteru-reddit-rpg-v4-poster.webp",
+    "captions_en": "alteru-reddit-rpg-v4.en.srt"
+  }
+}
+
