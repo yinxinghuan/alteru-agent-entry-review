@@ -1,0 +1,49 @@
+1
+00:00:00,000 --> 00:00:03,000
+YOU: Make me an RPG.
+
+2
+00:00:03,000 --> 00:00:06,000
+YOU: I'm a courier.
+The city forgot my name.
+
+3
+00:00:06,000 --> 00:00:09,000
+YOU: Give me one person
+who remembers me.
+
+4
+00:00:09,000 --> 00:00:12,000
+YOU: Put two guards at the gate.
+
+5
+00:00:12,000 --> 00:00:15,000
+YOU: Start with a sealed letter.
+
+6
+00:00:15,000 --> 00:00:18,000
+U AGENT: Your world is ready.
+Play.
+
+7
+00:00:18,000 --> 00:00:22,000
+Your companion remembers you.
+The guards don't.
+
+8
+00:00:22,000 --> 00:00:25,000
+WHAT DO YOU DO?
+Trust your companion.
+
+9
+00:00:25,000 --> 00:00:28,000
+She says your real name.
+
+10
+00:00:28,000 --> 00:00:31,000
+The gate opens. Go.
+
+11
+00:00:31,000 --> 00:00:34,000
+SAY IT. BUILD IT. PLAY IT.
+CREATE AND PLAY ON ALTERU.

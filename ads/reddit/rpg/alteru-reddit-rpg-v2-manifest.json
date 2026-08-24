@@ -1,0 +1,49 @@
+{
+  "id": "alteru-reddit-rpg-v2",
+  "title": "Say it. Build it. Play it.",
+  "version": "2.0",
+  "date": "2026-08-25",
+  "duration_seconds": 34,
+  "canvas": "1080x1350",
+  "aspect_ratio": "4:5",
+  "frame_rate": 24,
+  "video_codec": "H.264 High",
+  "audio_codec": "AAC stereo 44.1 kHz",
+  "creative_changes": [
+    "Five simulated user prompts build the RPG one sentence at a time",
+    "Each prompt uses a different camera framing and visible world state",
+    "Creation hands off explicitly into play mode",
+    "The player chooses an action and the world responds in a moving follow-camera shot"
+  ],
+  "audio_master": {
+    "integrated_loudness_lufs": -16.9,
+    "true_peak_dbfs": -1.4,
+    "loudness_range_lu": 3.6
+  },
+  "generated_playthrough": {
+    "service": "AlterU AI Service 2",
+    "task_id": "a8e1748457e04f2aa85222b860a188cd",
+    "source_url": "https://cdn.aiwaves.tech/prodsv/telegram/video/alteru-reddit-rpg-v2-playthrough/1787599664558467.mp4",
+    "embedded_audio_used": false
+  },
+  "audio_assets": [
+    {
+      "role": "34-second create-to-play music bed",
+      "file": "v2/audio/rpg-create-play-bed.mp3",
+      "task_id": "mt_25f489dc091ebf2fc2bdaec92741965d",
+      "request_id": "a92b3a27-1b08-4ec4-afbb-eba0b66c946b"
+    },
+    {
+      "role": "user prompt send cue",
+      "file": "v2/audio/prompt-send.mp3",
+      "task_id": "mt_d697e6847887e019a2fe057376e483fb",
+      "request_id": "d04d7c3c-4595-4398-b082-b326560f340c"
+    },
+    {
+      "role": "choice confirmation cue",
+      "file": "v1/audio/choice-confirm.mp3",
+      "task_id": "mt_827c0390427ebceb31f1cccd0cfe2629"
+    }
+  ],
+  "sha256": "e03c6d8732010ea4a14f6989240b74afebe29a0224f68030d6c2bc3916bdf556"
+}
