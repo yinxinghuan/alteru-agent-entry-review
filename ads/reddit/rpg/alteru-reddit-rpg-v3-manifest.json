@@ -1,0 +1,29 @@
+{
+  "id": "alteru-reddit-rpg-v3",
+  "title": "Say the world. Then play it.",
+  "version": "v3",
+  "duration_seconds": 38,
+  "frame": "1080x1350",
+  "frame_rate": 24,
+  "audio": {
+    "sample_rate": 44100,
+    "channels": 2,
+    "integrated_loudness_target_lufs": -18,
+    "true_peak_target_dbtp": -1.5
+  },
+  "story": [
+    { "time": "00:00-00:05", "beat": "The user asks for a city; the camera advances as the city grows." },
+    { "time": "00:05-00:10", "beat": "The user defines the hero; the courier forms on the road." },
+    { "time": "00:10-00:15", "beat": "The user asks for a companion; Mara appears deeper in the world." },
+    { "time": "00:15-00:20", "beat": "The user adds conflict; guards and a sealed letter arrive at the gate." },
+    { "time": "00:20-00:22", "beat": "Creation hands off directly to play." },
+    { "time": "00:22-00:32", "beat": "Playable RPG simulation: move, trigger dialogue, choose, see the consequence, continue." },
+    { "time": "00:32-00:38", "beat": "Brand and CTA." }
+  ],
+  "files": {
+    "video": "alteru-reddit-rpg-v3.mp4",
+    "poster_png": "alteru-reddit-rpg-v3-poster.png",
+    "poster_webp": "alteru-reddit-rpg-v3-poster.webp",
+    "captions_en": "alteru-reddit-rpg-v3.en.srt"
+  }
+}
