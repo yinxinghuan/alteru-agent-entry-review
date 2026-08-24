@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#070607" />
-    <title>AlterU Reddit Video Ads · M1 V1 Review</title>
+    <title>AlterU Reddit Video Ads · Direction Review</title>
     <style>
       :root {
         color-scheme: light;
@@ -100,6 +100,34 @@
         gap: clamp(32px, 7vw, 84px);
         align-items: start;
         padding: clamp(42px, 7vw, 88px) 0;
+      }
+
+      .direction-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 0.72fr);
+        gap: 32px;
+        align-items: end;
+        padding-top: clamp(54px, 8vw, 100px);
+        border-top: 1px solid var(--line);
+      }
+
+      .direction-head:first-of-type { border-top: 0; }
+
+      .direction-head p {
+        margin: 0;
+        color: #665960;
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      .direction-index {
+        display: block;
+        margin-bottom: 12px;
+        color: var(--signal);
+        font-size: 12px;
+        font-weight: 750;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
       }
 
       .video-shell {
@@ -262,7 +290,7 @@
         .masthead img { width: 132px; }
         .masthead__meta { font-size: 10px; }
         main { padding-top: 38px; }
-        .intro, .review, .next { grid-template-columns: 1fr; }
+        .intro, .direction-head, .review, .next { grid-template-columns: 1fr; }
         .intro { gap: 22px; }
         .video-shell { position: static; }
         .review { gap: 42px; }
@@ -287,26 +315,102 @@
   <body>
     <header class="masthead">
       <img src="./brand/logo/alteru-logo-lockup-reversed.svg" alt="AlterU" />
-      <span class="masthead__meta">Reddit Video Ads / M1 V1 Review</span>
+      <span class="masthead__meta">Reddit Video Ads / Direction Review</span>
     </header>
 
     <main>
       <section class="intro" aria-labelledby="page-title">
         <div>
-          <p class="eyebrow">Campaign system · First vertical slice</p>
-          <h1 id="page-title">Make it.<br />Play it.</h1>
+          <p class="eyebrow">Campaign system · Two playable directions</p>
+          <h1 id="page-title">Make it.<br />Then play it.</h1>
         </div>
         <p class="intro__summary">
-          V1 主片延长到 20 秒，并把抽象的“想法变游戏”改成同一个 River Row 世界的具体搭建过程：先看见角色造出河道，再进入同一艘船、同一条河的真实玩法。
+          这次保留 River Row 动作游戏版，同时增加 RPG 创建版。两版都不再用抽象隐喻：前者展示“搭出玩法”，后者展示“设定角色、规则与冲突，并亲自作出选择”。
         </p>
       </section>
 
-      <section class="review" aria-labelledby="review-title">
+      <header class="direction-head">
+        <div>
+          <span class="direction-index">Direction 01 · RPG creation</span>
+          <h2>Make a world. Step inside.</h2>
+        </div>
+        <p>推荐新方向。不是把完整游戏界面硬塞进广告，而是把 RPG 最有吸引力的内容——角色、规则、冲突和选择后果——压缩成一个能被立即看懂的 26 秒体验。</p>
+      </header>
+
+      <section class="review" aria-labelledby="rpg-review-title">
+        <div class="video-shell">
+          <video
+            poster="./ads/reddit/rpg/alteru-reddit-rpg-v1-poster.webp"
+            controls
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          >
+            <source src="./ads/reddit/rpg/alteru-reddit-rpg-v1.mp4" type="video/mp4" />
+          </video>
+          <div class="video-caption">
+            <span>RPG V1 · English · Original sound</span>
+            <span>26.00s</span>
+          </div>
+          <a class="download" href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-rpg-v1/alteru-reddit-rpg-v1.mp4">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14" /></svg>
+            下载 RPG 4:5 MP4
+          </a>
+          <a class="archive-link" href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-rpg-v1/alteru-reddit-rpg-v1.srt">下载独立字幕 SRT</a>
+        </div>
+
+        <div>
+          <span class="status">New · recommended for review</span>
+          <h2 id="rpg-review-title">The city forgets your name.</h2>
+          <p class="message">Build the hero, set the rule, create the conflict — then choose what happens.</p>
+
+          <ol class="timeline">
+            <li>
+              <time>0.0–4.0s</time>
+              <div><strong>PREMISE</strong><p>用一句真正像 RPG 的设定开场：“做一个城市忘记我名字的 RPG。”观众先被故事问题吸引。</p></div>
+            </li>
+            <li>
+              <time>4.0–12.0s</time>
+              <div><strong>CREATE</strong><p>主角、同伴、守卫、信件与城市逐步归位，让“制作 RPG”变成可见的角色、规则和冲突搭建。</p></div>
+            </li>
+            <li>
+              <time>12.0–16.0s</time>
+              <div><strong>CONFLICT</strong><p>同伴记得你，但守卫不记得。广告不需要复刻完整 UI，也能准确表达这个游戏的核心张力。</p></div>
+            </li>
+            <li>
+              <time>16.0–20.0s</time>
+              <div><strong>CHOOSE</strong><p>三个明确选项进入画面，玩家选择相信同伴；这一步证明它不是故事预告，而是可以玩的角色扮演体验。</p></div>
+            </li>
+            <li>
+              <time>20.0–26.0s</time>
+              <div><strong>CONSEQUENCE</strong><p>同伴说出真名、信件开启、城市入口改变颜色。选择真正改变了世界，再以 Create + Play 收束。</p></div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="specs" aria-label="RPG 样片规格">
+        <div class="spec"><span>Canvas</span><strong>1080 × 1350</strong></div>
+        <div class="spec"><span>Format</span><strong>4:5 MP4</strong></div>
+        <div class="spec"><span>Frame rate</span><strong>24 FPS</strong></div>
+        <div class="spec"><span>Audio</span><strong>Original mix + SRT</strong></div>
+      </section>
+
+      <header class="direction-head">
+        <div>
+          <span class="direction-index">Direction 02 · Action game</span>
+          <h2>A river. A boat. Make it fast.</h2>
+        </div>
+        <p>保留方向。用同一条河、同一艘船连接“制作”和“游玩”，优势是动作反馈直观；适合作为节奏更快、偏 Player-first 的横向版本。</p>
+      </header>
+
+      <section class="review" aria-labelledby="river-review-title">
         <div class="video-shell">
           <video
             poster="./ads/reddit/m1/alteru-reddit-m1-v1-poster.webp"
             controls
-            autoplay
             muted
             loop
             playsinline
@@ -315,58 +419,41 @@
             <source src="./ads/reddit/m1/alteru-reddit-m1-v1.mp4" type="video/mp4" />
           </video>
           <div class="video-caption">
-            <span>V1 · English · Sound-off safe</span>
+            <span>River Row V1 · English · Sound-off safe</span>
             <span>20.00s</span>
           </div>
           <a class="download" href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-m1-v1/alteru-reddit-m1-v1.mp4">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14" /></svg>
-            下载 4:5 MP4 主片
+            下载 River Row 4:5 MP4
           </a>
-          <a class="archive-link" href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-m1-v0/alteru-reddit-m1-v0.mp4">查看 10 秒 V0，对比本轮修改</a>
+          <a class="archive-link" href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-m1-v0/alteru-reddit-m1-v0.mp4">查看 10 秒 V0</a>
         </div>
 
         <div>
-          <span class="status">V1 ready for review</span>
-          <h2 id="review-title">A river. A boat. Make it fast.</h2>
-          <p class="message">Make the exact game you want to play — then play it.</p>
+          <span class="status">Retained comparison</span>
+          <h2 id="river-review-title">Make the exact game you want to play.</h2>
+          <p class="message">搭建和真实玩法使用同一套对象，避免“一个抽象动作突然生成游戏”的牵强感。</p>
 
           <ol class="timeline">
-            <li>
-              <time>0.0–2.0s</time>
-              <div><strong>WISH</strong><p>先用具体愿望定义成片目标：一条河、一艘船，而且要快。观众不需要猜“要做什么”。</p></div>
-            </li>
-            <li>
-              <time>2.0–8.0s</time>
-              <div><strong>MAKE</strong><p>小优摆放河岸、苹果、障碍和加速线，逐项搭出即将出现的同一个 River Row 世界。</p></div>
-            </li>
-            <li>
-              <time>8.0–10.0s</time>
-              <div><strong>MATCH</strong><p>搭建完成后沿同一条河向前推进，以船、河道和拱门作为匹配点切入真实录屏。</p></div>
-            </li>
-            <li>
-              <time>10.0–16.0s</time>
-              <div><strong>PLAY</strong><p>真实 River Row 操作完整停留 6 秒，让转向、加速、障碍和苹果都能被看懂，而不是一闪而过。</p></div>
-            </li>
-            <li>
-              <time>16.0–20.0s</time>
-              <div><strong>BRAND</strong><p>4 秒尾卡明确收束“做你想玩的游戏”，同时把 Create 与 Play 都归到 AlterU。</p></div>
-            </li>
+            <li><time>0.0–2.0s</time><div><strong>WISH</strong><p>一条河、一艘船，而且要快。</p></div></li>
+            <li><time>2.0–8.0s</time><div><strong>MAKE</strong><p>逐项摆放河岸、苹果、障碍与加速线。</p></div></li>
+            <li><time>8.0–10.0s</time><div><strong>MATCH</strong><p>用船、河道与拱门匹配切入真实玩法。</p></div></li>
+            <li><time>10.0–16.0s</time><div><strong>PLAY</strong><p>展示转向、加速、避障与收集，而不是只放一闪而过的游戏画面。</p></div></li>
+            <li><time>16.0–20.0s</time><div><strong>BRAND</strong><p>明确收束“做你想玩的游戏”。</p></div></li>
           </ol>
         </div>
       </section>
 
-      <section class="specs" aria-label="样片规格">
+      <section class="specs" aria-label="River Row 样片规格">
         <div class="spec"><span>Canvas</span><strong>1080 × 1350</strong></div>
         <div class="spec"><span>Format</span><strong>4:5 MP4</strong></div>
         <div class="spec"><span>Frame rate</span><strong>24 FPS</strong></div>
-        <div class="spec"><span>Audio</span><strong>AAC + captions</strong></div>
+        <div class="spec"><span>Duration</span><strong>20 seconds</strong></div>
       </section>
 
       <section class="next">
-        <h2>本轮修正：更具体、更可信，也给真实玩法足够时间。</h2>
-        <p>
-          V0 的“粉色弹珠进入入口”已经移除；V1 让每个搭建动作都对应 River Row 里的实际元素，并把主片从 10 秒延长到 20 秒。下一步再以此为母版，拆出 Creator-first 与 Player-first 的短版投放变体。
-        </p>
+        <h2>两版不是互相替代，而是回答不同的投放问题。</h2>
+        <p>RPG 版测试“一个具体世界与选择后果，能否同时带来创建欲和游玩欲”；River Row 版测试“直接、易懂的动作玩法，能否更快带来 Play 意图”。建议先以相近预算并行投放，再比较 3 秒观看、完整观看、Create start 与 Play start，而不是只看点击率。</p>
       </section>
     </main>
   </body>

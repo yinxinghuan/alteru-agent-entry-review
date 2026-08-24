@@ -1,0 +1,44 @@
+{
+  "id": "alteru-reddit-rpg-v1",
+  "title": "Make a world. Step inside.",
+  "version": "1.0",
+  "date": "2026-08-25",
+  "duration_seconds": 26,
+  "canvas": "1080x1350",
+  "aspect_ratio": "4:5",
+  "frame_rate": 24,
+  "video_codec": "H.264 High",
+  "audio_codec": "AAC stereo 44.1 kHz",
+  "audio_master": {
+    "integrated_loudness_lufs": -17.9,
+    "true_peak_dbfs": -1.5,
+    "loudness_range_lu": 4.4
+  },
+  "generated_motion": {
+    "service": "AlterU AI Service 2",
+    "task_id": "d8cd6af18962418ca1f401a1fa6413e3",
+    "source_url": "https://cdn.aiwaves.tech/prodsv/telegram/video/alteru-reddit-rpg-world-build-v1/1787598273820447.mp4",
+    "embedded_audio_used": false
+  },
+  "audio_assets": [
+    {
+      "role": "music",
+      "file": "v1/audio/story-build-bed.mp3",
+      "task_id": "mt_de79a947d4278c86f4bdfe13fea21d4f",
+      "request_id": "b919d81c-d613-49d7-afb1-e480768fd605"
+    },
+    {
+      "role": "world assembly sfx",
+      "file": "v1/audio/story-pieces.mp3",
+      "task_id": "mt_abfe02056d6033e0ce0dce76da740ecb",
+      "request_id": "36ef1f46-3d4f-4f11-9735-cec5fe5bcf79"
+    },
+    {
+      "role": "choice confirmation sfx",
+      "file": "v1/audio/choice-confirm.mp3",
+      "task_id": "mt_827c0390427ebceb31f1cccd0cfe2629",
+      "request_id": "3e15315e-2862-4809-be68-bd6bbd35a903"
+    }
+  ],
+  "sha256": "14f7e6c61f8ba67ec0079035af2cd7d3cba69a853829ac263893c3f1b9c5de5c"
+}
