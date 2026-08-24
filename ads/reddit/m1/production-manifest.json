@@ -1,0 +1,29 @@
+{
+  "campaign": "AlterU Reddit Video Ads",
+  "creative_id": "M1",
+  "version": "v0",
+  "generated_at": "2026-08-24",
+  "ai_shot": {
+    "request_file": "scripts/ads/reddit-m1-video-request.json",
+    "task_id": "50ca49f38faa42a49df2f4a55678fd6a",
+    "result_url": "https://cdn.aiwaves.tech/prodsv/telegram/video/alteru-reddit-m1-make-world-v1/1787567943757904.mp4",
+    "cost": 11.008228302001953,
+    "width": 576,
+    "height": 1024,
+    "fps": 24,
+    "duration_seconds": 5.041667,
+    "sha256": "abcd9757e3bb582ac3c5ba0b1226f56dad8ee7e2523d5196a168921df236411f"
+  },
+  "final_master": {
+    "file": "alteru-reddit-m1-v0.mp4",
+    "width": 1080,
+    "height": 1350,
+    "aspect_ratio": "4:5",
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "fps": 24,
+    "duration_seconds": 10.0,
+    "size_bytes": 2691795,
+    "sha256": "2244ff8d8572a0c93c323e06b31404783a90d4fba96c006e48e8f5be3221afd4"
+  }
+}

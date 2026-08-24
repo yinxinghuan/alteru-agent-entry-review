@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#070607" />
+    <title>AlterU Reddit Video Ads · M1 Review</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --black: #070607;
+        --ink: #171014;
+        --paper: #f6f2f5;
+        --white: #ffffff;
+        --pink: #f5b1c7;
+        --signal: #ff4b8a;
+        --lavender: #918de4;
+        --line: rgba(23, 16, 20, 0.18);
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+
+      html { background: var(--black); }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        background: var(--paper);
+        color: var(--ink);
+      }
+
+      a { color: inherit; }
+
+      .masthead {
+        min-height: 72px;
+        padding: max(18px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) 18px max(24px, env(safe-area-inset-left));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        color: var(--white);
+        background: var(--black);
+      }
+
+      .masthead img { width: 154px; height: auto; display: block; }
+
+      .masthead__meta {
+        font-size: 12px;
+        font-weight: 650;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+        color: var(--pink);
+      }
+
+      main {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        padding: clamp(36px, 6vw, 84px) clamp(20px, 5vw, 64px) 96px;
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(240px, 0.75fr);
+        align-items: end;
+        gap: 40px;
+        padding-bottom: 34px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        color: #6c5d65;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin: 0;
+        font-size: clamp(42px, 7vw, 82px);
+        line-height: 0.96;
+        letter-spacing: -0.045em;
+        font-weight: 650;
+      }
+
+      .intro__summary {
+        margin: 0;
+        max-width: 34rem;
+        font-size: 17px;
+        line-height: 1.6;
+        color: #5d5158;
+      }
+
+      .review {
+        display: grid;
+        grid-template-columns: minmax(320px, 0.9fr) minmax(300px, 1.1fr);
+        gap: clamp(32px, 7vw, 84px);
+        align-items: start;
+        padding: clamp(42px, 7vw, 88px) 0;
+      }
+
+      .video-shell {
+        position: sticky;
+        top: 24px;
+      }
+
+      video {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 5;
+        background: var(--black);
+        border: 1px solid var(--black);
+        border-radius: 18px;
+        object-fit: cover;
+      }
+
+      .video-caption {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 12px;
+        color: #70636a;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .download {
+        min-height: 52px;
+        margin-top: 22px;
+        padding: 0 22px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 2px solid var(--black);
+        border-radius: 999px;
+        color: var(--white);
+        background: var(--black);
+        font-size: 15px;
+        font-weight: 700;
+        text-decoration: none;
+        touch-action: manipulation;
+        transition: transform 180ms ease, color 180ms ease, background 180ms ease;
+      }
+
+      .download:hover { color: var(--black); background: var(--pink); }
+      .download:active { transform: translateY(1px); }
+      .download:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
+      .download svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin-bottom: 28px;
+        padding: 8px 13px;
+        border: 1px solid var(--ink);
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 750;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .status::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--signal);
+      }
+
+      h2 {
+        margin: 0 0 18px;
+        font-size: clamp(28px, 4vw, 45px);
+        line-height: 1.04;
+        letter-spacing: -0.035em;
+        font-weight: 650;
+      }
+
+      .message {
+        margin: 0 0 38px;
+        font-size: 21px;
+        line-height: 1.45;
+      }
+
+      .timeline {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid var(--line);
+      }
+
+      .timeline li {
+        display: grid;
+        grid-template-columns: 92px 1fr;
+        gap: 22px;
+        padding: 22px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .timeline time {
+        font-size: 13px;
+        font-weight: 750;
+        letter-spacing: 0.06em;
+        color: var(--signal);
+      }
+
+      .timeline strong { display: block; margin-bottom: 6px; font-size: 17px; }
+      .timeline p { margin: 0; color: #665960; font-size: 15px; line-height: 1.55; }
+
+      .specs {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .spec {
+        min-height: 138px;
+        padding: 22px;
+        border-right: 1px solid var(--line);
+      }
+
+      .spec:last-child { border-right: 0; }
+      .spec span { display: block; margin-bottom: 18px; color: #7b6e75; font-size: 12px; text-transform: uppercase; letter-spacing: 0.09em; }
+      .spec strong { font-size: 21px; line-height: 1.15; }
+
+      .next {
+        margin-top: 62px;
+        padding: clamp(28px, 5vw, 52px);
+        color: var(--white);
+        background: var(--black);
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.75fr);
+        gap: 34px;
+      }
+
+      .next h2 { max-width: 620px; }
+      .next p { margin: 0; color: #d5cbd0; font-size: 16px; line-height: 1.65; }
+
+      @media (max-width: 760px) {
+        .masthead { min-height: 64px; }
+        .masthead img { width: 132px; }
+        .masthead__meta { font-size: 10px; }
+        main { padding-top: 38px; }
+        .intro, .review, .next { grid-template-columns: 1fr; }
+        .intro { gap: 22px; }
+        .video-shell { position: static; }
+        .review { gap: 42px; }
+        .specs { grid-template-columns: 1fr 1fr; }
+        .spec:nth-child(2) { border-right: 0; }
+        .spec:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
+      }
+
+      @media (max-width: 420px) {
+        .masthead__meta { display: none; }
+        h1 { font-size: 46px; }
+        .timeline li { grid-template-columns: 72px 1fr; gap: 14px; }
+        .spec { min-height: 120px; padding: 18px 14px; }
+        .spec strong { font-size: 17px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="masthead">
+      <img src="./brand/logo/alteru-logo-lockup-reversed.svg" alt="AlterU" />
+      <span class="masthead__meta">Reddit Video Ads / M1 Review</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Campaign system · First vertical slice</p>
+          <h1 id="page-title">Make it.<br />Play it.</h1>
+        </div>
+        <p class="intro__summary">
+          第一支 10 秒样片把“小优创造世界”与真实游戏画面连接起来，用一句话同时建立 AlterU 的两个核心认知：这里可以做游戏，也可以马上玩游戏。
+        </p>
+      </section>
+
+      <section class="review" aria-labelledby="review-title">
+        <div class="video-shell">
+          <video
+            src="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-m1-v0/alteru-reddit-m1-v0.mp4"
+            poster="./ads/reddit/m1/alteru-reddit-m1-v0-poster.png"
+            controls
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          ></video>
+          <div class="video-caption">
+            <span>V0 · English · Sound-off safe</span>
+            <span>10.00s</span>
+          </div>
+          <a class="download" href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-m1-v0/alteru-reddit-m1-v0.mp4">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 20h14" /></svg>
+            下载 4:5 MP4 样片
+          </a>
+        </div>
+
+        <div>
+          <span class="status">Internal review</span>
+          <h2 id="review-title">What if the game you want to play doesn’t exist yet?</h2>
+          <p class="message">Make it. Play it. AlterU.</p>
+
+          <ol class="timeline">
+            <li>
+              <time>0.0–3.6s</time>
+              <div><strong>MAKE</strong><p>小优把粉色想法推入入口，世界被点亮；VI 负责停住滚动并建立识别。</p></div>
+            </li>
+            <li>
+              <time>3.6–7.2s</time>
+              <div><strong>PLAY</strong><p>硬切进入真实 River Row 操作，明确证明 AlterU 里存在能立即游玩的完整游戏。</p></div>
+            </li>
+            <li>
+              <time>7.2–10.0s</time>
+              <div><strong>BRAND</strong><p>回到 U + ALTERU 与母题，形成可以继续扩展到整批广告的统一尾卡。</p></div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="specs" aria-label="样片规格">
+        <div class="spec"><span>Canvas</span><strong>1080 × 1350</strong></div>
+        <div class="spec"><span>Format</span><strong>4:5 MP4</strong></div>
+        <div class="spec"><span>Frame rate</span><strong>24 FPS</strong></div>
+        <div class="spec"><span>Audio</span><strong>AAC + captions</strong></div>
+      </section>
+
+      <section class="next">
+        <h2>下一轮：把“做游戏”和“玩游戏”各自做成更锋利的 6 秒版本。</h2>
+        <p>
+          M2 将增加真实创建界面，P1 将用三款不同游戏建立内容丰富度。主片则根据这一版的角色动作、文案密度和真实游戏衔接反馈继续精修。
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
