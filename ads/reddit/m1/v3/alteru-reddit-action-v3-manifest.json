@@ -1,0 +1,32 @@
+{
+  "version": "action-v3",
+  "duration_seconds": 38,
+  "aspect_ratio": "4:5",
+  "resolution": "1080x1350",
+  "frame_rate": 24,
+  "language": "en",
+  "sound_off_safe": true,
+  "structure": "four alternating make-to-play cycles",
+  "audio": {
+    "music": "Original 38-second kinetic electro-pop bed generated through the AlterU media service",
+    "music_task_id": "mt_a96cda8b91f2c5c89c4ca2d01d51dc66",
+    "music_request_id": "f43baf28-4863-49eb-9b64-7acdf7a84b45",
+    "sfx": [
+      "four UI send and playable reveal cues",
+      "river rush and boat boost",
+      "pinball flipper and bumper impacts",
+      "arcade blaster and pickup pulse",
+      "swipe, chop and combo sparkle"
+    ],
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "target_loudness_lufs": -14
+  },
+  "games": [
+    { "title": "River Row", "make_prompt": "Make me a fast river racing game.", "source": "recorded real gameplay" },
+    { "title": "Monster Bash", "make_prompt": "Make me a monster pinball game.", "source": "recorded real gameplay" },
+    { "title": "Block Party", "make_prompt": "Make me a night survival game.", "source": "recorded real gameplay" },
+    { "title": "Farm to Table", "make_prompt": "Make me a fast swipe challenge.", "source": "recorded real gameplay" }
+  ],
+  "brand_lockup": "public/brand/logo/alteru-logo-lockup-reversed.svg"
+}

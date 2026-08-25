@@ -1,0 +1,43 @@
+1
+00:00:00,000 --> 00:00:03,000
+What will you make?
+
+2
+00:00:03,000 --> 00:00:05,500
+Make me a fast river racing game.
+
+3
+00:00:05,500 --> 00:00:09,500
+Race the river in River Row.
+
+4
+00:00:09,500 --> 00:00:12,000
+Make me a monster pinball game.
+
+5
+00:00:12,000 --> 00:00:16,000
+Smash monsters in Monster Bash.
+
+6
+00:00:16,000 --> 00:00:18,500
+Make me a night survival game.
+
+7
+00:00:18,500 --> 00:00:22,500
+Survive the night in Block Party.
+
+8
+00:00:22,500 --> 00:00:25,000
+Make me a fast swipe challenge.
+
+9
+00:00:25,000 --> 00:00:29,000
+Swipe fast in Farm to Table.
+
+10
+00:00:29,000 --> 00:00:32,000
+Four ideas. Four real games.
+
+11
+00:00:32,000 --> 00:00:38,000
+Make the game you want to play. Create on AlterU.
