@@ -12,10 +12,10 @@
     "true_peak_target_dbtp": -1.5
   },
   "story": [
-    { "time": "00:00-00:24", "beat": "Four user requests build one continuous city, hero, relationship and conflict with stable holds and soft transitions." },
-    { "time": "00:24-00:26.5", "beat": "The created world hands off directly to play." },
-    { "time": "00:26.5-00:36.5", "beat": "Move, trigger dialogue, choose, see the consequence and continue." },
-    { "time": "00:36.5-00:48.6", "beat": "Three-scene gameplay montage: gate corridor, rooftop path and memory archive." },
+    { "time": "00:00-00:21.55", "beat": "Four user requests build one continuous city, hero, relationship and conflict with concise holds and soft transitions." },
+    { "time": "00:21.55-00:24.1", "beat": "The created world hands off directly to play." },
+    { "time": "00:24.1-00:34.1", "beat": "Move, trigger dialogue, choose, see the consequence and continue." },
+    { "time": "00:34.1-00:48.6", "beat": "Expanded three-scene gameplay montage: gate corridor, rooftop path and memory archive." },
     { "time": "00:48.6-00:51", "beat": "Fast four-frame world recap." },
     { "time": "00:51-00:56", "beat": "Brand and CTA." }
   ],
@@ -26,4 +26,3 @@
     "captions_en": "alteru-reddit-rpg-v4.en.srt"
   }
 }
-

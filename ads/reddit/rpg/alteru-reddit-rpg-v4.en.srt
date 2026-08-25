@@ -1,49 +1,49 @@
 1
-00:00:00,000 --> 00:00:05,900
+00:00:00,000 --> 00:00:05,300
 Make me an RPG in a city.
 
 2
-00:00:05,900 --> 00:00:11,800
+00:00:05,300 --> 00:00:10,600
 I'm a courier nobody remembers.
 
 3
-00:00:11,800 --> 00:00:17,700
+00:00:10,600 --> 00:00:15,900
 Give me one person who does.
 
 4
-00:00:17,700 --> 00:00:23,950
+00:00:15,900 --> 00:00:21,550
 Two guards. A sealed letter. At the gate.
 
 5
-00:00:23,950 --> 00:00:26,500
+00:00:21,550 --> 00:00:24,100
 Your world is ready. Play.
 
 6
-00:00:26,500 --> 00:00:28,700
+00:00:24,100 --> 00:00:26,300
 Objective: Reach the sealed letter.
 
 7
-00:00:28,700 --> 00:00:31,300
+00:00:26,300 --> 00:00:28,900
 Mara: I remember your name. Those guards don't.
 
 8
-00:00:31,300 --> 00:00:33,300
+00:00:28,900 --> 00:00:30,900
 Your turn: Trust Mara.
 
 9
-00:00:33,300 --> 00:00:36,500
+00:00:30,900 --> 00:00:34,100
 New path: Enter the open gate.
 
 10
-00:00:36,500 --> 00:00:40,450
+00:00:34,100 --> 00:00:38,850
 Beyond the gate: Follow the living path.
 
 11
-00:00:40,450 --> 00:00:44,400
+00:00:38,850 --> 00:00:43,600
 Quest updated: Reach the archive tower.
 
 12
-00:00:44,400 --> 00:00:48,600
+00:00:43,600 --> 00:00:48,600
 Discovery: The archive remembers.
 
 13
@@ -53,4 +53,3 @@ One choice becomes a world. Keep discovering.
 14
 00:00:51,000 --> 00:00:56,000
 Make a world. Keep playing. Create and play games with U Agent.
-
