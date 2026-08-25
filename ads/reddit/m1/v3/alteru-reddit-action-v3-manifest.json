@@ -1,5 +1,5 @@
 {
-  "version": "action-v3",
+  "version": "action-v3.1",
   "duration_seconds": 38,
   "aspect_ratio": "4:5",
   "resolution": "1080x1350",
@@ -11,8 +11,8 @@
     "music": "Original 38-second kinetic electro-pop bed generated through the AlterU media service",
     "music_task_id": "mt_a96cda8b91f2c5c89c4ca2d01d51dc66",
     "music_request_id": "f43baf28-4863-49eb-9b64-7acdf7a84b45",
+    "mix_revision": "Removed repeated 660 Hz / 880 Hz UI tones; reduced gameplay SFX gain and added short fades",
     "sfx": [
-      "four UI send and playable reveal cues",
       "river rush and boat boost",
       "pinball flipper and bumper impacts",
       "arcade blaster and pickup pulse",
