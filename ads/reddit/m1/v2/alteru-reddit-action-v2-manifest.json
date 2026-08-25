@@ -1,0 +1,28 @@
+{
+  "version": "action-v2",
+  "duration_seconds": 32,
+  "aspect_ratio": "4:5",
+  "resolution": "1080x1350",
+  "frame_rate": 24,
+  "language": "en",
+  "sound_off_safe": true,
+  "audio": {
+    "music": "Original 32-second kinetic electro-pop bed generated through the AlterU media service",
+    "sfx": [
+      "river rush and boat boost",
+      "pinball flipper and bumper impacts",
+      "arcade blaster and pickup pulse",
+      "swipe, chop and combo sparkle"
+    ],
+    "sample_rate_hz": 44100,
+    "channels": 2,
+    "target_loudness_lufs": -14
+  },
+  "games": [
+    { "title": "River Row", "genre": "river race", "source": "recorded real gameplay" },
+    { "title": "Monster Bash", "genre": "monster pinball", "source": "recorded real gameplay" },
+    { "title": "Block Party", "genre": "zombie survival", "source": "recorded real gameplay" },
+    { "title": "Farm to Table", "genre": "swipe action", "source": "recorded real gameplay" }
+  ],
+  "brand_lockup": "public/brand/logo/alteru-logo-lockup-reversed.svg"
+}
