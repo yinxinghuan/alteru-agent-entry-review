@@ -32,6 +32,7 @@
   previous.addEventListener('click', () => go(active - 1));
   next.addEventListener('click', () => go(active + 1));
   window.addEventListener('keydown', (event) => {
+    if (event.defaultPrevented || ['A', 'BUTTON'].includes(document.activeElement?.tagName)) return;
     if (['ArrowDown', 'ArrowRight', 'PageDown', ' '].includes(event.key)) { event.preventDefault(); go(active + 1); }
     if (['ArrowUp', 'ArrowLeft', 'PageUp'].includes(event.key)) { event.preventDefault(); go(active - 1); }
     if (event.key === 'Home') { event.preventDefault(); go(0); }
