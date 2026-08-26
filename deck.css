@@ -264,8 +264,8 @@ button { font: inherit; }
   .slide--proof { display: block; }
   .proof-grid { margin-top: 36px; grid-template-columns: 1fr; }
   .proof-grid article { min-height: 0; }
-  .business-stack article, .business-stack__primary { grid-template-columns: 1fr; gap: 8px; padding: 18px 0 !important; }
-  .business-stack__primary { padding: 22px !important; }
+  .business-stack article { grid-template-columns: 1fr; gap: 8px; padding: 18px 0 !important; }
+  .business-stack article.business-stack__primary { padding: 22px !important; }
   .moat-layout { grid-template-columns: 1fr; }
   .moat-loop article { grid-template-columns: 100px 38px 1fr; gap: 10px; }
   .moat-loop article::after { left: 118px; }
