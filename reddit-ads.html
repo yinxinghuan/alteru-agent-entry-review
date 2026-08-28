@@ -272,6 +272,89 @@
       .spec span { display: block; margin-bottom: 18px; color: #7b6e75; font-size: 12px; text-transform: uppercase; letter-spacing: 0.09em; }
       .spec strong { font-size: 21px; line-height: 1.15; }
 
+      .short-system {
+        margin-top: clamp(86px, 10vw, 142px);
+        padding-top: 26px;
+        border-top: 1px solid var(--line);
+      }
+
+      .short-system__head {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+        gap: clamp(28px, 6vw, 80px);
+        align-items: end;
+      }
+
+      .short-system__head h2 { max-width: 780px; }
+      .short-system__head > p { margin: 0; color: #70646a; font-size: 17px; line-height: 1.7; }
+
+      .series-grid {
+        margin-top: 52px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .series-card {
+        --series-accent: var(--pink);
+        min-height: 560px;
+        padding: clamp(26px, 4vw, 42px);
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 28px;
+      }
+
+      .series-card--play { --series-accent: #a9a4ec; }
+      .series-card--weird { --series-accent: #d89d22; }
+      .series-card--pass { --series-accent: #ff6c57; }
+
+      .series-card__meta { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+      .series-card__meta strong {
+        width: 42px; height: 42px; display: grid; place-items: center;
+        color: var(--black); background: var(--series-accent); border-radius: 50%;
+        font-size: 12px; letter-spacing: .08em;
+      }
+      .series-card__meta span { color: #7a6c73; font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+      .series-card h3 { margin: 34px 0 0; font-size: clamp(32px, 4vw, 54px); line-height: .94; letter-spacing: -.05em; }
+      .series-card > p { margin: 18px 0 0; color: #776a71; line-height: 1.65; }
+
+      .series-card__rhythm {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 4px;
+      }
+      .series-card__rhythm span { height: 6px; background: var(--series-accent); border-radius: 99px; opacity: .35; }
+      .series-card__rhythm span:nth-child(2) { opacity: .58; }
+      .series-card__rhythm span:nth-child(3) { opacity: 1; }
+      .series-card__rhythm span:nth-child(4) { opacity: .72; }
+
+      .variant-list { margin: 34px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+      .variant-list li { padding: 18px 0; display: grid; grid-template-columns: 1fr auto; gap: 20px; border-bottom: 1px solid var(--line); }
+      .variant-list strong { font-size: 15px; }
+      .variant-list span { max-width: 260px; color: #786c72; font-size: 13px; line-height: 1.45; text-align: right; }
+      .series-card__line { margin-top: auto; padding-top: 28px; color: #756970; font-size: 12px; line-height: 1.6; }
+
+      .wave-one {
+        margin-top: 18px;
+        padding: clamp(30px, 5vw, 52px);
+        color: var(--white);
+        background: var(--black);
+        border-radius: 28px;
+      }
+      .wave-one__head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, .75fr); gap: 40px; }
+      .wave-one h3 { margin: 0; max-width: 760px; font-size: clamp(34px, 5vw, 64px); line-height: .98; letter-spacing: -.055em; }
+      .wave-one__head p { margin: 0; color: #bdb2b8; line-height: 1.7; }
+      .wave-one__list { margin-top: 38px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.18); }
+      .wave-one__list div { min-height: 130px; padding: 20px 18px 0 0; border-right: 1px solid rgba(255,255,255,.18); }
+      .wave-one__list div:nth-child(n + 4) { border-top: 1px solid rgba(255,255,255,.18); }
+      .wave-one__list div:nth-child(3n + 1):not(:first-child), .wave-one__list div:nth-child(3n + 2), .wave-one__list div:nth-child(3n) { padding-left: 18px; }
+      .wave-one__list div:nth-child(3n) { border-right: 0; }
+      .wave-one__list span { color: var(--pink); font-size: 10px; font-weight: 900; letter-spacing: .12em; }
+      .wave-one__list strong { margin-top: 18px; display: block; font-size: 16px; line-height: 1.35; }
+
       .next {
         margin-top: 62px;
         padding: clamp(28px, 5vw, 52px);
@@ -290,13 +373,19 @@
         .masthead img { width: 132px; }
         .masthead__meta { font-size: 10px; }
         main { padding-top: 38px; }
-        .intro, .direction-head, .review, .next { grid-template-columns: 1fr; }
+        .intro, .direction-head, .review, .next, .short-system__head, .wave-one__head { grid-template-columns: 1fr; }
         .intro { gap: 22px; }
         .video-shell { position: static; }
         .review { gap: 42px; }
         .specs { grid-template-columns: 1fr 1fr; }
         .spec:nth-child(2) { border-right: 0; }
         .spec:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
+        .series-grid { grid-template-columns: 1fr; }
+        .series-card { min-height: 0; }
+        .wave-one__list { grid-template-columns: repeat(2, 1fr); }
+        .wave-one__list div:nth-child(n) { padding-left: 14px; padding-right: 14px; border-right: 1px solid rgba(255,255,255,.18); }
+        .wave-one__list div:nth-child(2n) { border-right: 0; }
+        .wave-one__list div:nth-child(n + 3) { border-top: 1px solid rgba(255,255,255,.18); }
       }
 
       @media (max-width: 420px) {
@@ -305,6 +394,12 @@
         .timeline li { grid-template-columns: 72px 1fr; gap: 14px; }
         .spec { min-height: 120px; padding: 18px 14px; }
         .spec strong { font-size: 17px; }
+        .series-card { padding: 24px 20px; border-radius: 22px; }
+        .variant-list li { grid-template-columns: 1fr; gap: 8px; }
+        .variant-list span { max-width: none; text-align: left; }
+        .wave-one { padding: 28px 20px; border-radius: 22px; }
+        .wave-one__list { grid-template-columns: 1fr; }
+        .wave-one__list div:nth-child(n) { min-height: 104px; padding: 18px 0; border-right: 0; border-top: 1px solid rgba(255,255,255,.18); }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -457,6 +552,85 @@
         <div class="spec"><span>Format</span><strong>4:5 MP4</strong></div>
         <div class="spec"><span>Frame rate</span><strong>24 FPS</strong></div>
         <div class="spec"><span>Audio</span><strong>Original music + UI + 4 game SFX</strong></div>
+      </section>
+
+      <section class="short-system" aria-labelledby="short-system-title">
+        <header class="short-system__head">
+          <div>
+            <p class="eyebrow">Next campaign · 12 short ads</p>
+            <h2 id="short-system-title">Four repeatable series.<br />One clear idea per film.</h2>
+          </div>
+          <p>下一批不再把长片机械裁短，而是建立四个可持续更新的栏目。每个栏目固定一种叙事节奏，每条只替换一句输入、一个游戏和一个动作，时长控制在 6–10 秒。</p>
+        </header>
+
+        <div class="series-grid">
+          <article class="series-card">
+            <div class="series-card__meta"><strong>A</strong><span>8 sec · Make → Play</span></div>
+            <h3>Say it.<br />Play it.</h3>
+            <p>一句具体修改，游戏马上发生一个能被亲手使用的变化。它是长版创建流程的最短、最清楚版本。</p>
+            <div class="series-card__rhythm" aria-label="一句输入、变化发生、真实游玩、品牌收束"><span></span><span></span><span></span><span></span></div>
+            <ul class="variant-list">
+              <li><strong>A1 · RPG</strong><span>“Make the guard remember me.”</span></li>
+              <li><strong>A2 · River Row</strong><span>“Make the river fight back.”</span></li>
+              <li><strong>A3 · Monster Bash</strong><span>“Make every hit wake a monster.”</span></li>
+            </ul>
+            <p class="series-card__line">统一音序：发送 → 生成脉冲 → 游戏核心反馈 → U 双音尾声。</p>
+          </article>
+
+          <article class="series-card series-card--play">
+            <div class="series-card__meta"><strong>B</strong><span>6 sec · Player first</span></div>
+            <h3>One move.</h3>
+            <p>不解释平台，只展示一个完整的输入与连锁反馈。第一帧先给结果，最后一秒才出现游戏名和 Play CTA。</p>
+            <div class="series-card__rhythm" aria-label="结果先行、一次操作、连锁反馈、游戏入口"><span></span><span></span><span></span><span></span></div>
+            <ul class="variant-list">
+              <li><strong>B1 · River Row</strong><span>One turn. Three near misses.</span></li>
+              <li><strong>B2 · Monster Bash</strong><span>One hit. Keep it alive.</span></li>
+              <li><strong>B3 · Farm to Table</strong><span>One swipe. Don’t hit the cat.</span></li>
+            </ul>
+            <p class="series-card__line">每条保留游戏自己的音色，不再用统一电子提示音覆盖真实玩法反馈。</p>
+          </article>
+
+          <article class="series-card series-card--weird">
+            <div class="series-card__meta"><strong>C</strong><span>9 sec · Reddit native</span></div>
+            <h3>Who made<br />this?</h3>
+            <p>用一句具体、略奇怪、像 Reddit 帖子标题的问题停住用户，再用真实画面证明这条规则真的存在。</p>
+            <div class="series-card__rhythm" aria-label="问题钩子、规则出现、真实证明、作品署名"><span></span><span></span><span></span><span></span></div>
+            <ul class="variant-list">
+              <li><strong>C1 · Dungeon Shift</strong><span>A dungeon your friend rearranges?</span></li>
+              <li><strong>C2 · Trash or Treasure</strong><span>Your friend judges your worst purchase?</span></li>
+              <li><strong>C3 · Letters from Afar</strong><span>A world that remembers every traveller?</span></li>
+            </ul>
+            <p class="series-card__line">问题可直接复用为 Reddit post copy；视频内只保留最短核心句。</p>
+          </article>
+
+          <article class="series-card series-card--pass">
+            <div class="series-card__meta"><strong>D</strong><span>10 sec · Async loop</span></div>
+            <h3>Pass it on.</h3>
+            <p>一个人做出或留下东西，粉色信号穿过 U 形入口，另一个人在自己的时间完成下一步。</p>
+            <div class="series-card__rhythm" aria-label="一人留下、信号传递、另一人继续、共同结果"><span></span><span></span><span></span><span></span></div>
+            <ul class="variant-list">
+              <li><strong>D1 · Dungeon Shift</strong><span>Move the dungeon. Change their route.</span></li>
+              <li><strong>D2 · The Stand-In</strong><span>Leave a trace in someone else’s identity.</span></li>
+              <li><strong>D3 · Letters from Afar</strong><span>Write now. Someone answers later.</span></li>
+            </ul>
+            <p class="series-card__line">这一组承担 AlterU 的差异化：不是一次性生成，而是异步共同创造。</p>
+          </article>
+        </div>
+
+        <section class="wave-one" aria-labelledby="wave-one-title">
+          <div class="wave-one__head">
+            <h3 id="wave-one-title">First wave: make six, learn, then expand.</h3>
+            <p>首轮不一次做满 12 条。先选择六条覆盖创建、游玩、异步和 Reddit 原生问题钩子；每条只做两个文字 Hook，不同时改变画面、声音和 CTA。</p>
+          </div>
+          <div class="wave-one__list">
+            <div><span>01 · MAKE</span><strong>A1 · RPG guard remembers</strong></div>
+            <div><span>02 · MAKE → PLAY</span><strong>A2 · River fights back</strong></div>
+            <div><span>03 · PLAY</span><strong>B2 · Monster Bash combo</strong></div>
+            <div><span>04 · WEIRD RULE</span><strong>C1 · Dungeon Shift</strong></div>
+            <div><span>05 · ASYNC</span><strong>D3 · Letters from Afar</strong></div>
+            <div><span>06 · SCALE TEST</span><strong>A3 · Monster wakes up</strong></div>
+          </div>
+        </section>
       </section>
 
       <section class="next">
