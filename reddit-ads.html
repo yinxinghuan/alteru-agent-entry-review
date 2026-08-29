@@ -286,7 +286,44 @@
       }
 
       .short-system__head h2 { max-width: 780px; }
-      .short-system__head > p { margin: 0; color: #70646a; font-size: 17px; line-height: 1.7; }
+      .short-system__intro p { margin: 0; color: #70646a; font-size: 17px; line-height: 1.7; }
+      .short-system__intro .download { margin-top: 20px; }
+
+      .finished-shorts {
+        margin-top: 52px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .finished-short {
+        min-width: 0;
+        padding: 14px 14px 20px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+      }
+
+      .finished-short video {
+        border: 0;
+        border-radius: 14px;
+      }
+
+      .finished-short__body { padding: 18px 8px 0; }
+      .finished-short__meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        color: #776a71;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+      }
+      .finished-short h3 { margin: 12px 0 8px; font-size: 24px; line-height: 1.05; letter-spacing: -.035em; }
+      .finished-short p { margin: 0; min-height: 44px; color: #70646a; font-size: 14px; line-height: 1.55; }
+      .finished-short .download { width: 100%; margin-top: 18px; }
 
       .series-grid {
         margin-top: 52px;
@@ -381,6 +418,7 @@
         .spec:nth-child(2) { border-right: 0; }
         .spec:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
         .series-grid { grid-template-columns: 1fr; }
+        .finished-shorts { grid-template-columns: 1fr; }
         .series-card { min-height: 0; }
         .wave-one__list { grid-template-columns: repeat(2, 1fr); }
         .wave-one__list div:nth-child(n) { padding-left: 14px; padding-right: 14px; border-right: 1px solid rgba(255,255,255,.18); }
@@ -560,8 +598,52 @@
             <p class="eyebrow">Next campaign · 12 short ads</p>
             <h2 id="short-system-title">Four repeatable series.<br />One clear idea per film.</h2>
           </div>
-          <p>下一批不再把长片机械裁短，而是建立四个可持续更新的栏目。每个栏目固定一种叙事节奏，每条只替换一句输入、一个游戏和一个动作，时长控制在 6–10 秒。</p>
+          <div class="short-system__intro">
+            <p>下一批不再把长片机械裁短，而是建立四个可持续更新的栏目。每个栏目固定一种叙事节奏，每条只替换一句输入、一个游戏和一个动作，时长控制在 6–10 秒。</p>
+            <a class="download" href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-shorts-v1/alteru-reddit-short-ads-v1.zip">下载首批成片包 ZIP</a>
+          </div>
         </header>
+
+        <div class="finished-shorts" aria-label="首批完成的三条短视频广告">
+          <article class="finished-short">
+            <video controls playsinline preload="metadata" poster="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-shorts-v1/alteru-short-a1-rpg-poster.png">
+              <source src="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-shorts-v1/alteru-short-a1-rpg.mp4" type="video/mp4" />
+              <track kind="captions" srclang="en" label="English" src="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-shorts-v1/alteru-short-a1-rpg.en.vtt" />
+            </video>
+            <div class="finished-short__body">
+              <div class="finished-short__meta"><span>A1 · RPG</span><span>8 SEC</span></div>
+              <h3>Make trust open the gate.</h3>
+              <p>一句规则改变，紧接真实选择与开门结果。</p>
+              <a class="download" href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-shorts-v1/alteru-short-a1-rpg.mp4">下载 MP4</a>
+            </div>
+          </article>
+
+          <article class="finished-short">
+            <video controls playsinline preload="metadata" poster="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-shorts-v1/alteru-short-a2-river-row-poster.png">
+              <source src="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-shorts-v1/alteru-short-a2-river-row.mp4" type="video/mp4" />
+              <track kind="captions" srclang="en" label="English" src="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-shorts-v1/alteru-short-a2-river-row.en.vtt" />
+            </video>
+            <div class="finished-short__body">
+              <div class="finished-short__meta"><span>A2 · River Row</span><span>8 SEC</span></div>
+              <h3>Make the river fight back.</h3>
+              <p>由创作指令直接进入转向、避障与水流反馈。</p>
+              <a class="download" href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-shorts-v1/alteru-short-a2-river-row.mp4">下载 MP4</a>
+            </div>
+          </article>
+
+          <article class="finished-short">
+            <video controls playsinline preload="metadata" poster="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-shorts-v1/alteru-short-b2-monster-bash-poster.png">
+              <source src="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-shorts-v1/alteru-short-b2-monster-bash.mp4" type="video/mp4" />
+              <track kind="captions" srclang="en" label="English" src="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-shorts-v1/alteru-short-b2-monster-bash.en.vtt" />
+            </video>
+            <div class="finished-short__body">
+              <div class="finished-short__meta"><span>B2 · Monster Bash</span><span>6 SEC</span></div>
+              <h3>One hit. Keep it alive.</h3>
+              <p>第一帧即进入玩法，以一次击打和连续得分收住。</p>
+              <a class="download" href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-shorts-v1/alteru-short-b2-monster-bash.mp4">下载 MP4</a>
+            </div>
+          </article>
+        </div>
 
         <div class="series-grid">
           <article class="series-card">
@@ -570,7 +652,7 @@
             <p>一句具体修改，游戏马上发生一个能被亲手使用的变化。它是长版创建流程的最短、最清楚版本。</p>
             <div class="series-card__rhythm" aria-label="一句输入、变化发生、真实游玩、品牌收束"><span></span><span></span><span></span><span></span></div>
             <ul class="variant-list">
-              <li><strong>A1 · RPG</strong><span>“Make the guard remember me.”</span></li>
+              <li><strong>A1 · RPG</strong><span>“Make trust open the gate.”</span></li>
               <li><strong>A2 · River Row</strong><span>“Make the river fight back.”</span></li>
               <li><strong>A3 · Monster Bash</strong><span>“Make every hit wake a monster.”</span></li>
             </ul>
@@ -623,7 +705,7 @@
             <p>首轮不一次做满 12 条。先选择六条覆盖创建、游玩、异步和 Reddit 原生问题钩子；每条只做两个文字 Hook，不同时改变画面、声音和 CTA。</p>
           </div>
           <div class="wave-one__list">
-            <div><span>01 · MAKE</span><strong>A1 · RPG guard remembers</strong></div>
+            <div><span>01 · MAKE</span><strong>A1 · RPG trust opens gate</strong></div>
             <div><span>02 · MAKE → PLAY</span><strong>A2 · River fights back</strong></div>
             <div><span>03 · PLAY</span><strong>B2 · Monster Bash combo</strong></div>
             <div><span>04 · WEIRD RULE</span><strong>C1 · Dungeon Shift</strong></div>
