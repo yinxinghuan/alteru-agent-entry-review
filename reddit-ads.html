@@ -325,6 +325,62 @@
       .finished-short p { margin: 0; min-height: 44px; color: #70646a; font-size: 14px; line-height: 1.55; }
       .finished-short .download { width: 100%; margin-top: 18px; }
 
+      .format-kit {
+        margin-top: 72px;
+        padding-top: 28px;
+        border-top: 1px solid var(--line);
+      }
+
+      .format-kit__head {
+        display: grid;
+        grid-template-columns: minmax(0, 1.12fr) minmax(280px, .88fr);
+        gap: clamp(28px, 6vw, 80px);
+        align-items: end;
+      }
+
+      .format-kit__head p { margin: 0; color: #70646a; font-size: 16px; line-height: 1.7; }
+
+      .spec-note {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .spec-note div { min-height: 132px; padding: 22px; border-right: 1px solid var(--line); }
+      .spec-note div:last-child { border-right: 0; }
+      .spec-note span { display: block; color: #7a6c73; font-size: 11px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+      .spec-note strong { display: block; margin: 14px 0 8px; font-size: 24px; line-height: 1.05; }
+      .spec-note p { margin: 0; color: #70646a; font-size: 13px; line-height: 1.5; }
+
+      .asset-grid {
+        margin-top: 24px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .asset-card { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: #fff; }
+      .asset-card__hero { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--black); }
+      .asset-card__body { padding: 22px; }
+      .asset-card h3 { margin: 0 0 8px; font-size: 23px; letter-spacing: -.03em; }
+      .asset-card p { margin: 0; min-height: 44px; color: #70646a; font-size: 14px; line-height: 1.55; }
+      .asset-card__thumbs { margin-top: 18px; display: grid; grid-template-columns: 1.91fr 1fr; gap: 8px; }
+      .asset-card__thumbs img { display: block; width: 100%; height: 86px; object-fit: cover; border: 1px solid var(--line); border-radius: 10px; }
+      .asset-card__links { margin-top: 16px; display: grid; gap: 8px; }
+      .asset-link { min-height: 44px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid var(--ink); border-radius: 999px; text-decoration: none; font-size: 13px; font-weight: 750; }
+      .asset-link span { color: #74686e; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+
+      .landscape-films { margin-top: 42px; }
+      .landscape-films__head { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
+      .landscape-films__head h3 { margin: 0; font-size: clamp(28px, 4vw, 44px); letter-spacing: -.04em; }
+      .landscape-films__head p { max-width: 520px; margin: 0; color: #70646a; line-height: 1.6; }
+      .landscape-films .finished-shorts { margin-top: 24px; }
+      .landscape-film video { aspect-ratio: 16 / 9; object-fit: contain; }
+
       .series-grid {
         margin-top: 52px;
         display: grid;
@@ -417,8 +473,13 @@
         .specs { grid-template-columns: 1fr 1fr; }
         .spec:nth-child(2) { border-right: 0; }
         .spec:nth-child(-n + 2) { border-bottom: 1px solid var(--line); }
-        .series-grid { grid-template-columns: 1fr; }
+        .series-grid, .asset-grid { grid-template-columns: 1fr; }
         .finished-shorts { grid-template-columns: 1fr; }
+        .format-kit__head { grid-template-columns: 1fr; }
+        .spec-note { grid-template-columns: 1fr; }
+        .spec-note div { border-right: 0; border-bottom: 1px solid var(--line); }
+        .spec-note div:last-child { border-bottom: 0; }
+        .landscape-films__head { display: grid; }
         .series-card { min-height: 0; }
         .wave-one__list { grid-template-columns: repeat(2, 1fr); }
         .wave-one__list div:nth-child(n) { padding-left: 14px; padding-right: 14px; border-right: 1px solid rgba(255,255,255,.18); }
@@ -644,6 +705,90 @@
             </div>
           </article>
         </div>
+
+        <section class="format-kit" aria-labelledby="format-kit-title">
+          <header class="format-kit__head">
+            <div>
+              <p class="eyebrow">Reddit placement kit · verified 2026-09-02</p>
+              <h2 id="format-kit-title">同一个创意，按投放位置分别生产。</h2>
+            </div>
+            <div>
+              <p>同事给出的尺寸里，400×300 是现行评论区缩略图规格；1200×628 作为旧广告卡片兼容稿保留。当前横版主稿按 Reddit 最新推荐使用 1920×1080，并保留原有 1080×1350 移动 Feed 版本。</p>
+              <a class="download" href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-landscape-native-v1/alteru-reddit-format-kit-v1.zip">下载完整投放素材包 ZIP</a>
+            </div>
+          </header>
+
+          <div class="spec-note" aria-label="Reddit 素材规格说明">
+            <div><span>Current landscape master</span><strong>1920 × 1080</strong><p>16:9 · 当前官方推荐横版；图片与新视频都提供此尺寸。</p></div>
+            <div><span>Conversation thumbnail</span><strong>400 × 300</strong><p>4:3 · JPG / PNG · 每张均小于 500 KB。</p></div>
+            <div><span>Compatibility card</span><strong>1200 × 628</strong><p>1.91:1 · 仅在既有投放模板明确要求时使用，不再作为母版。</p></div>
+          </div>
+
+          <div class="asset-grid" aria-label="静态广告素材三套方案">
+            <article class="asset-card">
+              <img class="asset-card__hero" src="./ads/reddit/static-v1/reddit-landscape-1920x1080-family-gate.jpg" alt="Family Gate 16:9 横版广告" />
+              <div class="asset-card__body">
+                <h3>01 · Family Gate</h3>
+                <p>创建向：一句话搭出入口，小优家族进入同一个新世界。</p>
+                <div class="asset-card__thumbs"><img src="./ads/reddit/static-v1/reddit-main-1200x628-family-gate.jpg" alt="1200×628 兼容稿" /><img src="./ads/reddit/static-v1/reddit-thumb-400x300-family-gate.jpg" alt="400×300 缩略图" /></div>
+                <div class="asset-card__links">
+                  <a class="asset-link" download href="./ads/reddit/static-v1/reddit-landscape-1920x1080-family-gate.png">下载横版母稿 <span>PNG · 1920×1080</span></a>
+                  <a class="asset-link" download href="./ads/reddit/static-v1/reddit-main-1200x628-family-gate.png">下载兼容稿 <span>PNG · 1200×628</span></a>
+                  <a class="asset-link" download href="./ads/reddit/static-v1/reddit-thumb-400x300-family-gate.png">下载评论缩略图 <span>PNG · 400×300</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="asset-card">
+              <img class="asset-card__hero" src="./ads/reddit/static-v1/reddit-landscape-1920x1080-family-river.jpg" alt="Family River 16:9 横版广告" />
+              <div class="asset-card__body">
+                <h3>02 · Family River</h3>
+                <p>Make → Play：画出河道、折好纸船，然后全家一起开玩。</p>
+                <div class="asset-card__thumbs"><img src="./ads/reddit/static-v1/reddit-main-1200x628-family-river.jpg" alt="1200×628 兼容稿" /><img src="./ads/reddit/static-v1/reddit-thumb-400x300-family-river.jpg" alt="400×300 缩略图" /></div>
+                <div class="asset-card__links">
+                  <a class="asset-link" download href="./ads/reddit/static-v1/reddit-landscape-1920x1080-family-river.png">下载横版母稿 <span>PNG · 1920×1080</span></a>
+                  <a class="asset-link" download href="./ads/reddit/static-v1/reddit-main-1200x628-family-river.png">下载兼容稿 <span>PNG · 1200×628</span></a>
+                  <a class="asset-link" download href="./ads/reddit/static-v1/reddit-thumb-400x300-family-river.png">下载评论缩略图 <span>PNG · 400×300</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="asset-card">
+              <img class="asset-card__hero" src="./ads/reddit/static-v1/reddit-landscape-1920x1080-family-chain.jpg" alt="Family Chain 16:9 横版广告" />
+              <div class="asset-card__body">
+                <h3>03 · Family Chain</h3>
+                <p>游玩向：一次轻触唤醒整个家族，把动作和反馈留在第一眼。</p>
+                <div class="asset-card__thumbs"><img src="./ads/reddit/static-v1/reddit-main-1200x628-family-chain.jpg" alt="1200×628 兼容稿" /><img src="./ads/reddit/static-v1/reddit-thumb-400x300-family-chain.jpg" alt="400×300 缩略图" /></div>
+                <div class="asset-card__links">
+                  <a class="asset-link" download href="./ads/reddit/static-v1/reddit-landscape-1920x1080-family-chain.png">下载横版母稿 <span>PNG · 1920×1080</span></a>
+                  <a class="asset-link" download href="./ads/reddit/static-v1/reddit-main-1200x628-family-chain.png">下载兼容稿 <span>PNG · 1200×628</span></a>
+                  <a class="asset-link" download href="./ads/reddit/static-v1/reddit-thumb-400x300-family-chain.png">下载评论缩略图 <span>PNG · 400×300</span></a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <section class="landscape-films" aria-labelledby="landscape-films-title">
+            <header class="landscape-films__head">
+              <h3 id="landscape-films-title">Native 16:9 · 重新生产，不是改装竖版</h3>
+              <p>三支片全部由新绘制的 1024×576 首尾帧与九个横版运动镜头生成，再输出为 1920×1080。每个时间点只出现一个完整镜头，没有三联画、拉伸或竖版裁切。</p>
+            </header>
+            <div class="finished-shorts" aria-label="小优家族原生横版三条短视频广告">
+              <article class="finished-short landscape-film">
+                <video controls playsinline preload="metadata" poster="./ads/reddit/shorts/family-landscape-native-v1/alteru-a1-family-gate-landscape-native-v1-poster.jpg"><source src="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-landscape-native-v1/alteru-a1-family-gate-landscape-native-v1.mp4" type="video/mp4" /></video>
+                <div class="finished-short__body"><div class="finished-short__meta"><span>01 · Family Gate</span><span>16:9 · 10 SEC</span></div><h3>Build us a secret gate.</h3><p>低位跟拍 → 横向环绕搭门 → 穿门推进；横向空间和摄影机运动都重新设计。</p><a class="download" href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-landscape-native-v1/alteru-a1-family-gate-landscape-native-v1.mp4">下载 16:9 MP4</a></div>
+              </article>
+              <article class="finished-short landscape-film">
+                <video controls playsinline preload="metadata" poster="./ads/reddit/shorts/family-landscape-native-v1/alteru-a2-family-river-landscape-native-v1-poster.jpg"><source src="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-landscape-native-v1/alteru-a2-family-river-landscape-native-v1.mp4" type="video/mp4" /></video>
+                <div class="finished-short__body"><div class="finished-short__meta"><span>02 · Family River</span><span>16:9 · 10 SEC</span></div><h3>Make the river twist.</h3><p>俯拍旋转画河 → 侧移折船 → 低位追船升镜；创建和游玩仍在一支片里闭环。</p><a class="download" href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-landscape-native-v1/alteru-a2-family-river-landscape-native-v1.mp4">下载 16:9 MP4</a></div>
+              </article>
+              <article class="finished-short landscape-film">
+                <video controls playsinline preload="metadata" poster="./ads/reddit/shorts/family-landscape-native-v1/alteru-b2-family-wake-landscape-native-v1-poster.jpg"><source src="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-landscape-native-v1/alteru-b2-family-wake-landscape-native-v1.mp4" type="video/mp4" /></video>
+                <div class="finished-short__body"><div class="finished-short__meta"><span>03 · Family Chain</span><span>16:9 · 10 SEC</span></div><h3>Wake everyone with one hit.</h3><p>微距第一击 → 横向连锁唤醒 → 高位拉远成环；所有文字均在静音安全区内。</p><a class="download" href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-landscape-native-v1/alteru-b2-family-wake-landscape-native-v1.mp4">下载 16:9 MP4</a></div>
+              </article>
+            </div>
+          </section>
+        </section>
 
         <div class="series-grid">
           <article class="series-card">

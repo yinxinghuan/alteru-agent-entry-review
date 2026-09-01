@@ -1,0 +1,40 @@
+{
+  "version": "reddit-ad-landscape-native-v1",
+  "release": "https://github.com/yinxinghuan/alteru-agent-entry-review/releases/tag/reddit-ad-landscape-native-v1",
+  "bundle": "https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-landscape-native-v1/alteru-reddit-format-kit-v1.zip",
+  "delivery": {
+    "width": 1920,
+    "height": 1080,
+    "aspect_ratio": "16:9",
+    "frame_rate": 24,
+    "duration_seconds": 10,
+    "video_codec": "H.264",
+    "audio_codec": "AAC",
+    "sound_off_safe": true
+  },
+  "films": [
+    {
+      "id": "a1-family-gate-landscape-native-v1",
+      "file": "alteru-a1-family-gate-landscape-native-v1.mp4",
+      "size_bytes": 4499927,
+      "release_url": "https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-landscape-native-v1/alteru-a1-family-gate-landscape-native-v1.mp4"
+    },
+    {
+      "id": "a2-family-river-landscape-native-v1",
+      "file": "alteru-a2-family-river-landscape-native-v1.mp4",
+      "size_bytes": 4416860,
+      "release_url": "https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-landscape-native-v1/alteru-a2-family-river-landscape-native-v1.mp4"
+    },
+    {
+      "id": "b2-family-wake-landscape-native-v1",
+      "file": "alteru-b2-family-wake-landscape-native-v1.mp4",
+      "size_bytes": 5167220,
+      "release_url": "https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-landscape-native-v1/alteru-b2-family-wake-landscape-native-v1.mp4"
+    }
+  ],
+  "notes": [
+    "All nine motion shots were regenerated from new 1024x576 landscape keyframes.",
+    "No final film stretches, crops, or tiles the existing 4:5 films.",
+    "Transient identity-drift frames were repaired or excluded during the final edit."
+  ]
+}
