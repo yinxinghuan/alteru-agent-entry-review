@@ -289,6 +289,36 @@
       .short-system__intro p { margin: 0; color: #70646a; font-size: 17px; line-height: 1.7; }
       .short-system__intro .download { margin-top: 20px; }
 
+      .naming-strip {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1.15fr 1fr 1fr;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: #fff;
+      }
+
+      .naming-strip > div {
+        min-height: 112px;
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-right: 1px solid var(--line);
+      }
+
+      .naming-strip > div:last-child { border-right: 0; }
+      .naming-strip span {
+        color: #7a6c73;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: .12em;
+        text-transform: uppercase;
+      }
+      .naming-strip strong { font-size: clamp(22px, 3vw, 32px); line-height: 1; letter-spacing: -.035em; }
+      .naming-strip small { margin-top: 7px; color: #70646a; font-size: 12px; line-height: 1.4; }
+
       .finished-shorts {
         margin-top: 52px;
         display: grid;
@@ -476,9 +506,11 @@
         .series-grid, .asset-grid { grid-template-columns: 1fr; }
         .finished-shorts { grid-template-columns: 1fr; }
         .format-kit__head { grid-template-columns: 1fr; }
-        .spec-note { grid-template-columns: 1fr; }
+        .spec-note, .naming-strip { grid-template-columns: 1fr; }
         .spec-note div { border-right: 0; border-bottom: 1px solid var(--line); }
         .spec-note div:last-child { border-bottom: 0; }
+        .naming-strip > div { min-height: 96px; border-right: 0; border-bottom: 1px solid var(--line); }
+        .naming-strip > div:last-child { border-bottom: 0; }
         .landscape-films__head { display: grid; }
         .series-card { min-height: 0; }
         .wave-one__list { grid-template-columns: repeat(2, 1fr); }
@@ -656,14 +688,20 @@
       <section class="short-system" aria-labelledby="short-system-title">
         <header class="short-system__head">
           <div>
-            <p class="eyebrow">Xiaoyou family multi-shot cut · 3 finished films</p>
-            <h2 id="short-system-title">The family makes it.<br />Then plays it.</h2>
+            <p class="eyebrow">The Uli Family · multi-shot cut · 3 finished films</p>
+            <h2 id="short-system-title">The Uli Family makes it.<br />Then plays it.</h2>
           </div>
           <div class="short-system__intro">
             <p>三条短片再次精修：每支由三个独立生成镜头组成，分别使用微距、环绕、侧移、追踪与俯拍机位。小优家族始终是动作发起者，画面不再像单张会动的海报。</p>
             <a class="download" href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/reddit-ad-family-v3/alteru-reddit-xiaoyou-family-v3.zip">下载多镜头精修成片包 ZIP</a>
           </div>
         </header>
+
+        <div class="naming-strip" aria-label="小优英文命名系统">
+          <div><span>Character / 角色</span><strong>小优 · Uli</strong><small>读作 “YOU-lee”</small></div>
+          <div><span>Character family / 角色家族</span><strong>The Uli Family</strong><small>用于家族合影与系列广告</small></div>
+          <div><span>Story world / 世界观</span><strong>Uli’s World</strong><small>用于场景、故事与世界扩展</small></div>
+        </div>
 
         <div class="finished-shorts" aria-label="小优家族版三条短视频广告">
           <article class="finished-short">
@@ -850,7 +888,7 @@
             <p>首轮不一次做满 12 条。先选择六条覆盖创建、游玩、异步和 Reddit 原生问题钩子；每条只做两个文字 Hook，不同时改变画面、声音和 CTA。</p>
           </div>
           <div class="wave-one__list">
-            <div><span>01 · MAKE</span><strong>A1 · Xiaoyou builds a gate</strong></div>
+            <div><span>01 · MAKE</span><strong>A1 · Uli builds a gate</strong></div>
             <div><span>02 · MAKE → PLAY</span><strong>A2 · Family draws and races</strong></div>
             <div><span>03 · PLAY</span><strong>B2 · Family wake chain</strong></div>
             <div><span>04 · WEIRD RULE</span><strong>C1 · Dungeon Shift</strong></div>
