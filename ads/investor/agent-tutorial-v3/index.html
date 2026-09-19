@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AlterU — A 2D RPG, one sentence at a time / V3</title>
+<style>
+:root{--bg:#08070b;--text:#f7f4f8;--muted:#b6aebb;--pink:#f5b1c7;--line:#39313d;--space:8px}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:1440px;margin:auto;padding:40px 28px 80px}.eyebrow{color:var(--pink);font-size:12px;letter-spacing:.16em;text-transform:uppercase}h1{font-size:clamp(32px,4.4vw,60px);line-height:1.06;letter-spacing:-.045em;margin:20px 0}p{color:var(--muted);max-width:740px;margin:16px 0 24px}video{width:100%;aspect-ratio:16/9;display:block;background:#000;border:1px solid var(--line);border-radius:12px;margin:28px 0 16px}a{color:var(--pink)}a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}a:focus-visible,button:focus-visible{outline:2px solid white;outline-offset:5px}.actions,.chapters{display:flex;flex-wrap:wrap;gap:12px}.actions a,.chapters button{display:inline-flex;align-items:center;min-height:46px;padding:10px 20px;border:1px solid var(--line);border-radius:28px;text-decoration:none}.actions a:first-child{background:var(--pink);color:#171014;border-color:var(--pink);font-weight:600}.actions a:active,.chapters button:active{opacity:.75}.chapters{margin-top:20px}.chapters button{font:inherit;font-size:14px;color:var(--muted);background:transparent;cursor:pointer;padding:8px 16px}.chapters button span{color:var(--pink);margin-right:10px;font-variant-numeric:tabular-nums}.details{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:44px;padding-top:28px;border-top:1px solid var(--line)}.details h2{font-size:18px;margin:0 0 12px}.details p{margin:0}.status{font-size:14px;margin:12px 0;color:var(--muted)}.error{color:var(--pink)}footer{margin-top:40px;font-size:14px;color:var(--muted)}@media(max-width:650px){main{padding:28px 16px 48px}.details{grid-template-columns:1fr;gap:28px}.actions a{font-size:15px}.chapters{gap:8px}.chapters button{font-size:13px;padding:8px 12px}video{border-radius:8px}}
+</style>
+<main>
+<div class="eyebrow">AlterU / Internal product walkthrough / V3 · English</div>
+<h1>A 2D RPG.<br>One sentence at a time.</h1>
+<p>Create a village. Add a ranger and a quest. Walk into the world, then improve it with another sentence.</p>
+<video id="film" controls playsinline preload="metadata" poster="poster.jpg" aria-label="English AlterU Agent walkthrough: creating and exploring a 2D RPG"><source src="alteru-agent-tutorial-v3-en.mp4" type="video/mp4"></video>
+<p class="status" id="status" aria-live="polite">61 seconds · 1920 × 1080 · 16:9 · Music & sound effects</p>
+<nav class="actions" aria-label="Downloads"><a href="https://github.com/yinxinghuan/alteru-agent-entry-review/releases/download/agent-tutorial-v3-en/alteru-agent-tutorial-v3-en.mp4">Download video · 1080p MP4</a><a href="production-notes.md" download>Download script & notes</a></nav>
+<div class="chapters" aria-label="Jump to a chapter"><button data-time="0"><span>00:00</span>Describe</button><button data-time="9.083"><span>00:09</span>Add the ranger</button><button data-time="16.875"><span>00:17</span>Create a quest</button><button data-time="27.25"><span>00:27</span>Play</button><button data-time="48.667"><span>00:49</span>Refine & test</button></div>
+<div class="details"><section><h2>One frame. One focus.</h2><p>Full-width input close-ups, pull-backs into the Agent response, tracking shots through the village and quick cuts between exploration, dialogue and quest feedback.</p></section><section><h2>What this demonstration shows</h2><p>Uses the existing AlterU UI handoff with scripted conversations and an original simulated 2D RPG. Generation time is compressed. This is a workflow demonstration, not a live generation recording or a speed benchmark.</p></section></div>
+<footer><a href="../agent-tutorial-v2/">View the previous version</a></footer>
+</main>
+<script>
+const film=document.querySelector('#film'),status=document.querySelector('#status');document.querySelectorAll('[data-time]').forEach(button=>button.addEventListener('click',async()=>{film.currentTime=Number(button.dataset.time);try{await film.play()}catch{status.textContent='Tap the play button to start the video.'}}));film.addEventListener('error',()=>{status.classList.add('error');status.textContent='Preview unavailable in this browser. Use Download video to open the MP4 directly.'});
+</script>
+</html>

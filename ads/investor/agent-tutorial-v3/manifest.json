@@ -1,0 +1,154 @@
+{
+  "version": 3,
+  "language": "en",
+  "duration": 60.83333333333334,
+  "resolution": "1920x1080",
+  "fps": 24,
+  "uiSource": "Existing AlterU product UI handoff: alteru-agent-demo/handoff/css/app-ui.css",
+  "disclosure": "Scripted UI walkthrough; generation time compressed. Original 2D RPG simulation, not a recording of live Agent generation.",
+  "shots": [
+    {
+      "id": "type-world",
+      "kind": "ui",
+      "duration": 4.791666666666667,
+      "prompt": "Make a 2D RPG set in a forest village.",
+      "phase": "type",
+      "chapter": "world"
+    },
+    {
+      "id": "agent-world",
+      "kind": "ui",
+      "duration": 1.2916666666666667,
+      "phase": "reply",
+      "chapter": "world"
+    },
+    {
+      "id": "build-world",
+      "kind": "game",
+      "duration": 3
+    },
+    {
+      "id": "type-hero",
+      "kind": "ui",
+      "duration": 4,
+      "prompt": "Add a young ranger I can move around.",
+      "phase": "type",
+      "chapter": "hero"
+    },
+    {
+      "id": "hero-arrives",
+      "kind": "game",
+      "duration": 1.7916666666666667
+    },
+    {
+      "id": "walk-intro",
+      "kind": "game",
+      "duration": 2
+    },
+    {
+      "id": "type-rules",
+      "kind": "ui",
+      "duration": 4.791666666666667,
+      "prompt": "An elder sends me to find three forest runes.",
+      "phase": "type",
+      "chapter": "rules"
+    },
+    {
+      "id": "quest-reveal",
+      "kind": "game",
+      "duration": 2
+    },
+    {
+      "id": "forest-glide",
+      "kind": "game",
+      "duration": 1.7916666666666667
+    },
+    {
+      "id": "preview-click",
+      "kind": "ui",
+      "duration": 1.7916666666666667,
+      "phase": "preview",
+      "chapter": "rules"
+    },
+    {
+      "id": "village-walk",
+      "kind": "game",
+      "duration": 2.4166666666666665
+    },
+    {
+      "id": "elder-talk",
+      "kind": "game",
+      "duration": 3.5833333333333335
+    },
+    {
+      "id": "accept-quest",
+      "kind": "game",
+      "duration": 1.4166666666666667
+    },
+    {
+      "id": "leave-village",
+      "kind": "game",
+      "duration": 2.2083333333333335
+    },
+    {
+      "id": "cross-bridge",
+      "kind": "game",
+      "duration": 2
+    },
+    {
+      "id": "collect-one",
+      "kind": "game",
+      "duration": 1.7916666666666667
+    },
+    {
+      "id": "collect-two",
+      "kind": "game",
+      "duration": 1.5833333333333333
+    },
+    {
+      "id": "collect-three",
+      "kind": "game",
+      "duration": 1.7916666666666667
+    },
+    {
+      "id": "shrine-approach",
+      "kind": "game",
+      "duration": 2.2083333333333335
+    },
+    {
+      "id": "shrine-opens",
+      "kind": "game",
+      "duration": 2.4166666666666665
+    },
+    {
+      "id": "type-refine",
+      "kind": "ui",
+      "duration": 4,
+      "prompt": "Add a dash so I can explore faster.",
+      "phase": "type",
+      "chapter": "refine"
+    },
+    {
+      "id": "agent-refine",
+      "kind": "ui",
+      "duration": 1.2083333333333333,
+      "phase": "reply",
+      "chapter": "refine"
+    },
+    {
+      "id": "dash-test",
+      "kind": "game",
+      "duration": 2.7916666666666665
+    },
+    {
+      "id": "last-run",
+      "kind": "game",
+      "duration": 2.5833333333333335
+    },
+    {
+      "id": "finish",
+      "kind": "game",
+      "duration": 1.5833333333333333
+    }
+  ]
+}
