@@ -1,0 +1,122 @@
+{
+  "duration": 90,
+  "language": "en",
+  "resolution": "1920x1080",
+  "uiSource": "alteru-agent-demo/handoff: agent.html + css/app-ui.css",
+  "uiStatus": "Existing product UI handoff, scripted content; not a live production screen recording",
+  "gameplay": "Illustrative simulation with staged player movement, dialogue, choice, inventory, gate and return-state response",
+  "shots": [
+    {
+      "id": "hook",
+      "duration": 4,
+      "kind": "game"
+    },
+    {
+      "id": "brief",
+      "duration": 9,
+      "kind": "ui",
+      "n": "01",
+      "title": "Start with\na world.",
+      "note": "Give the Agent a setting\nand a playable idea.",
+      "prompt": "Create an RPG in a city where memories are currency.",
+      "reply": "I’ll start with the city, its streets and a central gate.",
+      "state": "Building the city",
+      "cover": "stage-00-empty"
+    },
+    {
+      "id": "city",
+      "duration": 5,
+      "kind": "clip",
+      "clip": "city-build",
+      "title": "A city takes shape.",
+      "note": "Your setting becomes a place to explore."
+    },
+    {
+      "id": "cast",
+      "duration": 8,
+      "kind": "ui",
+      "n": "02",
+      "title": "Give someone\na story.",
+      "note": "Describe who you play\nand who matters to them.",
+      "prompt": "Make me a forgotten courier. Add one friend who still remembers me.",
+      "reply": "Adding the courier and a companion who recognises them.",
+      "state": "Creating the characters",
+      "cover": "stage-01-courier"
+    },
+    {
+      "id": "hero",
+      "duration": 5,
+      "kind": "clip",
+      "clip": "courier-build",
+      "title": "You are the courier.",
+      "note": "A role. A motive. A reason to begin."
+    },
+    {
+      "id": "companion",
+      "duration": 5,
+      "kind": "clip",
+      "clip": "companion-build",
+      "title": "One person remembers.",
+      "note": "A relationship gives the journey meaning."
+    },
+    {
+      "id": "rules",
+      "duration": 9,
+      "kind": "ui",
+      "n": "03",
+      "title": "Turn a premise\ninto a choice.",
+      "note": "Say what the player can do\nand what should happen.",
+      "prompt": "Two guards block the gate. Let me show the letter or trade a memory.",
+      "reply": "The letter earns their trust. Trading a memory costs one memory. Either choice opens the gate.",
+      "state": "Adding the encounter",
+      "cover": "stage-03-conflict"
+    },
+    {
+      "id": "conflict",
+      "duration": 5,
+      "kind": "clip",
+      "clip": "conflict-build",
+      "title": "Now there is a decision.",
+      "note": "The gate. The guards. The sealed letter."
+    },
+    {
+      "id": "preview",
+      "duration": 6,
+      "kind": "ui",
+      "n": "04",
+      "title": "Try what\nyou made.",
+      "note": "Open Preview.\nPlay the first encounter.",
+      "prompt": "",
+      "reply": "The first encounter is ready to preview.",
+      "state": "Ready to preview",
+      "cover": "stage-03-conflict"
+    },
+    {
+      "id": "play",
+      "duration": 12,
+      "kind": "game"
+    },
+    {
+      "id": "refine",
+      "duration": 8,
+      "kind": "ui",
+      "n": "05",
+      "title": "Play. Notice.\nAsk again.",
+      "note": "Keep refining the rules\nin the same conversation.",
+      "prompt": "Make the guards remember me and let me pass next time.",
+      "reply": "I’ll save their trust. When you return, they’ll recognise you and open the gate.",
+      "state": "Updating the return encounter",
+      "cover": "stage-04-result"
+    },
+    {
+      "id": "replay",
+      "duration": 8,
+      "kind": "game"
+    },
+    {
+      "id": "end",
+      "duration": 6,
+      "kind": "end"
+    }
+  ]
+}

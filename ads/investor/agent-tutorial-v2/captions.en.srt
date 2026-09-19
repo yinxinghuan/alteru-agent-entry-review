@@ -1,0 +1,51 @@
+1
+00:00:00,000 --> 00:00:04,000
+Let’s make a playable RPG.
+
+2
+00:00:04,000 --> 00:00:13,000
+Create an RPG in a city where memories are currency.
+
+3
+00:00:13,000 --> 00:00:18,000
+A city takes shape.
+
+4
+00:00:18,000 --> 00:00:26,000
+Make me a forgotten courier. Add one friend who still remembers me.
+
+5
+00:00:26,000 --> 00:00:31,000
+You are the courier.
+
+6
+00:00:31,000 --> 00:00:36,000
+One person remembers.
+
+7
+00:00:36,000 --> 00:00:45,000
+Two guards block the gate. Let me show the letter or trade a memory.
+
+8
+00:00:45,000 --> 00:00:50,000
+Now there is a decision.
+
+9
+00:00:50,000 --> 00:00:56,000
+Try what you made.
+
+10
+00:00:56,000 --> 00:01:08,000
+Walk to the gate. Show the letter. Earn their trust.
+
+11
+00:01:08,000 --> 00:01:16,000
+Make the guards remember me and let me pass next time.
+
+12
+00:01:16,000 --> 00:01:24,000
+The guards remember you and let you pass.
+
+13
+00:01:24,000 --> 00:01:30,000
+Describe. Preview. Play. Refine. — alteru.app
