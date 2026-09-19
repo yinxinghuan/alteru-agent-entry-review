@@ -1,0 +1,343 @@
+{
+  "version": 4,
+  "language": "en",
+  "duration": 99.29166666666666,
+  "resolution": "1920x1080",
+  "fps": 24,
+  "uiSource": "Existing AlterU product UI handoff: alteru-agent-demo/handoff/css/app-ui.css",
+  "disclosure": "Scripted UI walkthrough; generation time compressed. Original 2D RPG simulation, not a recording of live Agent generation.",
+  "shots": [
+    {
+      "id": "type-world",
+      "kind": "ui",
+      "duration": 4.791666666666667,
+      "prompt": "Make a 2D RPG set in a forest village.",
+      "phase": "type",
+      "chapter": "world",
+      "hasCharm": false,
+      "revisit": false
+    },
+    {
+      "id": "agent-world",
+      "kind": "ui",
+      "duration": 1.2916666666666667,
+      "phase": "reply",
+      "chapter": "world",
+      "hasCharm": false,
+      "revisit": false
+    },
+    {
+      "id": "build-world",
+      "kind": "game",
+      "duration": 3,
+      "hasCharm": false,
+      "revisit": false
+    },
+    {
+      "id": "type-hero",
+      "kind": "ui",
+      "duration": 4,
+      "prompt": "Add a young ranger I can move around.",
+      "phase": "type",
+      "chapter": "hero",
+      "hasCharm": false,
+      "revisit": false
+    },
+    {
+      "id": "hero-arrives",
+      "kind": "game",
+      "duration": 1.7916666666666667,
+      "hasCharm": false,
+      "revisit": false
+    },
+    {
+      "id": "walk-intro",
+      "kind": "game",
+      "duration": 2,
+      "hasCharm": false,
+      "revisit": false
+    },
+    {
+      "id": "type-rules",
+      "kind": "ui",
+      "duration": 4.791666666666667,
+      "prompt": "An elder sends me to find three forest runes.",
+      "phase": "type",
+      "chapter": "rules",
+      "hasCharm": false,
+      "revisit": false
+    },
+    {
+      "id": "quest-reveal",
+      "kind": "game",
+      "duration": 2,
+      "hasCharm": false,
+      "revisit": false
+    },
+    {
+      "id": "forest-glide",
+      "kind": "game",
+      "duration": 1.7916666666666667,
+      "hasCharm": false,
+      "revisit": false
+    },
+    {
+      "id": "preview-click",
+      "kind": "ui",
+      "duration": 1.7916666666666667,
+      "phase": "preview",
+      "chapter": "rules",
+      "hasCharm": false,
+      "revisit": false
+    },
+    {
+      "id": "village-walk",
+      "kind": "game",
+      "duration": 2.4166666666666665,
+      "hasCharm": false,
+      "revisit": false
+    },
+    {
+      "id": "talk-greeting",
+      "kind": "game",
+      "duration": 5.791666666666667,
+      "dialogue": {
+        "speaker": "elder",
+        "text": "Stranger, the forest shrine has gone quiet. Will you help?",
+        "choices": [
+          "What happened to it?",
+          "I’m looking for the shrine."
+        ],
+        "selected": 0,
+        "selectAt": 4.7
+      }
+    },
+    {
+      "id": "talk-ask-what",
+      "kind": "game",
+      "duration": 1.5833333333333333,
+      "dialogue": {
+        "speaker": "ranger",
+        "text": "What happened to it?"
+      }
+    },
+    {
+      "id": "talk-history",
+      "kind": "game",
+      "duration": 5.791666666666667,
+      "dialogue": {
+        "speaker": "elder",
+        "text": "The storm scattered its three runes. The doorway is sealed.",
+        "choices": [
+          "I’ll take a look.",
+          "Where should I search?"
+        ],
+        "selected": 1,
+        "selectAt": 4.7
+      }
+    },
+    {
+      "id": "talk-ask-where",
+      "kind": "game",
+      "duration": 1.5833333333333333,
+      "dialogue": {
+        "speaker": "ranger",
+        "text": "Where should I search?"
+      }
+    },
+    {
+      "id": "talk-directions",
+      "kind": "game",
+      "duration": 5.791666666666667,
+      "dialogue": {
+        "speaker": "elder",
+        "text": "Across the bridge. Follow the broken stones toward the old steps.",
+        "choices": [
+          "I’ll find all three.",
+          "Not right now."
+        ],
+        "selected": 0,
+        "selectAt": 4.7
+      }
+    },
+    {
+      "id": "talk-agree",
+      "kind": "game",
+      "duration": 1.5833333333333333,
+      "dialogue": {
+        "speaker": "ranger",
+        "text": "I’ll find all three."
+      }
+    },
+    {
+      "id": "talk-charm",
+      "kind": "game",
+      "duration": 3.7916666666666665,
+      "dialogue": {
+        "speaker": "elder",
+        "text": "Take this charm. It glows when a rune is near.",
+        "choices": null,
+        "selected": 0,
+        "selectAt": null,
+        "giveCharm": true
+      }
+    },
+    {
+      "id": "quest-journal",
+      "kind": "game",
+      "duration": 1.5,
+      "journal": true,
+      "hasCharm": true
+    },
+    {
+      "id": "leave-village",
+      "kind": "game",
+      "duration": 2.2083333333333335,
+      "hasCharm": true,
+      "revisit": false
+    },
+    {
+      "id": "cross-bridge",
+      "kind": "game",
+      "duration": 2,
+      "hasCharm": true,
+      "revisit": false
+    },
+    {
+      "id": "collect-one",
+      "kind": "game",
+      "duration": 1.7916666666666667,
+      "hasCharm": true,
+      "revisit": false
+    },
+    {
+      "id": "collect-two",
+      "kind": "game",
+      "duration": 1.5833333333333333,
+      "hasCharm": true,
+      "revisit": false
+    },
+    {
+      "id": "collect-three",
+      "kind": "game",
+      "duration": 1.7916666666666667,
+      "hasCharm": true,
+      "revisit": false
+    },
+    {
+      "id": "return-bridge",
+      "kind": "game",
+      "duration": 1.7916666666666667,
+      "hasCharm": true,
+      "returning": true
+    },
+    {
+      "id": "return-elder",
+      "kind": "game",
+      "duration": 1.5833333333333333,
+      "hasCharm": true,
+      "returning": true
+    },
+    {
+      "id": "talk-return",
+      "kind": "game",
+      "duration": 5.583333333333333,
+      "dialogue": {
+        "speaker": "elder",
+        "text": "You found them—all three. The charm led you well.",
+        "choices": [
+          "Will you come with me?",
+          "How do I open the shrine?"
+        ],
+        "selected": 1,
+        "selectAt": 4.5,
+        "returning": true
+      }
+    },
+    {
+      "id": "talk-ask-open",
+      "kind": "game",
+      "duration": 1.5833333333333333,
+      "dialogue": {
+        "speaker": "ranger",
+        "text": "How do I open the shrine?",
+        "returning": true
+      }
+    },
+    {
+      "id": "talk-open",
+      "kind": "game",
+      "duration": 4,
+      "dialogue": {
+        "speaker": "elder",
+        "text": "Set the runes in the doorway. I’ll keep watch here.",
+        "choices": null,
+        "selected": 0,
+        "selectAt": null,
+        "returning": true
+      }
+    },
+    {
+      "id": "quest-next",
+      "kind": "game",
+      "duration": 1.5,
+      "journal": true,
+      "hasCharm": true,
+      "returning": true
+    },
+    {
+      "id": "shrine-approach",
+      "kind": "game",
+      "duration": 2.2083333333333335,
+      "hasCharm": true,
+      "revisit": true
+    },
+    {
+      "id": "shrine-opens",
+      "kind": "game",
+      "duration": 2.4166666666666665,
+      "hasCharm": true,
+      "revisit": false
+    },
+    {
+      "id": "type-refine",
+      "kind": "ui",
+      "duration": 4,
+      "prompt": "Add a dash so I can explore faster.",
+      "phase": "type",
+      "chapter": "refine",
+      "hasCharm": false,
+      "revisit": false
+    },
+    {
+      "id": "agent-refine",
+      "kind": "ui",
+      "duration": 1.2083333333333333,
+      "phase": "reply",
+      "chapter": "refine",
+      "hasCharm": false,
+      "revisit": false
+    },
+    {
+      "id": "dash-test",
+      "kind": "game",
+      "duration": 2.7916666666666665,
+      "hasCharm": true,
+      "revisit": false
+    },
+    {
+      "id": "last-run",
+      "kind": "game",
+      "duration": 2.5833333333333335,
+      "hasCharm": true,
+      "revisit": false
+    },
+    {
+      "id": "finish",
+      "kind": "game",
+      "duration": 1.5833333333333333,
+      "hasCharm": true,
+      "revisit": false
+    }
+  ]
+}
